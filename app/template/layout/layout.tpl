@@ -20,7 +20,7 @@
             {%include file="youyin/widget/header.tpl"%}
         {%/block%}
 
-        <div id="content-wrap">
+        <div id="content">
             {%block name="content"%}
             {%/block%}
         </div>

@@ -1,0 +1,62 @@
+/*css sprite 设置*/
+.common-icons-sprite {
+  display: inline-block;
+}
+$common-icons-spacing: 2px;
+$common-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "common-icons/*.png";
+@include all-common-icons-sprites(true);
+
+.m-footer{
+    background: #1a2c42;
+    .footer-inner{
+        width: 1000px;
+        margin: 0 auto;
+        .logo{
+            float: left;
+            position: relative;
+            top: 25px;
+        }
+        .detail{
+            float: right;
+            &>li{
+                text-align: right;
+            }
+            .nav{
+                margin: 30px 0 20px;
+                li{
+                    display: inline-block;
+                    a{
+                        color: #fff;
+                        font-size: 16px;
+                    }
+                    &.divide{
+                        margin: 0 5px;
+                        position: relative;
+                        top: -2px;
+                    }
+                }
+            }
+            .media{
+                margin-bottom: 20px;
+                div{
+                    display: inline-block;
+                    color: #fff;
+                    font-size: 16px;
+                    &:first-child{
+                        margin-right:32px;
+                    }
+                    i{
+                        margin-left: 20px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .qualify{
+                font-size: 12px;
+                color: #8d939a;
+            }
+        }
+    }
+}
