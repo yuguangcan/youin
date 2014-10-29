@@ -39,6 +39,52 @@
             <a href="###"  class="product-item-5"><img src="/static/youin/images/more-product.jpg"></img></a>
         </div>
     </section>
+
+    <section class="designer">
+        <div class="title">
+            <i class="index-icons-light"></i>
+            他们会让你生活更有创意
+            <a href="###">更多设计师<i class="index-icons-arrow-small"></i></a>
+        </div>
+        <ul class="clearfix">
+            <li>
+                <a href="###" class="designer-item-1">
+                    <div></div>
+                    <img src="/static/youin/images/designer1.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="###" class="designer-item-2">
+                    <div></div>
+                    <img src="/static/youin/images/designer2.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="###" class="designer-item-3">
+                    <img src="/static/youin/images/designer3.jpg">
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a href="###" class="designer-item-4">
+                    <img src="/static/youin/images/designer4.jpg">
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a href="###" class="designer-item-5">
+                    <div></div>
+                    <img src="/static/youin/images/designer5.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="###" class="designer-item-6">
+                    <div></div>
+                    <img src="/static/youin/images/designer6.jpg">
+                </a>
+            </li>
+        </ul>
+    </section>
 {%/block%}
 
 {%block name="js"%}

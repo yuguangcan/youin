@@ -69,6 +69,23 @@ $common-icons-layout: smart;
                         position: absolute;
                         left: 30px;
                         top: 20px;
+                        &.common-icons-nav-dress{
+                            left: 20px;
+                            top: 22px;
+                        }
+                        &.common-icons-nav-life{
+                            top: 30px;
+                            left: 27px;
+                        }
+                        &.common-icons-nav-shell{
+                            left: 31px;
+                        }
+                        &.common-icons-nav-hot{
+                            left: 21px;
+                        }
+                        &.common-icons-nav-special{
+                            left: 20px;
+                        }
                     }
                     p{
                         text-align: center;

@@ -30,6 +30,7 @@ $index-icons-layout: smart;
 	.product-list-style1{
 		position: relative;
 		margin-top: 25px;
+		height: 554px;
 		a{
 			display: block;
 			position: absolute;
@@ -73,17 +74,70 @@ $index-icons-layout: smart;
 	.product-list-style2{
 		position: relative;
 		margin-top: 25px;
+		height: 554px;
 		.product-item-1{
 			width: 712px;
-			height: 552px;
+			height: 554px;
 			left: 0;
 			top:0;
 		}
 		.product-item-2{
 			width: 264px;
-			height: 552px;
+			height: 554px;
 			right: 0;
 			top:0;
+		}
+	}
+}
+.designer{
+	.title{
+		margin: 30px auto 45px;
+		text-align: center;
+		font-size: 30px;
+		color: #fff;
+		.index-icons-light{
+			position: relative;
+			top: 12px;
+		}
+		a{
+			color: #49c0f5;
+			font-size: 12px;
+			margin-left: 10px;
+			i{
+				margin-left: 5px;
+			}
+		}
+	}
+	ul{
+		margin-bottom: 80px;
+		li{
+			float: left;
+			height: 180px;
+			a{
+				display: block;
+				width: 500px;
+				height: 180px;
+				div{
+					float: left;
+					width: 250px;
+					height: 180px;
+				}
+				img{
+					float: left;
+					display: block;
+					width: 250px;
+					height: 180px;
+				}
+
+				@for $i from 1 through 6 {
+				  	&.designer-item-#{$i} { 
+				  		div{
+				  			@include index-icons-sprite(designer-item-#{$i});
+				  		}
+				  	 	
+				  	}
+				}
+			}
 		}
 	}
 }
