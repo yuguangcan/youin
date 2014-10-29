@@ -23,7 +23,7 @@ module.exports = function (grunt) {
             // Configurable paths
             app: 'app',
             dist: 'dist',
-            module: 'youyin'
+            module: 'youin'
         },
 
         // Empties folders to start fresh
@@ -194,18 +194,10 @@ module.exports = function (grunt) {
                 files:[{
                     expand: true,
                     dot: true,
-                    cwd: '.tmp/static/styles/',
-                    dest: '<%= config.dist %>/static/<%= config.module %>/styles',
+                    cwd: '.tmp/concat/static/',
+                    dest: '<%= config.dist %>/static/',
                     src: [
-                        '**/*.css'
-                    ]
-                },
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= config.app %>/static/scripts/',
-                    dest: '<%= config.dist %>/static/<%= config.module %>/scripts',
-                    src: [
+                        '**/*.css',
                         '**/*.js'
                     ]
                 }]
@@ -239,6 +231,7 @@ module.exports = function (grunt) {
         'compass',
         'copy:dist',
         'useminPrepare',  
+        'concat',
         'copy:tmp',
         'usemin'
     ]);

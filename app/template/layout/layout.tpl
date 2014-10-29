@@ -6,7 +6,7 @@
             {%block name="title"%}有印{%/block%}
         </title>
 
-        <!-- build:css(.tmp) /static/youyin/styles/base/common.css -->
+        <!-- build:css(.tmp) /static/youin/styles/base/common.css -->
         <link rel="stylesheet" href="static/styles/base/common.css">
         <!-- endbuild -->
 
@@ -17,7 +17,7 @@
     </head>
     <body>
         {%block name="header"%}
-            {%include file="youyin/widget/header.tpl"%}
+            {%include file="youin/widget/header.tpl"%}
         {%/block%}
 
         <div id="content">
@@ -26,7 +26,7 @@
         </div>
 
         {%block name="footer"%}
-            {%include file="youyin/widget/footer.tpl"%}
+            {%include file="youin/widget/footer.tpl"%}
         {%/block%}
         
 
@@ -50,7 +50,7 @@
                 }
             };
         </script>
-        <!-- build:js /static/youyin/scripts/base/base.js -->
+        <!-- build:js /static/youin/scripts/base/base.js -->
         <script src="static/scripts/base/jquery-1.8.3.js" type="text/javascript"></script>
         <script src="static/scripts/widget/base.js" type="text/javascript"></script>
         <!-- endbuild -->
