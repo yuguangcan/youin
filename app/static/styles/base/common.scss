@@ -6,7 +6,7 @@ html{
 }
 body{
     min-width: 1000px;
-    height: 100%;
+    min-height: 100%;
     background:#2a425e;
     font-size: 14px;
     font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
@@ -16,6 +16,8 @@ a{
     text-decoration: none;
 }
 #content{
+    width: 1000px;
+    margin: 0 auto;
     padding-bottom: 170px;
 }
 #footer{

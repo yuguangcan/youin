@@ -1,3 +1,44 @@
-body{
-    color: #fff;
+/*css sprite 设置*/
+.index-icons-sprite {
+  display: inline-block;
+}
+$index-icons-spacing: 2px;
+$index-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "index-icons/*.png";
+@include all-index-icons-sprites(true);
+
+.banner{
+	width: 100%;
+	height: 400px;
+	position: relative;
+	img{
+		display: block;
+	}
+	.index-icons-arrow-left{
+		position: absolute;
+		top: 100px;
+		left: -92px;
+	}
+	.index-icons-arrow-right{
+		position: absolute;
+		top: 100px;
+		right: -95px;
+	}
+}
+.product{
+	.product-list-style1{
+		position: relative;
+		margin-top: 25px;
+		img{
+			display: block;
+		}
+		.product-item-1{
+			position: absolute;
+			width: 265px;
+			height: 554px;
+			left: 0;
+			top:0;
+		}
+	}
 }

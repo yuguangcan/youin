@@ -177,8 +177,7 @@ module.exports = function (grunt) {
                     cwd: '<%= config.app %>/static',
                     dest: '<%= config.dist %>/static/<%= config.module %>',
                     src: [
-                        'images/**/*.webp',
-                        'images/generated/*.*',
+                        'images/**/*.*'
                     ]
                 },
                 {
