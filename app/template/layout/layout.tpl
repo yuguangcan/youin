@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="utf-8">
@@ -29,6 +29,13 @@
             {%include file="youin/widget/footer.tpl"%}
         {%/block%}
         
+        {%block name="gotop"%}
+            <div id="gotop">
+                <div class="gotop-inner">
+                    <i class="common-icons-gotop"></i>
+                </div>
+            </div>
+        {%/block%}
 
         <script type="text/javascript">
             var YY = YY || {};
@@ -52,6 +59,7 @@
         </script>
         <!-- build:js /static/youin/scripts/base/base.js -->
         <script src="static/scripts/base/jquery-1.8.3.js" type="text/javascript"></script>
+        <script src="static/scripts/widget/misc.js" type="text/javascript"></script>
         <script src="static/scripts/widget/base.js" type="text/javascript"></script>
         <!-- endbuild -->
         {%block name="js"%}

@@ -14,9 +14,30 @@
 
 {%block name="content"%}
     <section class="banner">
-        <img src="/static/youin/images/banner1.jpg">
-        <i class="index-icons-arrow-left"></i>
-        <i class="index-icons-arrow-right"></i>
+        <div class="scrollable">
+            <div class="items">
+                <a href="###">
+                    <img src="/static/youin/images/banner1.jpg">
+                </a>
+                <a href="###">
+                    <img src="/static/youin/images/banner1.jpg">
+                </a>
+                <a href="###">
+                    <img src="/static/youin/images/banner1.jpg">
+                </a>
+            </div>
+        </div>
+        <div class="navi navi-pre">
+            <i class="index-icons-arrow-left"></i>
+        </div>
+        <div class="navi navi-next">
+            <i class="index-icons-arrow-right"></i>
+        </div>
+        <ul class="scroll-point">
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+        </ul>
     </section>
 
     <section class="product">
@@ -90,6 +111,7 @@
 {%block name="js"%}
 
 <!-- build:js /static/youin/scripts/page/index.js -->
+<script src="static/scripts/base/jquery.tools.min.js" type="text/javascript"></script>
 <script src="static/scripts/page/index.js"></script>
 <!-- endbuild -->
 {%/block%}

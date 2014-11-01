@@ -12,18 +12,66 @@ $index-icons-layout: smart;
 	width: 100%;
 	height: 400px;
 	position: relative;
+	.scrollable{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		.items{
+			width: 12800px;
+			position: absolute;
+		}
+	}
+	a{
+		display: block;
+		cursor: pointer;
+		float: left;	
+	}
 	img{
 		display: block;
 	}
-	.index-icons-arrow-left{
+	.navi{
 		position: absolute;
-		top: 100px;
-		left: -92px;
+		cursor: pointer;
+		width: 90px;
+		height: 400px;
+		top: 0;
+		i{
+			position: absolute;
+			top: 100px;
+		}
 	}
-	.index-icons-arrow-right{
+	.navi-pre{
+		left: -90px;
+		i{
+			left: 0;
+		}
+	}
+	.navi-next{
+		right: -90px;
+		i{
+			right: 0;
+		}
+	}
+	.scroll-point{
 		position: absolute;
-		top: 100px;
-		right: -95px;
+		width: 100%;
+		left: 0;
+		bottom: 15px;
+		text-align: center;
+		li{
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			margin-left: 12px;
+			&:first-child{
+				margin-left:0;
+			}
+			@include index-icons-sprite(pointer);
+			&.cur{
+				@include index-icons-sprite(pointer-h);
+			}
+		}
 	}
 }
 .product{
@@ -75,6 +123,10 @@ $index-icons-layout: smart;
 		position: relative;
 		margin-top: 25px;
 		height: 554px;
+		a{
+			display: block;
+			position: absolute;
+		}
 		.product-item-1{
 			width: 712px;
 			height: 554px;
