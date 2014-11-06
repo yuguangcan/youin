@@ -57,10 +57,14 @@ $common-icons-layout: smart;
         ul{
             float: right;
             li{
-                display: inline-block;
+                float: left;
                 width: 100px;
                 height: 120px;
-                a{
+                position: relative;
+                &.divide{
+                    width: 1px;
+                }
+                &>a{
                     display: block;
                     position: relative;
                     width: 100%;
@@ -87,6 +91,11 @@ $common-icons-layout: smart;
                             left: 20px;
                         }
                     }
+                    span{
+                        position: absolute;
+                        bottom:7px;
+                        left: 45px; 
+                    }
                     p{
                         text-align: center;
                         bottom: 15px;
@@ -95,9 +104,60 @@ $common-icons-layout: smart;
                         position: absolute;
                         width: 100%;
                     }
+                    .sub-nav{
+                        display: none;
+                        position: absolute;
+                        top: 120px;
+                        left: 0;
+                        z-index: 10;
+                        div{
+                            display: block;
+                            width: 100px;
+                            height: 50px;
+                            line-height: 50px;
+                            background: #1f2b43;
+                            color: #fff;
+                            font-size: 14px;
+                            text-align: center;
+                            border-top: 1px solid #1f2b43;
+                            border-bottom: 1px solid #1f2b43;
+                            &:hover{
+                                border-top: 1px solid #112031;
+                                border-bottom: 1px solid #112031;
+                                background: #26516f;
+                            }
+                        }
+                    }
+                    &:hover{
+                        background: #2a5170;
+                        p{
+                            color: #49c0f5;
+                        }
+                        .sub-nav{
+                            display: block;
+                        }
+                    }
                 }
                 &.cur{
-                    a{
+                    &::before{
+                        content:"";
+                        position: absolute;
+                        width: 1px;
+                        height: 120px;
+                        @include common-icons-sprite(nav-cur-divide);
+                        top: 0;
+                        left: -1px;
+                    }
+                    &::after{
+                        content:"";
+                        position: absolute;
+                        width: 1px;
+                        height: 120px;
+                        @include common-icons-sprite(nav-cur-divide);
+                        top: 0;
+                        right: -1px;
+                    }
+                    &>a{
                         @include background-image(linear-gradient(#1a2c42, #142234));
                         p{
                             color: #49c0f5;

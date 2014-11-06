@@ -5,6 +5,11 @@ YY.base = {
     initLogin : function(){
         
     },
+    initHeader: function(){
+    	$('#header .sub-nav-hre').click(function(){
+    		location.href = $(this).data('href');
+    	});
+    },
     initGotop : function(){
     	var gotop = $('#gotop i');
     	$(window).on('scroll',function(){
