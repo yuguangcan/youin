@@ -1,0 +1,81 @@
+/*css sprite 设置*/
+.common-icons-sprite {
+  display: inline-block;
+}
+$common-icons-spacing: 2px;
+$common-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "common-icons/*.png";
+
+.m-scrollbanner{
+	width: 100%;
+	height: 400px;
+	position: relative;
+	.scrollable{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		.items{
+			width: 12800px;
+			position: absolute;
+		}
+	}
+	a{
+		display: block;
+		cursor: pointer;
+		float: left;	
+	}
+	img{
+		display: block;
+	}
+	.navi{
+		position: absolute;
+		cursor: pointer;
+		width: 90px;
+		height: 400px;
+		top: 0;
+		i{
+			position: absolute;
+			top: 100px;
+		}
+	}
+	.navi-pre{
+		left: -90px;
+		i{
+			left: 0;
+			width: 30px;
+			height: 194px;
+			@include common-icons-sprite(arrow-left);
+		}
+	}
+	.navi-next{
+		right: -90px;
+		i{
+			right: 0;
+			width: 30px;
+			height: 194px;
+			@include common-icons-sprite(arrow-right);
+		}
+	}
+	.scroll-point{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 15px;
+		text-align: center;
+		li{
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			margin-left: 12px;
+			&:first-child{
+				margin-left:0;
+			}
+			@include common-icons-sprite(pointer);
+			&.cur{
+				@include common-icons-sprite(pointer-h);
+			}
+		}
+	}
+}

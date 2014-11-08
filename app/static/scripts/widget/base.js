@@ -11,7 +11,8 @@ YY.base = {
     	});
     },
     initGotop : function(){
-    	var gotop = $('#gotop i');
+    	var gotop = $('#gotop'),
+            gotopIcon = $('#gotop i');
     	$(window).on('scroll',function(){
     		if ($(window).scrollTop() > $(window).height() * 2){
     			gotop.show();
@@ -19,7 +20,7 @@ YY.base = {
     			gotop.hide();
     		}
     	});
-    	gotop.click(function(){
+    	gotopIcon.click(function(){
     		$('body').animate({
     			scrollTop : 0
     		},300);

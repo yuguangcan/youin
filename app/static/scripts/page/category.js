@@ -1,8 +1,8 @@
-YY.indexPage = {
+YY.categoryPage = {
     init:function(){
         YY.scrollbanner.init();
     }
 }
 $(function(){
-    YY.indexPage.init();
+    YY.categoryPage.init();
 });

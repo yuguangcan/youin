@@ -8,57 +8,57 @@
 
 {%block name="css"%}
 <!-- build:css(.tmp) /static/youin/styles/page/index.css -->
+<link rel="stylesheet" href="static/styles/widget/scrollbanner.css">
 <link rel="stylesheet" href="static/styles/page/index.css">
 <!-- endbuild -->
 {%/block%}
 
 {%block name="content"%}
-    <section class="banner">
-        <div class="scrollable">
-            <div class="items">
-                <a href="###">
-                    <img src="/static/youin/images/banner1.jpg">
-                </a>
-                <a href="###">
-                    <img src="/static/youin/images/banner1.jpg">
-                </a>
-                <a href="###">
-                    <img src="/static/youin/images/banner1.jpg">
-                </a>
-            </div>
-        </div>
-        <div class="navi navi-pre">
-            <i class="index-icons-arrow-left"></i>
-        </div>
-        <div class="navi navi-next">
-            <i class="index-icons-arrow-right"></i>
-        </div>
-        <ul class="scroll-point">
-            <li class="cur"></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>
+    {%include file="youin/widget/scrollbanner.tpl"%}
 
     <section class="product">
-        <div class="product-list-style1">
-            <a href="###"  class="product-item-1"><img src="/static/youin/images/product1.jpg"></img></a>
-            <a href="###"  class="product-item-2"><img src="/static/youin/images/product2.jpg"></img></a>
-            <a href="###"  class="product-item-3"><img src="/static/youin/images/product3.jpg"></img></a>
-            <a href="###"  class="product-item-4"><img src="/static/youin/images/product4.jpg"></img></a>
-            <a href="###"  class="product-item-5"><img src="/static/youin/images/product5.jpg"></img></a>
-        </div>
-        <div class="product-list-style2">
-            <a href="###"  class="product-item-1"><img src="/static/youin/images/product6.jpg"></img></a>
-            <a href="###"  class="product-item-2"><img src="/static/youin/images/product7.jpg"></img></a>
-        </div>
-        <div class="product-list-style1">
-            <a href="###"  class="product-item-1"><img src="/static/youin/images/product8.jpg"></img></a>
-            <a href="###"  class="product-item-2"><img src="/static/youin/images/product9.jpg"></img></a>
-            <a href="###"  class="product-item-3"><img src="/static/youin/images/product10.jpg"></img></a>
-            <a href="###"  class="product-item-4"><img src="/static/youin/images/product11.jpg"></img></a>
-            <a href="###"  class="product-item-5"><img src="/static/youin/images/more-product.jpg"></img></a>
-        </div>
+        <ul class="product-list-style1">
+            <li class="product-item-1">
+                <a href="###"><img src="/static/youin/images/product1.jpg"></img></a>
+            </li>
+            <li class="product-item-2">
+                <a href="###"><img src="/static/youin/images/product2.jpg"></img></a>
+            </li>
+            <li class="product-item-3">
+                <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            </li>
+            <li class="product-item-4">
+                <a href="###"><img src="/static/youin/images/product4.jpg"></img></a>
+            </li>
+            <li class="product-item-5">
+                <a href="###"><img src="/static/youin/images/product5.jpg"></img></a>
+            </li>
+        </ul>
+        <ul class="product-list-style2">
+            <li class="product-item-1">
+                <a href="###"><img src="/static/youin/images/product6.jpg"></img></a>
+            </li>
+            <li class="product-item-2">
+                <a href="###"><img src="/static/youin/images/product7.jpg"></img></a>
+            </li>
+        </ul>
+        <ul class="product-list-style1">
+            <li class="product-item-1">
+                <a href="###"><img src="/static/youin/images/product8.jpg"></img></a>
+            </li>
+            <li class="product-item-2">
+                <a href="###"><img src="/static/youin/images/product9.jpg"></img></a>
+            </li>
+            <li class="product-item-3">
+                <a href="###"><img src="/static/youin/images/product10.jpg"></img></a>
+            </li>
+            <li class="product-item-4">
+                <a href="###"><img src="/static/youin/images/product11.jpg"></img></a>
+            </li>
+            <li class="product-item-5">
+                <a href="###"><img src="/static/youin/images/index-more-product.jpg"></img></a>
+            </li>
+        </ul>
     </section>
 
     <section class="designer">
@@ -112,6 +112,7 @@
 
 <!-- build:js /static/youin/scripts/page/index.js -->
 <script src="static/scripts/base/jquery.tools.min.js" type="text/javascript"></script>
+<script src="static/scripts/widget/scrollbanner.js"></script>
 <script src="static/scripts/page/index.js"></script>
 <!-- endbuild -->
 {%/block%}
