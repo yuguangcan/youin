@@ -1,15 +1,5 @@
 @import "compass/css3";
 
-/*css sprite*/
-.common-icons-sprite {
-  display: inline-block;
-}
-$common-icons-spacing: 2px;
-$common-icons-layout: smart;
-@import "compass/utilities/sprites";
-@import "common-icons/*.png";
-@include all-common-icons-sprites(true);
-
 .m-header{
     .ucenter{
         height: 50px;
@@ -36,7 +26,16 @@ $common-icons-layout: smart;
                         vertical-align: middle;
                         margin-right: 8px;
                     }
+                    &.avatar{
+                        img{
+                            width: 22px;
+                            height: 22px;
+                            @include border-radius(22px);
+                            margin-right: 8px;
+                        }
+                    }
                 } 
+
             }
         }
     }

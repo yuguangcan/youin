@@ -51,40 +51,100 @@
 
     <ul class="product-list clearfix">
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
         <li>
-            <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
-        <li class="more">
-            <a href="###"><img src="/static/youin/images/category-more-product.jpg" ></img></a>
+        <li>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
+        </li>
+        <li>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
+        </li>
+        <li>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
+        </li>
+        <li>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
+        </li>
+        <li>
+            <a href="###">
+                <img src="/static/youin/images/product3.jpg"></img>
+                {%include file="youin/widget/productinfo.tpl"%}
+            </a>
         </li>
     </ul>
 

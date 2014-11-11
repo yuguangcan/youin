@@ -1,5 +1,15 @@
 ﻿@import 'reset';
 
+/*css sprite*/
+.common-icons-sprite {
+  display: inline-block;
+}
+$common-icons-spacing: 2px;
+$common-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "common-icons/*.png";
+@include all-common-icons-sprites(true);
+
 html{
     width: 100%;
     height: 100%;
@@ -44,3 +54,4 @@ a{
 }
 @import '../widget/header';
 @import '../widget/footer';
+@import '../widget/productinfo';
