@@ -1,0 +1,651 @@
+@charset "UTF-8";
+* {
+  -webkit-text-size-adjust: none;
+}
+
+/*html4 reset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset, img {
+  border: 0 none;
+}
+
+address, caption, cite, code, dfn, em, th, var, b, h1, h2, h3 {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul, li {
+  list-style-type: none;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/*html5 reset*/
+header, footer, section, nav, menu, details, hgroup, figure, figcaption, article, aside {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 1000px;
+  min-height: 100%;
+  background: #2a425e;
+  font-size: 14px;
+  font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+#content {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 260px;
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  height: 170px;
+  bottom: 0px;
+}
+
+#gotop {
+  position: fixed;
+  bottom: 315px;
+  width: 100%;
+  display: none;
+}
+#gotop .gotop-inner {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+#gotop .gotop-inner i {
+  position: absolute;
+  cursor: pointer;
+  right: -90px;
+}
+
+/*css sprite*/
+.common-icons-sprite, .common-icons-arrow-left, .common-icons-arrow-right, .common-icons-cart, .common-icons-collect, .common-icons-douban, .common-icons-email, .common-icons-footer-logo, .common-icons-gotop, .common-icons-header-logo, .common-icons-instagram, .common-icons-nav-arrow, .common-icons-nav-cur-divide, .common-icons-nav-designer, .common-icons-nav-divide, .common-icons-nav-dress, .common-icons-nav-hot, .common-icons-nav-index, .common-icons-nav-life, .common-icons-nav-paint, .common-icons-nav-shell, .common-icons-nav-special, .common-icons-pointer-h, .common-icons-pointer, .common-icons-search, .common-icons-usericon, .common-icons-weibo, .common-icons-weixin, .m-header .nav-inner ul li.cur::before, .m-header .nav-inner ul li.cur::after {
+  display: inline-block;
+}
+
+.common-icons-sprite, .common-icons-arrow-left, .common-icons-arrow-right, .common-icons-cart, .common-icons-collect, .common-icons-douban, .common-icons-email, .common-icons-footer-logo, .common-icons-gotop, .common-icons-header-logo, .common-icons-instagram, .common-icons-nav-arrow, .common-icons-nav-cur-divide, .common-icons-nav-designer, .common-icons-nav-divide, .common-icons-nav-dress, .common-icons-nav-hot, .common-icons-nav-index, .common-icons-nav-life, .common-icons-nav-paint, .common-icons-nav-shell, .common-icons-nav-special, .common-icons-pointer-h, .common-icons-pointer, .common-icons-search, .common-icons-usericon, .common-icons-weibo, .common-icons-weixin, .m-header .nav-inner ul li.cur::before, .m-header .nav-inner ul li.cur::after {
+  background: url('/static/youin/images/generated/common-icons-s2774638ec9.png') no-repeat;
+}
+
+.common-icons-arrow-left {
+  background-position: -32px 0;
+  height: 194px;
+  width: 30px;
+}
+
+.common-icons-arrow-right {
+  background-position: -2px 0;
+  height: 194px;
+  width: 30px;
+}
+
+.common-icons-cart {
+  background-position: -20px -341px;
+  height: 20px;
+  width: 19px;
+}
+
+.common-icons-collect {
+  background-position: -24px -230px;
+  height: 16px;
+  width: 19px;
+}
+
+.common-icons-douban {
+  background-position: -62px 0;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-email {
+  background-position: -31px -194px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-footer-logo {
+  background-position: 0 -657px;
+  height: 113px;
+  width: 126px;
+}
+
+.common-icons-gotop {
+  background-position: -60px -401px;
+  height: 66px;
+  width: 66px;
+}
+
+.common-icons-header-logo {
+  background-position: 0 -560px;
+  height: 97px;
+  width: 97px;
+}
+
+.common-icons-instagram {
+  background-position: -43px -230px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-nav-arrow {
+  background-position: 0 -194px;
+  height: 6px;
+  width: 9px;
+}
+
+.common-icons-nav-cur-divide {
+  background-position: 0 0;
+  height: 120px;
+  width: 1px;
+}
+
+.common-icons-nav-designer {
+  background-position: -77px -341px;
+  height: 60px;
+  width: 43px;
+}
+
+.common-icons-nav-divide {
+  background-position: -1px 0;
+  height: 120px;
+  width: 1px;
+}
+
+.common-icons-nav-dress {
+  background-position: 0 -401px;
+  height: 52px;
+  width: 60px;
+}
+
+.common-icons-nav-hot {
+  background-position: 0 -284px;
+  height: 56px;
+  width: 57px;
+}
+
+.common-icons-nav-index {
+  background-position: -79px -230px;
+  height: 54px;
+  width: 43px;
+}
+
+.common-icons-nav-life {
+  background-position: 0 -522px;
+  height: 38px;
+  width: 60px;
+}
+
+.common-icons-nav-paint {
+  background-position: -36px -467px;
+  height: 55px;
+  width: 44px;
+}
+
+.common-icons-nav-shell {
+  background-position: -39px -341px;
+  height: 59px;
+  width: 38px;
+}
+
+.common-icons-nav-special {
+  background-position: -57px -284px;
+  height: 57px;
+  width: 60px;
+}
+
+.common-icons-pointer-h {
+  background-position: 0 -230px;
+  height: 12px;
+  width: 12px;
+}
+
+.common-icons-pointer {
+  background-position: -12px -230px;
+  height: 12px;
+  width: 12px;
+}
+
+.common-icons-search {
+  background-position: 0 -341px;
+  height: 20px;
+  width: 20px;
+}
+
+.common-icons-usericon {
+  background-position: -9px -194px;
+  height: 22px;
+  width: 22px;
+}
+
+.common-icons-weibo {
+  background-position: 0 -467px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-weixin {
+  background-position: -67px -194px;
+  height: 36px;
+  width: 36px;
+}
+
+.m-header .ucenter {
+  height: 50px;
+  width: 100%;
+  background: #0d1826;
+}
+.m-header .ucenter ul {
+  text-align: right;
+  width: 1000px;
+  margin: 0 auto;
+  height: 50px;
+  line-height: 50px;
+}
+.m-header .ucenter ul li {
+  display: inline-block;
+  margin-left: 24px;
+}
+.m-header .ucenter ul li a {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+}
+.m-header .ucenter ul li a span {
+  color: #49c0f5;
+  margin: 0 5px;
+}
+.m-header .ucenter ul li a i {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.m-header .nav {
+  background: #1a2c42;
+  width: 100%;
+  height: 120px;
+}
+.m-header .nav-inner {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.m-header .nav-inner .logo {
+  position: absolute;
+  left: 30px;
+  top: 12px;
+}
+.m-header .nav-inner ul {
+  float: right;
+}
+.m-header .nav-inner ul li {
+  float: left;
+  width: 100px;
+  height: 120px;
+  position: relative;
+}
+.m-header .nav-inner ul li.divide {
+  width: 1px;
+}
+.m-header .nav-inner ul li > a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.m-header .nav-inner ul li > a i {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+.m-header .nav-inner ul li > a i.common-icons-nav-dress {
+  left: 20px;
+  top: 22px;
+}
+.m-header .nav-inner ul li > a i.common-icons-nav-life {
+  top: 30px;
+  left: 27px;
+}
+.m-header .nav-inner ul li > a i.common-icons-nav-shell {
+  left: 31px;
+}
+.m-header .nav-inner ul li > a i.common-icons-nav-hot {
+  left: 21px;
+}
+.m-header .nav-inner ul li > a i.common-icons-nav-special {
+  left: 20px;
+}
+.m-header .nav-inner ul li > a span {
+  position: absolute;
+  bottom: 7px;
+  left: 45px;
+}
+.m-header .nav-inner ul li > a p {
+  text-align: center;
+  bottom: 15px;
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  width: 100%;
+}
+.m-header .nav-inner ul li > a .sub-nav {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 0;
+  z-index: 10;
+}
+.m-header .nav-inner ul li > a .sub-nav div {
+  display: block;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  background: #1f2b43;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+.m-header .nav-inner ul li > a .sub-nav div:hover {
+  background: #26516f;
+}
+.m-header .nav-inner ul li > a:hover {
+  background: #2a5170;
+}
+.m-header .nav-inner ul li > a:hover p {
+  color: #49c0f5;
+}
+.m-header .nav-inner ul li > a:hover .sub-nav {
+  display: block;
+}
+.m-header .nav-inner ul li.cur::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  background-position: 0 0;
+  top: 0;
+  left: -1px;
+}
+.m-header .nav-inner ul li.cur::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  background-position: 0 0;
+  top: 0;
+  right: -1px;
+}
+.m-header .nav-inner ul li.cur > a {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1a2c42), color-stop(100%, #142234));
+  background-image: -webkit-linear-gradient(#1a2c42, #142234);
+  background-image: -moz-linear-gradient(#1a2c42, #142234);
+  background-image: -o-linear-gradient(#1a2c42, #142234);
+  background-image: linear-gradient(#1a2c42, #142234);
+}
+.m-header .nav-inner ul li.cur > a p {
+  color: #49c0f5;
+}
+
+/*css sprite*/
+.common-icons-sprite, .common-icons-arrow-left, .common-icons-arrow-right, .common-icons-cart, .common-icons-collect, .common-icons-douban, .common-icons-email, .common-icons-footer-logo, .common-icons-gotop, .common-icons-header-logo, .common-icons-instagram, .common-icons-nav-arrow, .common-icons-nav-cur-divide, .common-icons-nav-designer, .common-icons-nav-divide, .common-icons-nav-dress, .common-icons-nav-hot, .common-icons-nav-index, .common-icons-nav-life, .common-icons-nav-paint, .common-icons-nav-shell, .common-icons-nav-special, .common-icons-pointer-h, .common-icons-pointer, .common-icons-search, .common-icons-usericon, .common-icons-weibo, .common-icons-weixin, .m-header .nav-inner ul li.cur::before, .m-header .nav-inner ul li.cur::after {
+  display: inline-block;
+}
+
+.common-icons-sprite, .common-icons-arrow-left, .common-icons-arrow-right, .common-icons-cart, .common-icons-collect, .common-icons-douban, .common-icons-email, .common-icons-footer-logo, .common-icons-gotop, .common-icons-header-logo, .common-icons-instagram, .common-icons-nav-arrow, .common-icons-nav-cur-divide, .common-icons-nav-designer, .common-icons-nav-divide, .common-icons-nav-dress, .common-icons-nav-hot, .common-icons-nav-index, .common-icons-nav-life, .common-icons-nav-paint, .common-icons-nav-shell, .common-icons-nav-special, .common-icons-pointer-h, .common-icons-pointer, .common-icons-search, .common-icons-usericon, .common-icons-weibo, .common-icons-weixin, .m-header .nav-inner ul li.cur::before, .m-header .nav-inner ul li.cur::after {
+  background: url('/static/youin/images/generated/common-icons-s2774638ec9.png') no-repeat;
+}
+
+.common-icons-arrow-left {
+  background-position: -32px 0;
+  height: 194px;
+  width: 30px;
+}
+
+.common-icons-arrow-right {
+  background-position: -2px 0;
+  height: 194px;
+  width: 30px;
+}
+
+.common-icons-cart {
+  background-position: -20px -341px;
+  height: 20px;
+  width: 19px;
+}
+
+.common-icons-collect {
+  background-position: -24px -230px;
+  height: 16px;
+  width: 19px;
+}
+
+.common-icons-douban {
+  background-position: -62px 0;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-email {
+  background-position: -31px -194px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-footer-logo {
+  background-position: 0 -657px;
+  height: 113px;
+  width: 126px;
+}
+
+.common-icons-gotop {
+  background-position: -60px -401px;
+  height: 66px;
+  width: 66px;
+}
+
+.common-icons-header-logo {
+  background-position: 0 -560px;
+  height: 97px;
+  width: 97px;
+}
+
+.common-icons-instagram {
+  background-position: -43px -230px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-nav-arrow {
+  background-position: 0 -194px;
+  height: 6px;
+  width: 9px;
+}
+
+.common-icons-nav-cur-divide {
+  background-position: 0 0;
+  height: 120px;
+  width: 1px;
+}
+
+.common-icons-nav-designer {
+  background-position: -77px -341px;
+  height: 60px;
+  width: 43px;
+}
+
+.common-icons-nav-divide {
+  background-position: -1px 0;
+  height: 120px;
+  width: 1px;
+}
+
+.common-icons-nav-dress {
+  background-position: 0 -401px;
+  height: 52px;
+  width: 60px;
+}
+
+.common-icons-nav-hot {
+  background-position: 0 -284px;
+  height: 56px;
+  width: 57px;
+}
+
+.common-icons-nav-index {
+  background-position: -79px -230px;
+  height: 54px;
+  width: 43px;
+}
+
+.common-icons-nav-life {
+  background-position: 0 -522px;
+  height: 38px;
+  width: 60px;
+}
+
+.common-icons-nav-paint {
+  background-position: -36px -467px;
+  height: 55px;
+  width: 44px;
+}
+
+.common-icons-nav-shell {
+  background-position: -39px -341px;
+  height: 59px;
+  width: 38px;
+}
+
+.common-icons-nav-special {
+  background-position: -57px -284px;
+  height: 57px;
+  width: 60px;
+}
+
+.common-icons-pointer-h {
+  background-position: 0 -230px;
+  height: 12px;
+  width: 12px;
+}
+
+.common-icons-pointer {
+  background-position: -12px -230px;
+  height: 12px;
+  width: 12px;
+}
+
+.common-icons-search {
+  background-position: 0 -341px;
+  height: 20px;
+  width: 20px;
+}
+
+.common-icons-usericon {
+  background-position: -9px -194px;
+  height: 22px;
+  width: 22px;
+}
+
+.common-icons-weibo {
+  background-position: 0 -467px;
+  height: 36px;
+  width: 36px;
+}
+
+.common-icons-weixin {
+  background-position: -67px -194px;
+  height: 36px;
+  width: 36px;
+}
+
+.m-footer {
+  background: #1a2c42;
+}
+.m-footer .footer-inner {
+  width: 1000px;
+  margin: 0 auto;
+}
+.m-footer .footer-inner .logo {
+  float: left;
+  position: relative;
+  top: 25px;
+}
+.m-footer .footer-inner .detail {
+  float: right;
+}
+.m-footer .footer-inner .detail > li {
+  text-align: right;
+}
+.m-footer .footer-inner .detail .nav {
+  margin: 30px 0 20px;
+}
+.m-footer .footer-inner .detail .nav li {
+  display: inline-block;
+}
+.m-footer .footer-inner .detail .nav li a {
+  color: #fff;
+  font-size: 16px;
+}
+.m-footer .footer-inner .detail .nav li.divide {
+  margin: 0 5px;
+  position: relative;
+  top: -2px;
+  color: #fff;
+}
+.m-footer .footer-inner .detail .media {
+  margin-bottom: 20px;
+}
+.m-footer .footer-inner .detail .media div {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+}
+.m-footer .footer-inner .detail .media div:first-child {
+  margin-right: 32px;
+}
+.m-footer .footer-inner .detail .media div i {
+  margin-left: 20px;
+  vertical-align: middle;
+}
+.m-footer .footer-inner .detail .qualify {
+  font-size: 12px;
+  color: #8d939a;
+}
