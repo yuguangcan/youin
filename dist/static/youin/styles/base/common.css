@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   -webkit-text-size-adjust: none;
 }
@@ -61,7 +60,7 @@ body {
   min-height: 100%;
   background: #2a425e;
   font-size: 14px;
-  font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+  font-family: arial, 'Hiragino Sans GB', Microsoft Yahei, \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
   position: relative;
 }
 
