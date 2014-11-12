@@ -1,13 +1,3 @@
-/*css sprite*/
-.common-icons-sprite {
-  display: inline-block;
-}
-$common-icons-spacing: 2px;
-$common-icons-layout: smart;
-@import "compass/utilities/sprites";
-@import "common-icons/*.png";
-@include all-common-icons-sprites(true);
-
 .m-footer{
     background: #1a2c42;
     .footer-inner{

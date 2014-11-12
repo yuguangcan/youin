@@ -19,41 +19,74 @@
     <section class="product">
         <ul class="product-list-style1">
             <li class="product-item-1">
-                <a href="###"><img src="/static/youin/images/product1.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product1.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-2">
-                <a href="###"><img src="/static/youin/images/product2.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product2.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-3">
-                <a href="###"><img src="/static/youin/images/product3.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product3.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-4">
-                <a href="###"><img src="/static/youin/images/product4.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product4.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-5">
-                <a href="###"><img src="/static/youin/images/product5.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product5.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
         </ul>
         <ul class="product-list-style2">
             <li class="product-item-1">
-                <a href="###"><img src="/static/youin/images/product6.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product6.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-2">
-                <a href="###"><img src="/static/youin/images/product7.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product7.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
         </ul>
         <ul class="product-list-style1">
             <li class="product-item-1">
-                <a href="###"><img src="/static/youin/images/product8.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product8.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-2">
-                <a href="###"><img src="/static/youin/images/product9.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product9.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-3">
-                <a href="###"><img src="/static/youin/images/product10.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product10.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-4">
-                <a href="###"><img src="/static/youin/images/product11.jpg"></img></a>
+                <a href="###">
+                    <img src="/static/youin/images/product11.jpg"></img>
+                    {%include file="youin/widget/productinfo.tpl"%}
+                </a>
             </li>
             <li class="product-item-5">
                 <a href="###"><img src="/static/youin/images/index-more-product.jpg"></img></a>
