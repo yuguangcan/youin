@@ -22,7 +22,7 @@ YY.base = {
     	});
     	gotopIcon.click(function(){
     		$('body').animate({
-    			scrollTop : 0
+    			scrollTop : 115
     		},300);
     	});
 

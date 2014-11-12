@@ -1,0 +1,71 @@
+@import "compass/css3";
+
+.side-bar{
+	position: fixed;
+	top: 220px;
+	.side-bar-inner{
+		position: absolute;
+		width: 90px;
+		height: auto;
+		margin: 0 auto;
+		position: relative;
+		li{
+			height: 50px;
+			margin-bottom: 3px;
+			background-color: #1a2c42;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+		    color: #fff;
+		}
+		li:hover{
+			background-color: #00c0f2;
+		}
+		.active{
+			background-color: #00c0f2;
+		}
+
+	}
+}
+.activity{
+	position: relative;
+	margin-left: 115px;
+	width: 885px;
+	height: auto;
+	h2{ 
+		font-size: 28px;
+		color: #fff;
+		margin: 25px 0;
+        padding: 10px;
+		border-bottom: 1px solid #00c0f2;
+		a{
+		color: #49c0f5;
+		font-size: 14px;
+		padding-left: 10px;
+	}
+	}
+
+	.activity-list{		
+		width: 900px;
+		height: 565px;
+		li{
+			@include box-shadow(2px 2px 4px rgba(0,0,0,0.5));
+		}
+		.activity-item-top{
+			width: 885px;
+			height: 340px;
+			margin-bottom: 15px;
+		}
+		.activity-item-bottom{
+			width: 210px;
+			height: 210px;
+			margin-right: 15px;
+			float: left;
+			img{
+				width: 100%;
+				height: 100%;
+				
+			}
+		}
+	}
+}
