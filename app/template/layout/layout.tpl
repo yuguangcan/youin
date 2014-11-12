@@ -37,6 +37,11 @@
             </div>
         {%/block%}
 
+        {%block name="login"%}
+            {%include file="youin/widget/login.tpl"%}
+        {%/block%}
+
+
         <script type="text/javascript">
             var YY = YY || {};
 
