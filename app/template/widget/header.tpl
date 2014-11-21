@@ -2,7 +2,7 @@
     <div class="ucenter">
         <ul>
             <li>
-                <a href="###" class="avatar"><img src="/static/youin/images/ds-photo.jpg"></i>测试用户</a>
+                <a href="###" class="avatar" id="login"><img src="/static/youin/images/ds-photo.jpg"></i>测试用户</a>
                 <div style="display:none;">
                     <i></i>
                     <div class="user">

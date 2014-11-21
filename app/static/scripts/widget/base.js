@@ -2,9 +2,42 @@ YY.base = {
     init : function(){
         this._initHeader();
     	this._initGotop();
+        this._initLogin();
     },
-    initLogin : function(){
-        
+    _initLogin : function(){
+        function Login(){
+            this.loginOverlay = $('#login-overlay');
+            this.loginPopup = $('#login-popup');
+            this.loginLogin = $('#login-login');
+            this.loginRegister = $('#login-register');
+            var _self = this;
+            this.loginLogin.find('h2 a').click(function(){
+                _self.showRegester();
+            });
+            this.loginRegister.find('h2 a').click(function(){
+                _self.showLogin();
+            });
+        }
+        Login.prototype.show = function(){
+            YY.misc.showPopup(this.loginPopup,this.loginOverlay);
+        }
+        Login.prototype.hide = function(){
+            YY.misc.hidePopup(this.loginPopup,this.loginOverlay);
+        }
+        Login.prototype.showLogin = function(){
+            this.loginRegister.hide();
+            this.loginLogin.show();
+        }
+        Login.prototype.showRegester = function(){
+            this.loginLogin.hide();
+            this.loginRegister.show();
+        }
+
+        var loginPopup = new Login();
+        $('#login').click(function(){
+            loginPopup.show();
+            loginPopup.showLogin();
+        });
     },
     _initHeader: function(){
     	$('#header .sub-nav-hre').click(function(){
@@ -26,47 +59,8 @@ YY.base = {
     			scrollTop : 115
     		},300);
     	});
-    },
-    showPopup : function(obj, overlay, callback){
-        var popup = $(obj),
-            overlay = $(overlay);
-        popup.fadeIn(callback);
-        overlay.show();
-        var windowWidth = document.documentElement.clientWidth,
-            windowHeight = document.documentElement.clientHeight,
-            popupHeight = popup.height(),
-            popupWidth = popup.width(),
-            scrollTop = $('body').scrollTop();
-        if(isAbsolute === true){
-            popup.css({
-                "position": "absolute",
-                "top": scrollTop + windowHeight / 2 - popupHeight / 2,
-                "left": windowWidth / 2 - popupWidth / 2,
-                "z-index": 2100
-            });
-        }else{
-            popup.css({
-                "position": "fixed",
-                "top": windowHeight / 2 - popupHeight / 2,
-                "left": windowWidth / 2 - popupWidth / 2,
-                "z-index": 2100
-            });
-        }
-        overlay.click(function() {
-            popup.fadeOut();
-            overlay.hide();
-        });
-        popup.find(".close").click(function() {
-            popup.fadeOut();
-            overlay.hide();
-        });
-    },
-    hidePopup : function(obj,overlay) {
-        var popup = $(obj),
-            overlay = $(overlay);
-        popup.fadeOut();
-        overlay.hide();
     }
+    
 }
 $(function(){
 	YY.base.init();

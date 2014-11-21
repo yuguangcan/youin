@@ -32,6 +32,9 @@
                             height: 22px;
                             @include border-radius(22px);
                             margin-right: 8px;
+                            vertical-align: middle;
+                            position: relative;
+                            top: -2px;
                         }
                     }
                 } 

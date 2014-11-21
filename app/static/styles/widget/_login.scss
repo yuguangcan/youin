@@ -1,0 +1,93 @@
+@import "compass/css3";
+
+#login-overlay{
+	background: #000000;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+#login-popup{
+	display: none;
+	background: #fff;
+	width: 580px;
+	height: 650px;
+	position: relative;
+	ul{
+		margin: 35px 65px;
+	}
+	li{
+		display: none;
+	}
+	.close{
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		cursor: pointer;
+	}
+	h2{
+		font-size: 30px;
+		color: #333;
+		margin-bottom: 30px;
+		span{
+			font-size: 20px;
+			margin: 0 10px 0 20px;
+		}
+		a{
+			font-size: 20px;
+			text-decoration: underline;
+			color: #49c0f5;
+		}
+	}
+	.input-box{
+		width: 450px;
+		height: 76px;
+		border: 1px solid #49c0f5;
+		position: relative;
+		margin-bottom: 20px;
+		input{
+			width: 400px;
+			line-height: 44px;
+			padding: 16px 25px;
+			color: #333;
+			font-size: 24px;
+			display: block;
+			border: 0;
+			outline: 0;
+		}
+		.error{
+			font-size: 24px;
+			color: #ff2828;
+			position: absolute;
+			top: 21px;
+			right: 30px;
+			display: none;
+		}
+	}
+	.submit{
+		width: 160px;
+		height: 80px;
+		line-height: 80px;
+		background: #49c0f5;
+		color: #fff;
+		font-size: 24px;
+		text-align: center;
+		@include border-radius(5px);
+		display: block;
+		float: right;
+	}
+	#register-submit{
+		margin-top: 40px;
+	}
+	label{
+		color: #333;
+		font-size: 18px;
+		margin-bottom: 30px;
+		clear:both;
+	}
+}
