@@ -96,7 +96,6 @@
 {%block name="js"%}
 
 <!-- build:js /static/youin/scripts/page/special-activity.js -->
-<script src="static/scripts/base/jquery.tools.min.js" type="text/javascript"></script>
 <script src="static/scripts/page/special-activity.js"></script>
 <!-- endbuild -->
 {%/block%}

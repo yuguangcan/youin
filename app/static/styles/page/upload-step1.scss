@@ -1,4 +1,191 @@
+@import "compass/css3";
+
 .content-inner{
 	width: 755px;
-	margin-top: 55px;
+	margin: 55px auto 0;
+}
+.upload-nav{
+	width: 672px;
+	margin-left: 83px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #49c0f5;
+	span{
+		font-size: 30px;
+		color: #5680b0;
+		cursor: default;
+		&.cur{
+			color: #fff;
+		}
+	}
+}
+.input-item{
+	margin: 40px 0;
+	&>span{
+		display: inline-block;
+		height: 80px;
+		line-height: 80px;
+		width: 80px;
+		color: #fff;
+		font-size: 24px;
+	}
+	&>input{
+		height: 46px;
+		width: 638px;
+		border: 2px solid #fff;
+		font-size: 24px;
+		color: #333;
+		padding: 15px;
+		float: right;
+		outline: none;
+		&.focus{
+			border: 2px solid #49c0f5;
+		}
+	}
+	textarea{
+		width: 638px;
+		height: 156px;
+		border: 2px solid #fff;
+		font-size: 24px;
+		color: #333;
+		padding: 15px;
+		float: right;
+		outline: none;
+		resize:none;
+		&.focus{
+			border: 2px solid #49c0f5;
+		}
+	}
+	.taglist{
+		float: right;
+		width: 672px;
+		li{
+			float: left;
+			width: 82px;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #466486;
+			border-right:0;
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+			cursor: pointer;
+			&.no-top{
+				border-top: 0;
+			}
+			&.has-border-right{
+				border-right:1px solid #466486;
+			}
+			&.selected{
+				background: #00c0f2;
+			}
+		}
+	}
+	.upload{
+		float: right;
+		width: 672px;
+		a{
+			width: 197px;
+			height: 80px;
+			line-height: 80px;
+			color: #fff;
+			font-size: 24px;
+			text-align: center;
+			background: #00c0f2;
+			display: block;
+			float: left;
+			@include border-radius(5px);
+		}
+		div{
+			margin-left: 28px;
+			font-size: 14px;
+			color: #5680b0;
+			display: inline-block;
+			width: 260px;
+			height: 80px;
+		}
+	}
+	.upload-done{
+		position: relative;
+		float: right;
+		width: 672px;
+		a{
+			width: 197px;
+			height: 80px;
+			line-height: 80px;
+			color: #fff;
+			font-size: 24px;
+			text-align: center;
+			background: #119fc4;
+			display: inline-block;
+			@include border-radius(5px);
+		}
+		div{
+			position: absolute;
+			left: 0;
+			top: 85px;
+			width: 197px;
+			span{
+				float: left;
+				font-size: 14px;
+				color: #5680b0;
+				&:last-child{
+					float:right;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.add-minus{
+		width: 288px;
+		height: 80px;
+		line-height: 80px;
+		display: inline-block;
+		position: relative;
+		span{
+			display: inline-block;
+			width: 68px;
+			font-size: 36px;
+			font-weight: bold;
+			color: #2a425e;
+			background: #d0d0d0;
+			text-align: center;
+			cursor: pointer;
+			&.add{
+				position:absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+		input{
+			width: 138px;
+			height: 40px;
+			line-height: 40px;
+			padding: 18px 5px;
+			color: #333;
+			border:2px solid #49c0f5;
+			position: absolute;
+			top: 0;
+			font-size: 24px;
+			text-align: center;
+			outline: none;
+		}
+	}
+}
+#submit{
+	width: 160px;
+	height: 80px;
+	line-height: 80px;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	background: #48be53;
+	display: inline-block;
+	float: right;
+	@include border-radius(5px);
+	&.disable{
+		background: #c4c4c4;
+	}
+}
+#pic{
+	display: none;
 }

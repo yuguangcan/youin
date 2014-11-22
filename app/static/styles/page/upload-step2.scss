@@ -1,0 +1,144 @@
+@import "compass/css3";
+
+.content-inner{
+	width: 672px;
+	margin: 55px auto 0;
+}
+.upload-nav{
+	width: 672px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #49c0f5;
+	span{
+		font-size: 30px;
+		color: #5680b0;
+		cursor: default;
+		&.cur{
+			color: #fff;
+		}
+	}
+}
+.atr-title{
+	padding: 35px 0;
+	border-bottom: 1px solid #49c0f5;
+	img{
+		float: left;
+		display: block;
+		width: 310px;
+		height: 310px;
+	}
+	div{
+		margin-left: 340px;
+		.title{
+			font-size: 24px;
+			color: #fff;
+			margin-bottom: 15px;
+		}
+		.author{
+			font-size: 14px;
+			color: #5680b0;
+			margin-bottom: 20px;
+		}
+		.description{
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+}
+.art-list{
+	padding: 25px 0;
+	.title{
+		font-size: 24px;
+		color: #5680b0;
+		text-align: left;
+		margin-bottom: 25px;
+		a{
+			float: right;
+			color: #00c0f2;
+		}
+	}
+	ul{
+		width: 724px;
+		li{
+			width: 310px;
+			margin:0 52px 35px 0;
+			float: left;
+			img{
+				width: 310px;
+				height: 310px;
+				display: block;
+				margin-bottom: 25px;
+			}
+			.upload{
+				a{
+					width: 310px;
+					height: 80px;
+					line-height: 80px;
+					color: #fff;
+					font-size: 24px;
+					text-align: center;
+					background: #00c0f2;
+					display: block;
+					margin-bottom: 20px;
+					@include border-radius(5px);
+				}
+				div{
+					font-size: 14px;
+					color: #5680b0;
+					width: 310px;
+				}
+				input{
+					display: none;
+				}
+			}
+			.upload-done{
+				a{
+					width: 310px;
+					height: 80px;
+					line-height: 80px;
+					color: #fff;
+					font-size: 24px;
+					text-align: center;
+					background: #119fc4;
+					margin-bottom: 20px;
+					display: block;
+					@include border-radius(5px);
+				}
+				div{
+					width: 310px;
+					span{
+						float: left;
+						font-size: 14px;
+						color: #5680b0;
+						&:last-child{
+							float:right;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#submit{
+	width: 160px;
+	height: 80px;
+	line-height: 80px;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	background: #48be53;
+	display: inline-block;
+	float: right;
+	@include border-radius(5px);
+	&.disable{
+		background: #c4c4c4;
+	}
+}
+#back{
+	float: right;
+	margin-right: 40px;
+	height: 80px;
+	line-height: 80px;
+	color: #00c0f2;
+	font-size: 24px;
+}

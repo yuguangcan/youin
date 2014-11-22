@@ -28,5 +28,5 @@ header, footer, section, nav, menu, details, hgroup, figure, figcaption, article
     padding:0;
     display:block;
 }
-.clearfix:after {clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}
+.clearfix:after {content:'';clear:both;overflow:hidden;height:0;display:block}
 .clearfix{zoom:1;}

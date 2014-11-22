@@ -38,12 +38,11 @@ header, footer, section, nav, menu, details, hgroup, figure, figcaption, article
 }
 
 .clearfix:after {
+  content: '';
   clear: both;
-  content: " ";
-  display: block;
-  font-size: 0;
+  overflow: hidden;
   height: 0;
-  visibility: hidden;
+  display: block;
 }
 
 .clearfix {
@@ -613,6 +612,9 @@ a {
   border-radius: 5px;
   display: block;
   float: right;
+}
+#login-popup #register-submit {
+  margin-top: 40px;
 }
 #login-popup label {
   color: #333;
