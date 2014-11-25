@@ -15,19 +15,23 @@
 {%block name="content"%}
 	<section class="product">
 		<div class="product-img">
-			<img src="/static/youin/images/product5.jpg">
+			<div id="magnifier-img">
+				<img src="/static/youin/images/product3.jpg">
+				<div></div>
+			</div>
+			<div id="magnifier"><img src=""></div>
 			<ul class="clearfix">
 				<li class="cur">
-					<img src="/static/youin/images/product5.jpg">
+					<img src="/static/youin/images/product3.jpg">
+				</li>
+				<li>
+					<img src="/static/youin/images/product4.jpg">
 				</li>
 				<li>
 					<img src="/static/youin/images/product5.jpg">
 				</li>
 				<li>
-					<img src="/static/youin/images/product5.jpg">
-				</li>
-				<li>
-					<img src="/static/youin/images/product5.jpg">
+					<img src="/static/youin/images/product4.jpg">
 				</li>
 				<li>
 					<img src="/static/youin/images/product5.jpg">

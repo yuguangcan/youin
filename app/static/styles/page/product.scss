@@ -16,12 +16,7 @@ $product-icons-layout: smart;
 .product-img{
 	width: 372px;
 	float: left;
-	&>img{
-		display: block;
-		width: 372px;
-		height: 372px;
-		margin-bottom: 15px;
-	}
+	position: relative;
 	ul{
 		width: 386px;
 		li{
@@ -53,6 +48,36 @@ $product-icons-layout: smart;
 		}
 	}
 }
+#magnifier-img{
+	position: relative;
+	img{
+		display: block;
+		width: 372px;
+		height: 372px;
+		margin-bottom: 15px;
+	}
+	div{
+		border:1px solid #ccc;
+		z-index:100;
+		position:absolute;
+		display: none;
+		background:#ccc;
+		opacity: 0.5;
+	}
+}
+#magnifier{
+	position: absolute;
+	width: 372px;
+	height: 372px;
+	top: 0;
+	left: 382px;
+	display: none;
+	overflow: hidden;
+	z-index: 100;
+	img{
+		position: absolute;
+	}
+}
 .product-info{
 	margin-left: 415px;
 	h2{
@@ -67,7 +92,7 @@ $product-icons-layout: smart;
 	position: relative;
 	.author{
 		position: absolute;
-		top: 0;
+		top: -20px;
 		right: 0;
 		width: 130px;
 		text-align: center;

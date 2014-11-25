@@ -14,84 +14,21 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="youin/widget/scrollbanner.tpl"%}
+    {%include file="youin/widget/scrollbanner.tpl" banner=$data.data.banner%}
 
     <section class="product">
-        <ul class="product-list-style1">
-            <li class="product-item-1">
-                <a href="###">
-                    <img src="/static/youin/images/product1.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-2">
-                <a href="###">
-                    <img src="/static/youin/images/product2.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-3">
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-4">
-                <a href="###">
-                    <img src="/static/youin/images/product4.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-5">
-                <a href="###">
-                    <img src="/static/youin/images/product5.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-        </ul>
-        <ul class="product-list-style2">
-            <li class="product-item-1">
-                <a href="###">
-                    <img src="/static/youin/images/product6.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-2">
-                <a href="###">
-                    <img src="/static/youin/images/product7.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-        </ul>
-        <ul class="product-list-style1">
-            <li class="product-item-1">
-                <a href="###">
-                    <img src="/static/youin/images/product8.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-2">
-                <a href="###">
-                    <img src="/static/youin/images/product9.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-3">
-                <a href="###">
-                    <img src="/static/youin/images/product10.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-4">
-                <a href="###">
-                    <img src="/static/youin/images/product11.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="product-item-5">
-                <a href="###"><img src="/static/youin/images/index-more-product.jpg"></img></a>
-            </li>
-        </ul>
+        {%foreach $data.data.product as $item%}
+            <ul class="{%if $item.style == 1%}product-list-style1{%else if $item.style == 2%}product-list-style2{%/if%}">
+                {%foreach $item.content as $picitem%}
+                    <li class="product-item-{%$picitem@index+1%}">
+                        <a href="/mall/item/detail?itemId={%$picitem.itemId%}">
+                            <img src="{%$picitem.pic%}"></img>
+                            {%include file="youin/widget/productinfo.tpl" product=$picitem%}
+                        </a>
+                    </li>
+                {%/foreach%}
+            </ul>
+        {%/foreach%}
     </section>
 
     <section class="designer">
@@ -100,44 +37,18 @@
             他们会让你生活更有创意
             <a href="###">更多设计师<i class="index-icons-arrow-small"></i></a>
         </div>
+        {%foreach $data.data.designer as $designer%}
         <ul class="clearfix">
-            <li>
-                <a href="###" class="designer-item-1">
-                    <div></div>
-                    <img src="/static/youin/images/designer1.jpg">
-                </a>
-            </li>
-            <li>
-                <a href="###" class="designer-item-2">
-                    <div></div>
-                    <img src="/static/youin/images/designer2.jpg">
-                </a>
-            </li>
-            <li>
-                <a href="###" class="designer-item-3">
-                    <img src="/static/youin/images/designer3.jpg">
-                    <div></div>
-                </a>
-            </li>
-            <li>
-                <a href="###" class="designer-item-4">
-                    <img src="/static/youin/images/designer4.jpg">
-                    <div></div>
-                </a>
-            </li>
-            <li>
-                <a href="###" class="designer-item-5">
-                    <div></div>
-                    <img src="/static/youin/images/designer5.jpg">
-                </a>
-            </li>
-            <li>
-                <a href="###" class="designer-item-6">
-                    <div></div>
-                    <img src="/static/youin/images/designer6.jpg">
-                </a>
-            </li>
+            {%foreach $designer.content as $item%}
+                <li>
+                    <a href="{%$item.uid%}" class="designer-item-{%$item@index+1%}">
+                        <div> </div>
+                        <img src="{%$item.pic%}">
+                    </a>
+                </li>
+            {%/foreach%}
         </ul>
+        {%/foreach%}
     </section>
 {%/block%}
 

@@ -14,157 +14,23 @@
 {%/block%}
 
 {%block name="content"%}
-    {%include file="youin/widget/scrollbanner.tpl"%}
+    {%include file="youin/widget/scrollbanner.tpl" banner=$data.data.banner%}
 
-    <section class="category-item">
-        <h2>有框画<a href="###">更多</a></h2>
-        <ul class="product-list clearfix">
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="more">
-                <a href="###"><img src="/static/youin/images/category-more-product.jpg" ></img></a>
-            </li>
-        </ul>
-    </section>
-
-    <section class="category-item">
-        <h2>无框画<a href="###">更多</a></h2>
-        <ul class="product-list clearfix">
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li>
-                <a href="###">
-                    <img src="/static/youin/images/product3.jpg"></img>
-                    {%include file="youin/widget/productinfo.tpl"%}
-                </a>
-            </li>
-            <li class="more">
-                <a href="###"><img src="/static/youin/images/category-more-product.jpg"></img></a>
-            </li>
-        </ul>
-    </section>
+    {%foreach $data.data.product as $product%}
+        <section class="category-item">
+            <h2>{%$product.cname%}<a href="/pages/subcategory?cid={%$product.cid%}">更多</a></h2>
+            <ul class="product-list clearfix">
+                {%foreach $product.list as $item%}
+                    <li>
+                        <a href="/mall/item/detail?itemId={%$item.itemId%}">
+                            <img src="{%$item.pic%}"></img>
+                            {%include file="youin/widget/productinfo.tpl" product=$item%}
+                        </a>
+                    </li>
+                {%/foreach%}
+            </ul>
+        </section>
+    {%/foreach%}
 
 
 {%/block%}
