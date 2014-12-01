@@ -25,69 +25,70 @@
 	<ul class="activity-list">
 		<li class="activity-item-top">
 			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg"></a>
+				<img src="/static/youin/images/special-activity.jpg">
+				{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 	</ul>
 	<h2>2F 动画专场<a href="###">更多</a></h2>
 	<ul class="activity-list">
 		<li class="activity-item-top">
 			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg"></a>
+				<img src="/static/youin/images/special-activity.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 	</ul>
 	<h2>3F 新人专场<a href="###">更多</a></h2>
 	<ul class="activity-list">
 		<li class="activity-item-top">
 			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg"></a>
+				<img src="/static/youin/images/special-activity.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 		<li class="activity-item-bottom">
 			<a href="###">
-				<img src="/static/youin/images/product4.jpg"></a>
+				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
 		</li>
 	</ul>
 </section>
