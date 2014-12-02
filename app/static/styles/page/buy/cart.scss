@@ -1,0 +1,178 @@
+@import "compass/css3";
+
+@import '../../widget/related-product';
+
+.buy-nav{
+	margin: 50px 0;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #49c0f5;
+	span{
+		font-size: 30px;
+		color: #5680b0;
+		cursor: default;
+		&.cur{
+			color: #fff;
+		}
+	}
+}
+.titlebar{
+	height: 50px;
+	line-height: 50px;
+	background: #19263d;
+	div{
+		float: left;
+		color: #fff;
+		font-size: 16px;
+	}
+	.name{
+		width: 300px;
+		padding-left: 70px;
+	}
+	.price{
+		width: 146px;
+		text-align: center;
+	}
+	.count{
+		width: 177px;
+		text-align: center;
+	}
+	.sum{
+		width: 156px;
+		text-align: center;
+	}
+	.del{
+		width: 150px;
+		text-align: center;
+	}
+}
+.cart{
+	margin-bottom: 50px;
+}
+.cart-list{
+	li{
+		height: 150px;
+		line-height: 150px;
+		background: #1e2b43;
+		border-bottom: 1px solid #19263d;
+		&>div{
+			float: left;
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+	.name{
+		width: 370px;
+		height: 150px;
+		input{
+			margin: 68px 20px 0 40px;
+			float: left;
+		}
+		img{
+			display: inline-block;
+			margin-top: 20px;
+			float: left;
+			width: 100px;
+			height: 110px;
+			margin-right: 13px;
+		}
+		span{
+			width: 150px;
+			display: inline-block;
+			vertical-align: middle;
+			color: #fff;
+			line-height: 18px;
+		}
+	}
+	.price{
+		width: 146px;
+		text-align: center;
+	}
+	.count{
+		width: 177px;
+		.add-minus{
+			margin-left: 41px;
+			width: 95px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			position: relative;
+			span{
+				display: inline-block;
+				width: 26px;
+				font-size: 18px;
+				font-weight: bold;
+				color: #666666;
+				background: #e0e0e0;
+				text-align: center;
+				cursor: pointer;
+				&.add{
+					position:absolute;
+					top: 0;
+					right: 0;
+				}
+			}
+			input{
+				width: 37px;
+				height: 30px;
+				line-height: 30px;
+				color: #333;
+				position: absolute;
+				top: 0;
+				padding: 0 3px;
+				font-size: 14px;
+				text-align: center;
+				border: 0;
+				outline: none;
+			}
+		}
+	}
+	.sum{
+		width: 156px;
+		text-align: center;
+	}
+	.del{
+		width: 150px;
+		text-align: center;
+		a{
+			color: #00baea;
+		}
+	}
+}
+.operation{
+	height: 140px;
+	line-height: 140px;
+	background: #1e2b43;
+	.opt{
+		float: left;
+		margin-left: 40px;
+		a{
+			color: #00baea;
+			margin-right: 30px;
+			font-size: 14px;
+		}
+	}
+	#submit{
+		float: right;
+		margin: 30px 40px 0;
+		width: 160px;
+		height: 80px;
+		line-height: 80px;
+		text-align: center;
+		color: #fff;
+		font-size: 24px;
+		background: #16b9e4;
+		@include border-radius(5px);
+	}
+	.check{
+		float: right;
+		span{
+			color: #00baea;
+			margin-left: 25px;
+			font-size: 14px;
+		}
+		#total-price{
+			font-size: 24px;
+			vertical-align: middle;
+		}
+	}
+}
