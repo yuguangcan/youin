@@ -21,7 +21,7 @@
 
 {%block name="js"%}
 
-<!-- build:js /static/youin/scripts/page/pay.js -->
-<script src="static/scripts/page/pay.js"></script>
+<!-- build:js /static/youin/scripts/page/buy/pay.js -->
+<script src="static/scripts/page/buy/pay.js"></script>
 <!-- endbuild -->
 {%/block%}
