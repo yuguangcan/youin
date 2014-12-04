@@ -1,9 +1,9 @@
-{%*已关注的设计师*%}
+{%*我的粉丝*%}
 
 {%extends file="youin/layout/layout.tpl"%}
 
 {%block name="title"%}
-已关注的设计师
+我的粉丝
 {%/block%}
 
 {%block name="css"%}
@@ -15,10 +15,10 @@
 {%block name="content"%}
 <ul class="following-followers-like clearfix">
 	<li>
-		<a href="#following" class="active">已关注的设计师（37人）</a>
+		<a href="#following">已关注的设计师（37人）</a>
 	</li>
 	<li>
-		<a href="###">我的粉丝（37人）</a>
+		<a href="#followers" class="active">我的粉丝（37人）</a>
 	</li>
 	<li>
 		<a href="#like">我的收藏（28件）</a>
@@ -33,7 +33,7 @@
 		<li class="intro">
 			<p class="name">永歌</p>
 			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button cancle">取消关注</span>
+			<span class="attent-button on">关注</span>
 			<span>粉丝 2544</span>
 			<span>作品 44</span>
 		</li>
@@ -50,7 +50,7 @@
 		<li class="intro">
 			<p class="name">永歌</p>
 			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button cancle">取消关注</span>
+			<span class="attent-button on">关注</span>
 			<span>粉丝 2544</span>
 			<span>作品 44</span>
 		</li>
@@ -67,7 +67,7 @@
 		<li class="intro">
 			<p class="name">永歌</p>
 			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button cancle">取消关注</span>
+			<span class="attent-button on">关注</span>
 			<span>粉丝 2544</span>
 			<span>作品 44</span>
 		</li>
@@ -84,7 +84,7 @@
 		<li class="intro">
 			<p class="name">永歌</p>
 			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button cancle">取消关注</span>
+			<span class="attent-button on">关注</span>
 			<span>粉丝 2544</span>
 			<span>作品 44</span>
 		</li>

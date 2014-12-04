@@ -1,0 +1,110 @@
+@import "compass/css3";
+
+.following-followers-like{
+      margin-top: 50px;
+      li{
+            float: left;
+            line-height: 48px;
+            a{
+                  display: inline-block;
+                  width:270px;
+                  text-align: center;
+                  border-right: 1px solid #161f32;
+                  color: rgba(255,255,255,0.4);
+                  background-color: #1e2b43;
+                  font-size: 18px;
+            }
+            .active{
+                  background-color: #161f32;
+                  color: rgba(255,255,255,1);
+            }
+      }
+}
+.user-list{
+      .last-item{
+            border-bottom: none;
+      }
+      ul{   
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: #2e4969;
+            border-bottom: 1px solid #20334a;
+            li{
+                  position: absolute;
+                  top: 25px;
+                  color: #fff;
+            }
+            .ds-photo{
+                  width: 127px;
+                  height: 127px;
+                  left: 50px;
+                  background:#fff;
+                  @include border-radius(50%);
+                  padding:4px; 
+                  .photo{
+                        width: 127px;
+                        height: 127px;
+                        @include border-radius(50%);
+                  }
+            }
+            .intro{
+                  width: 260px;
+                  left: 215px;
+                  .name{
+                        font-size: 20px;
+                        margin: 16px 0 6px 0;
+                  }
+                  span{
+                        margin: 20px 16px;
+                        margin-left: 0;
+                  }
+                  .attent-button{
+                        display: inline-block;
+                        width: 85px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        font-size: 16px;          
+                        @include border-radius(3px); 
+                        cursor: pointer;
+                  }
+                  .cancle{
+                        background-color: #1fe59d;
+                  }
+                  .on{
+                        background-color: #00b8e7;
+                  }
+            }
+            .product{
+                  width: 450px;
+                  height: 152px;
+                  right: 20px;
+                  @include border-radius(3px);
+                  float: left;
+                  img{
+                        width: 146px;
+                        height: 146px;
+                        margin: 3px;
+                        margin-right: 0;
+                  }
+                  a{
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        .m-more{
+                              display: none;
+                        }
+                        &:hover{
+                              .m-more{
+                                    display: block;
+                                    top: 0;
+                                    left: 0;
+                              }
+                        }
+                  }
+            } 
+      }
+}
+

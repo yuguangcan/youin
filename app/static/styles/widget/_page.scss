@@ -1,0 +1,28 @@
+@import "compass/css3";
+
+.page{
+	float: right;
+	margin: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	a{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		color: #999;
+		margin-left: 5px;
+		background-color: #fff;
+		@include border-radius(2px);
+		line-height: 20px;
+		text-align: center;
+	}
+	.first,.last{
+		width: 40px;
+		color: #fff;
+		background-color: #16b9e4;
+	}
+	.active{
+		color: #fff;
+		background-color: #16b9e4;
+	}
+}

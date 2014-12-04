@@ -1,17 +1,6 @@
 @import "compass/css3";
 
-/*css sprite */
-/*.designer-icons-sprite {
-  display: inline-block;
-}
-$designer-icons-spacing: 2px;
-$designer-icons-layout: smart;
-@import "compass/utilities/sprites";
-@import "designer-icons/*.png";
-@include all-designer-icons-sprites(true);*/
-
-
-.following-follower-like{
+.following-followers-like{
 	margin-top: 50px;
 	li{
 		float: left;

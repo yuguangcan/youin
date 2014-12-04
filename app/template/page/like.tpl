@@ -1,9 +1,9 @@
-{%*收藏*%}
+{%*我的收藏*%}
 
 {%extends file="youin/layout/layout.tpl"%}
 
 {%block name="title"%}
-收藏
+我的收藏
 {%/block%}
 
 {%block name="css"%}
@@ -13,7 +13,7 @@
 {%/block%}
 
 {%block name="content"%}
-<ul class="following-follower-like clearfix">
+<ul class="following-followers-like clearfix">
 	<li><a href="###">已关注的设计师（37人）</a></li>
 	<li><a href="###">我的粉丝（37人）</a></li>
 	<li><a href="#like" class="active">我的收藏（28件）</a></li>
