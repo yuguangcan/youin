@@ -84,7 +84,7 @@
 		</div>
 	</section>
 
-	<section class="relate-product">
+	<section class="relate-arts">
 		<h2>相关艺术品</h2>
 		<ul class="clearfix">
 			<li>
