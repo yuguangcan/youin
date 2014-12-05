@@ -2,6 +2,16 @@
 
 @import '../../widget/related-product';
 
+/*css sprite*/
+.buy-icons-sprite {
+  display: inline-block;
+}
+$buy-icons-spacing: 2px;
+$buy-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "buy-icons/*.png";
+@include all-buy-icons-sprites(true);
+
 .buy-nav{
 	margin: 50px 0;
 	padding-bottom: 25px;
@@ -14,4 +24,98 @@
 			color: #fff;
 		}
 	}
+}
+.notice{
+	margin: 50px 0;
+	h2{
+		color: #fff;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		i{
+			vertical-align: middle;
+			margin-right: 20px;
+		}
+	}
+	p{
+		margin-top: 18px;
+		color: #d8d8d8;
+		font-size: 18px;
+		text-align: center;
+	}
+}
+.top{
+	width: 100%;
+	height: 3px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAADCAYAAABBCiV2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyODZEOTlEODYyMjA2ODExODIyQUI3MzUwMzZBQjREMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MUZDOUExRDVGMjgxMUU0QkY3RUJCNDcwODJEOEMyMiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MUZDOUExQzVGMjgxMUU0QkY3RUJCNDcwODJEOEMyMiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMzkzZTVkNS1jYzQzLTQ5MzMtODM5Zi05YTljMTBiYjM2MTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Mjg2RDk5RDg2MjIwNjgxMTgyMkFCNzM1MDM2QUI0RDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6n1bl5AAAANElEQVR42mKR13FmgAIhIH7LgADCQPwOxGBCEkxhQAWxMAYLEAtCBZrRFHUB8X8gXgwQYAA7IwZ3YGd0mwAAAABJRU5ErkJggg==);
+	background-repeat: repeat-x;
+}
+.bottom{
+	width: 100%;
+	height: 3px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAADCAYAAABBCiV2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyODZEOTlEODYyMjA2ODExODIyQUI3MzUwMzZBQjREMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MUZDOUEyMTVGMjgxMUU0QkY3RUJCNDcwODJEOEMyMiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MUZDOUEyMDVGMjgxMUU0QkY3RUJCNDcwODJEOEMyMiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMzkzZTVkNS1jYzQzLTQ5MzMtODM5Zi05YTljMTBiYjM2MTQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Mjg2RDk5RDg2MjIwNjgxMTgyMkFCNzM1MDM2QUI0RDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7tyGY4AAAAQElEQVR42mKR13EWZGBgiAXibiBmY0CAX0BcCsRLmAXElH4AGSeB+DcQuyApKgbiSUD8nQlJcDYDKlgMYwAEGACHoQosFvuMPgAAAABJRU5ErkJggg==);
+	background-repeat: repeat-x;
+}
+.product{
+	background: #1b2d42;
+	padding: 20px 0;
+	.info-list{
+		margin: 0 25px;
+		border-bottom: 1px dashed #000;
+		li{
+			height: 50px;
+			line-height: 50px;
+			color: #d8d8d8;
+			font-size: 18px;
+			&:first-child{
+				background:#30415f;
+			}
+			div{
+				float: left;
+				text-align: center;
+			}
+			.time{
+				width: 225px;
+			}
+			.num{
+				width: 200px;
+			}
+			.count{
+				width: 150px;
+			}
+			.price{
+				width: 150px;
+			}
+			.state{
+				width: 225px;
+			}
+		}
+	}
+	.product-list{
+		margin: 25px 25px 0;
+		a{
+			float: left;
+			display: block;
+			width: 120px;
+			height: 120px;
+			margin:0 50px 10px 0;
+			img{
+				display: block;
+				width: 120px;
+				height: 120px;
+			}
+		}
+	}
+}
+#continue{
+	float: right;
+	margin: 40px 0 50px;
+	width: 160px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	background: #48be53;
+	@include border-radius(5px);
 }
