@@ -14,6 +14,7 @@
 
 {%block name="content"%}
 	
+	{%include file="youin/widget/buylist.tpl" selected=2 state="send"%}
 
 	{%include file="youin/widget/related-product.tpl"%}
 
