@@ -6,15 +6,28 @@
                 <a href="javascript:;" class="avatar" id="login"></i>登录/注册</a>
             </li>
             {%else%}
-            <li>
-                <a href="javascript:;" class="avatar" id="ucenter"><img src="{%$data.userInfo.avatar%}"></i>{%$data.userInfo.uname%}</a>
-                <div style="display:none;">
-                    <i></i>
-                    <div class="user">
-                        <img src="" class="avatar">
-                        <p class="name">测试用户</p>
-                        <p class="detail">这是一个测试用户</p>
+            <li id="ucenter">
+                <a href="javascript:;" class="avatar"><img src="{%$data.userInfo.avatar%}"></i>{%$data.userInfo.uname%}</a>
+                <div id="ucenter-panel" style="display:none;">
+                    <i class="common-icons-cornerup"></i>
+                    <div class="mask"></div>
+                    <div class="user-wrapper">
+                        <div class="user">
+                            <img src="{%$data.userInfo.avatar%}" class="avatar">
+                            <p class="name">{%$data.userInfo.uname%}</p>
+                            <p class="detail">{%$data.userInfo.mark%}</p>
+                        </div>
                     </div>
+                    <div class="info">
+                        <p>作品：0</p>
+                        <p>关注：0</p>
+                        <p>粉丝：0</p>
+                    </div>
+                    <div class="opt">
+                        <a href="###">上传资料</a>
+                        <a href="###">修改资料</a>
+                    </div>
+                    <a href="###" id="logout">退出</a>
                 </div>
             </li>
             <li><a href="###"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>

@@ -3,6 +3,7 @@ YY.base = {
         this._initHeader();
     	this._initGotop();
         this._initLogin();
+        this._initUcenter();
     },
     _initLogin : function(){
         function Login(){
@@ -43,6 +44,17 @@ YY.base = {
         $('#login').click(function(){
             loginPopup.show();
             loginPopup.showLogin();
+        });
+    },
+    _initUcenter : function(){
+        var ucenterPanel = $('#ucenter-panel');
+        $('#ucenter').on('mouseenter',function(){
+            ucenterPanel.show();
+        }).on('mouseleave',function(){
+            ucenterPanel.hide();
+        });
+        $('#logout').click(function(){
+
         });
     },
     _initHeader: function(){
