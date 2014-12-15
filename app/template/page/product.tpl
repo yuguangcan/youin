@@ -16,36 +16,26 @@
 	<section class="product">
 		<div class="product-img">
 			<div id="magnifier-img">
-				<img src="/static/youin/images/product3.jpg">
+				<img src="{%$data.data.item.picList[0]%}">
 				<div></div>
 			</div>
 			<div id="magnifier"><img src=""></div>
 			<ul class="clearfix">
-				<li class="cur">
-					<img src="/static/youin/images/product3.jpg">
-				</li>
-				<li>
-					<img src="/static/youin/images/product4.jpg">
-				</li>
-				<li>
-					<img src="/static/youin/images/product5.jpg">
-				</li>
-				<li>
-					<img src="/static/youin/images/product4.jpg">
-				</li>
-				<li>
-					<img src="/static/youin/images/product5.jpg">
-				</li>
+				{%foreach $data.data.item.picList as $item%}
+					<li {%if $item@index ==0 %}class="cur"{%/if%}>
+						<img src="{%$item%}">
+					</li>
+				{%/foreach%}
 			</ul>
 		</div>
 		<div class="product-info">
-			<h2>寂寞的夜</h2>
+			<h2>{%$data.data.item.itemName%}</h2>
 			<div class="product-detail">
 				<div class="author">
-					<img src="/static/youin/images/ds-photo.jpg">
-					<p class="name">yongge</p>
-					<div class="clearfix"><span>作品</span><span>26</span></div>
-					<div class="clearfix"><span>粉丝</span><span>2623</span></div>
+					<img src="{%$data.data.author.avatar%}">
+					<p class="name">{%$data.data.author.uname%}</p>
+					<div class="clearfix"><span>作品</span><span>{%$data.data.author.itemNum%}</span></div>
+					<div class="clearfix"><span>粉丝</span><span>{%$data.data.author.followedNum%}</span></div>
 					<a href="javascript:;">+关注</a>
 				</div>
 				<div class="info-item mt-20">
@@ -65,7 +55,7 @@
 		                <li>蓝色<i></i></li>
 		                <li>灰色<i></i></li>
 		            </ul>
-					<span class="label">颜色：</span>
+					<span class="label">属性：</span>
 				</div>
 				<div class="info-item">
 					<span class="label">购买数量：</span>
@@ -87,22 +77,18 @@
 	<section class="relate-arts">
 		<h2>相关艺术品</h2>
 		<ul class="clearfix">
-			<li>
-				<img src="/static/youin/images/product5.jpg">
-			</li>
-			<li>
-				<img src="/static/youin/images/product5.jpg">
-			</li>
-			<li>
-				<img src="/static/youin/images/product5.jpg">
-			</li>
-			<li>
-				<img src="/static/youin/images/product5.jpg">
-			</li>
+			{%foreach $data.data.related.list as $item%}
+				<li>
+				    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+				        <img src="{%$item.pic%}"></img>
+				        {%include file="youin/widget/productinfo.tpl" product=$item%}
+				    </a>
+				</li>
+			{%/foreach%}
 		</ul>
 	</section>
 
-	{%include file="youin/widget/related-product.tpl"%}
+	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
 

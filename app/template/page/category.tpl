@@ -22,7 +22,7 @@
             <ul class="product-list clearfix">
                 {%foreach $product.list as $item%}
                     <li>
-                        <a href="/mall/item/detail?itemId={%$item.itemId%}">
+                        <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
                             <img src="{%$item.pic%}"></img>
                             {%include file="youin/widget/productinfo.tpl" product=$item%}
                         </a>

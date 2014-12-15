@@ -1,29 +1,13 @@
 <section class="m-related-product">
 	<h2>相关购买</h2>
 	<ul class="clearfix">
-		<li>
-		    <a href="###">
-		        <img src="/static/youin/images/product3.jpg"></img>
-		        {%include file="youin/widget/productinfo.tpl"%}
-		    </a>
-		</li>
-		<li>
-		    <a href="###">
-		        <img src="/static/youin/images/product3.jpg"></img>
-		        {%include file="youin/widget/productinfo.tpl"%}
-		    </a>
-		</li>
-		<li>
-		    <a href="###">
-		        <img src="/static/youin/images/product3.jpg"></img>
-		        {%include file="youin/widget/productinfo.tpl"%}
-		    </a>
-		</li>
-		<li>
-		    <a href="###">
-		        <img src="/static/youin/images/product3.jpg"></img>
-		        {%include file="youin/widget/productinfo.tpl"%}
-		    </a>
-		</li>
+		{%foreach $productlist as $item%}
+			<li>
+			    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+			        <img src="{%$item.pic%}"></img>
+			        {%include file="youin/widget/productinfo.tpl" product=$item%}
+			    </a>
+			</li>
+		{%/foreach%}
 	</ul>
 </section>

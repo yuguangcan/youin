@@ -17,6 +17,12 @@ YY.base = {
             this.loginRegister.find('h2 a').click(function(){
                 _self.showLogin();
             });
+            $('#login-submit').click(function(e){
+                $(this).parent().submit();
+            });
+            $('#register-submit').click(function(e){
+                $(this).parent().submit();
+            });
         }
         Login.prototype.show = function(){
             YY.misc.showPopup(this.loginPopup,this.loginOverlay);
@@ -40,7 +46,9 @@ YY.base = {
         });
     },
     _initHeader: function(){
-    	$('#header .sub-nav-hre').click(function(){
+    	$('#header .sub-nav-href').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
     		location.href = $(this).data('href');
     	});
     },

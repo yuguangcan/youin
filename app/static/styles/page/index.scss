@@ -145,8 +145,39 @@ $index-icons-layout: smart;
 					float: left;
 					width: 250px;
 					height: 180px;
+					position: relative;
+					img{
+						position: absolute;
+						width: 48px;
+						height: 48px;
+						border: 2px solid #fff;
+						top: 45px;
+						@include border-radius(48px);
+					}
+					.name{
+						position: absolute;
+						top: 108px;
+						color: #fff;
+						font-size: 30px;
+					}
+					.mark{
+						position: absolute;
+						top: 145px;
+						color: #fff;
+						font-size: 14px;
+					}
+					&.right{
+						img,.name,.mark{
+							right: 34px;
+						}
+					}
+					&.left{
+						img,.name,.mark{
+							left: 34px;
+						}
+					}
 				}
-				img{
+				&>img{
 					float: left;
 					display: block;
 					width: 250px;

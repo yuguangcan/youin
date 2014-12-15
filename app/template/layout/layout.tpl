@@ -14,6 +14,30 @@
         {%block name="css"%}
         {%/block%}
 
+        <script type="text/javascript">
+            var YY = YY || {};
+            
+            (function(){
+                var _data = {};
+                YY.context = function (key, value) {
+                    var length = arguments.length;
+                    if (length > 1) {
+                        _data[key] = value;
+                    } else if (length == 1) {
+                        if (typeof key == 'object') {
+                            for (var k in key) {
+                                if (key.hasOwnProperty(k)) {
+                                    _data[k] = key[k];
+                                }
+                            }
+                        } else {
+                            return _data[key];
+                        }
+                    }
+                };
+            })();
+
+        </script>
     </head>
     <body>
         {%block name="header"%}
@@ -41,27 +65,6 @@
             {%include file="youin/widget/login.tpl"%}
         {%/block%}
 
-
-        <script type="text/javascript">
-            var YY = YY || {};
-
-            YY.context = function (key, value) {
-                var length = arguments.length;
-                if (length > 1) {
-                    _data[key] = value;
-                } else if (length == 1) {
-                    if (typeof key == 'object') {
-                        for (var k in key) {
-                            if (key.hasOwnProperty(k)) {
-                                _data[k] = key[k];
-                            }
-                        }
-                    } else {
-                        return _data[key];
-                    }
-                }
-            };
-        </script>
         <!-- build:js /static/youin/scripts/base/base.js -->
         <script src="static/scripts/base/jquery-1.8.3.js" type="text/javascript"></script>
         <script src="static/scripts/widget/misc.js" type="text/javascript"></script>

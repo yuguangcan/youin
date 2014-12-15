@@ -12,6 +12,10 @@
 <!-- endbuild -->
 {%/block%}
 
+{%block name="header"%}
+    {%include file="youin/widget/header.tpl" select="special"%}
+{%/block%}
+
 {%block name="content"%}
 <section class="side-bar">
 	<ul class="side-bar-inner">

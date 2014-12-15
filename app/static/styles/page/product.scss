@@ -27,6 +27,7 @@ $product-icons-layout: smart;
 			width: 65px;
 			height: 65px;
 			position: relative;
+			cursor: pointer;
 			img{
 				display: block;
 				width: 65px;
@@ -284,6 +285,22 @@ $product-icons-layout: smart;
 				display: block;
 				width: 212px;
 				height: 212px;
+			}
+			a{
+				display: block;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				.m-productinfo{
+					display: none;
+				}
+				&:hover{
+					.m-productinfo{
+						display: block;
+						top: 0;
+						left: 0;
+					}
+				}
 			}
 		}
 	}

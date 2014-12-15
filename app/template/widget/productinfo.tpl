@@ -1,4 +1,4 @@
-<!-- <div class="m-productinfo">
+<div class="m-productinfo">
 	<div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
 	<div class="opt share"><i class="common-icons-product-share"></i>分享</div>
 	<div class="opt like"><i class="common-icons-product-like"></i>收藏</div>
@@ -11,8 +11,8 @@
         	<img class="avatar" src="{%$product.avatar%}">{%$product.uname%}
         </div>
 	</div>
-</div> -->
-
+</div>
+<!-- 
 <div class="m-productinfo">
 	<div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
 	<div class="opt share"><i class="common-icons-product-share"></i>分享</div>
@@ -26,4 +26,4 @@
         	<img class="avatar" src="/static/youin/images/ds-photo.jpg">艺术家
         </div>
 	</div>
-</div>
+</div> -->

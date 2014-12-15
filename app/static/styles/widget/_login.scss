@@ -80,6 +80,8 @@
 		@include border-radius(5px);
 		display: block;
 		float: right;
+		border: 0;
+		outline: 0;
 	}
 	#register-submit{
 		margin-top: 40px;

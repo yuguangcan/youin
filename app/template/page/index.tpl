@@ -13,6 +13,10 @@
 <!-- endbuild -->
 {%/block%}
 
+{%block name="header"%}
+    {%include file="youin/widget/header.tpl" select="index"%}
+{%/block%}
+
 {%block name="content"%}
     {%include file="youin/widget/scrollbanner.tpl" banner=$data.data.banner%}
 
@@ -21,7 +25,7 @@
             <ul class="{%if $item.style == 1%}product-list-style1{%else if $item.style == 2%}product-list-style2{%/if%}">
                 {%foreach $item.content as $picitem%}
                     <li class="product-item-{%$picitem@index+1%}">
-                        <a href="/mall/item/detail?itemId={%$picitem.itemId%}">
+                        <a href="/mall/item/detail?itemId={%$picitem.itemId%}" target="_blank">
                             <img src="{%$picitem.pic%}"></img>
                             {%include file="youin/widget/productinfo.tpl" product=$picitem%}
                         </a>
@@ -41,9 +45,22 @@
         <ul class="clearfix">
             {%foreach $designer.content as $item%}
                 <li>
-                    <a href="{%$item.uid%}" class="designer-item-{%$item@index+1%}">
-                        <div> </div>
+                    <a href="{%$item.uid%}" target="_blank" class="designer-item-{%$item@index+1%}">
+                        {%if $item@index == 2 || $item@index == 3%}
                         <img src="{%$item.pic%}">
+                        <div class="right">
+                            <img src="{%$item.avatar%}"></img>
+                            <span class="name">{%$item.uname%}</span>
+                            <span class="mark">{%$item.mark%}</span>
+                        </div>
+                        {%else%}
+                        <div class="left">
+                            <img src="{%$item.avatar%}"></img>
+                            <span class="name">{%$item.uname%}</span>
+                            <span class="mark">{%$item.mark%}</span>
+                        </div>
+                        <img src="{%$item.pic%}">
+                        {%/if%}
                     </a>
                 </li>
             {%/foreach%}
