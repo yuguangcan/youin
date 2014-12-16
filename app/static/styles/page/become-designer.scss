@@ -1,0 +1,77 @@
+@import "compass/css3";
+
+/*css sprite*/
+.becomedesigner-icons-sprite {
+  display: inline-block;
+}
+$becomedesigner-icons-spacing: 2px;
+$becomedesigner-icons-layout: smart;
+@import "compass/utilities/sprites";
+@import "becomedesigner-icons/*.png";
+@include all-becomedesigner-icons-sprites(true);
+
+.info{
+	width: 830px;
+	height: 705px;
+	margin: 40px auto 30px;
+	background: #fff;
+	position: relative;
+	.becomedesigner-icons-corner{
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+#become-info{
+	h3{
+		color: #5cb6df;
+		font-size: 46px;
+		text-align: center;
+		margin-bottom: 60px;
+		position: relative;
+		top: 30px;
+	}
+	div{
+		margin: 0 30px 0 54px;
+		height: 550px;
+		overflow: auto;
+		p{
+			color: #5cb6df;
+			font-size: 18px;
+			text-indent: 2em;
+		}
+	}
+}
+#submit-info{
+	display: none;
+	i{
+		display: block;
+		position: relative;
+		top: 176px;
+		margin: 0 auto 260px;
+	}
+	h3{
+		color: #5cb6df;
+		font-size: 46px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+}
+.opt{
+	width: 830px;
+	margin: 0 auto;
+}
+a{
+	float: right;
+	display: block;
+	color: #fff;
+	font-size: 24px;
+	background: #4fbef5;
+	height: 80px;
+	line-height: 80px;
+	@include border-radius(5px);
+	padding: 0 75px;
+}
+#submit{
+	display: none;
+}
