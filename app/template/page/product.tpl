@@ -74,6 +74,7 @@
 		</div>
 	</section>
 
+	{%if $data.data.related %}
 	<section class="relate-arts">
 		<h2>相关艺术品</h2>
 		<ul class="clearfix">
@@ -87,6 +88,7 @@
 			{%/foreach%}
 		</ul>
 	</section>
+	{%/if%}
 
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 

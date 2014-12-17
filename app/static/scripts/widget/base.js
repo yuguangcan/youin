@@ -53,8 +53,11 @@ YY.base = {
         }).on('mouseleave',function(){
             ucenterPanel.hide();
         });
-        $('#logout').click(function(){
-
+        $('#logout').click(function(e){
+            e.preventDefault();
+            $.post('/login/checkout',{},function(){
+                window.location.reload(true);
+            });
         });
     },
     _initHeader: function(){

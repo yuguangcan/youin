@@ -24,8 +24,13 @@
                         <p>粉丝：0</p>
                     </div>
                     <div class="opt">
-                        <a href="###">上传资料</a>
+                        {%if $data.userInfo.level == 0%}
+                        <a href="###">1元成为设计师</a>
                         <a href="###">修改资料</a>
+                        {%elseif $data.userInfo.level == 1%}
+                        <a href="/pages/upload_1">上传资料</a>
+                        <a href="###">修改资料</a>
+                        {%/if%}
                     </div>
                     <a href="###" id="logout">退出</a>
                 </div>
