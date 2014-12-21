@@ -85,12 +85,14 @@
 					font-size: 14px;
 					color: #5680b0;
 					width: 310px;
+					height: 42px;
 				}
 				input{
 					display: none;
 				}
 			}
 			.upload-done{
+				display: none;
 				a{
 					width: 310px;
 					height: 80px;
@@ -105,6 +107,7 @@
 				}
 				div{
 					width: 310px;
+					height: 42px;
 					span{
 						float: left;
 						font-size: 14px;

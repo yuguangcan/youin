@@ -3,7 +3,7 @@
 {%extends file="youin/layout/layout.tpl"%}
 
 {%block name="title"%}
-搜索结果
+{%$data.data.item.itemName%}
 {%/block%}
 
 {%block name="css"%}
@@ -15,31 +15,33 @@
 {%block name="content"%}
 	<section class="product clearfix">
 		<div class="product-img">
-			<img src="/static/youin/images/product4.jpg">
+			<img src="{%$data.data.item.pic%}">
 		</div>
 		<div class="product-author">
-			<img src="/static/youin/images/ds-photo.jpg">
-			<p class="name">永歌</p>
-			<div class="clearfix"><span>作品</span><span>12</span></div>
-			<div class="clearfix"><span>粉丝</span><span>234</span></div>
+			<img src="{%$data.data.author.avatar%}">
+			<p class="name">{%$data.data.author.uname%}</p>
+			<div class="clearfix"><span>作品</span><span>{%$data.data.author.itemNum%}</span></div>
+			<div class="clearfix"><span>粉丝</span><span>{%$data.data.author.followedNum%}</span></div>
 			<a href="javascript:;">+关注</a>
 		</div>
 		<div class="product-info">
-			<h2>寂寞的夜</h2>
-			<p class="author">设计师：永歌</p>
-			<p class="des">杜兰特在2007年首轮第二顺位被当时还在西雅图的超音速队选中，2008年随队搬到俄克拉荷马，球队也改名为雷霆队。2010年，21岁的杜兰特成为NBA史上最年轻得分王，随后又连续两个赛季荣膺得分王。2014年，杜兰特同时获得得分王与NBA常规赛最有价值球员奖。</p>
+			<h2>{%$data.data.item.itemName%}</h2>
+			<p class="author">设计师：{%$data.data.author.uname%}</p>
+			<p class="des">{%$data.data.item.summary%}</p>
 		</div>
 	</section>
 
 	<section class="relate-arts">
 		<h2>相关艺术品</h2>
 		<ul class="clearfix">
-			<li>
-			    <a href="/mall/item/detail?itemId=1" target="_blank">
-			        <img src="/static/youin/images/product4.jpg"></img>
-			        {%include file="youin/widget/productinfo.tpl" product=$item%}
-			    </a>
-			</li>
+			{%foreach $data.data.related.list as $item%}
+				<li>
+				    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+				        <img src="{%$item.pic%}"></img>
+				        {%include file="youin/widget/productinfo.tpl" product=$item%}
+				    </a>
+				</li>
+			{%/foreach%}
 		</ul>
 	</section>
 

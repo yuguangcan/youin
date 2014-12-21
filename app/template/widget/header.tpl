@@ -18,13 +18,13 @@
                             <p class="detail">{%$data.userInfo.mark%}</p>
                         </div>
                     </div>
-                    <div class="info buy-info">
+                    <div class="user-info buy-info">
                         <p>待付款<span>0</span></p>
                         <p>待收款<span>2</span></p>
                         <p>待发货<span>4</span></p>
                         <p>待评价<span>1</span></p>
                     </div>
-                    <div class="info">
+                    <div class="user-info">
                         <p>作品<span>0</span></p>
                         <p>关注<span>0</span></p>
                         <p>粉丝<span>0</span></p>
@@ -32,7 +32,7 @@
                     <div class="opt">
                         {%if $data.userInfo.level == 0%}
                         <span>我想成为设计师上传作品</span>
-                        <a href="###">1元成为设计师</a>
+                        <a href="/user/newdesigner">1元成为设计师</a>
                         <a href="###">修改资料</a>
                         {%elseif $data.userInfo.level == 1%}
                         <a href="/pages/upload_1">上传资料</a>

@@ -32,7 +32,7 @@
             <h3>支付宝充值1元</h3>
         </div>
     </section>
-    <section class="opt clearfix">
+    <section class="submit-opt clearfix">
         <a href="javascript:;" id="become">我要成为设计师</a>
         <a href="javascript:;" id="submit">确定</a>
     </section>

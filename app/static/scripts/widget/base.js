@@ -85,7 +85,7 @@ YY.base = {
     	});
     	gotopIcon.click(function(){
     		$('body').animate({
-    			scrollTop : 115
+    			scrollTop : 0
     		},300);
     	});
     }
