@@ -19,7 +19,13 @@ YY.base = {
                 _self.showLogin();
             });
             $('#login-submit').click(function(e){
-                $(this).parent().submit();
+                var form = $(this).parent();
+                $.post('/login/checkin',{
+                    account : form.find('input[name="account"]').val(),
+                    password : form.find('input[name="password"]').val()
+                },function(resp){
+                    window.location.reload(true);
+                });
             });
             $('#register-submit').click(function(e){
                 $(this).parent().submit();

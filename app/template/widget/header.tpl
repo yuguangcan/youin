@@ -18,13 +18,20 @@
                             <p class="detail">{%$data.userInfo.mark%}</p>
                         </div>
                     </div>
+                    <div class="info buy-info">
+                        <p>待付款<span>0</span></p>
+                        <p>待收款<span>2</span></p>
+                        <p>待发货<span>4</span></p>
+                        <p>待评价<span>1</span></p>
+                    </div>
                     <div class="info">
-                        <p>作品：0</p>
-                        <p>关注：0</p>
-                        <p>粉丝：0</p>
+                        <p>作品<span>0</span></p>
+                        <p>关注<span>0</span></p>
+                        <p>粉丝<span>0</span></p>
                     </div>
                     <div class="opt">
                         {%if $data.userInfo.level == 0%}
+                        <span>我想成为设计师上传作品</span>
                         <a href="###">1元成为设计师</a>
                         <a href="###">修改资料</a>
                         {%elseif $data.userInfo.level == 1%}
@@ -38,13 +45,18 @@
             <li><a href="###"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>
             <li><a href="###"><i class="common-icons-cart"></i>购物车<span>{%$data.userInfo.cartNum%}</span>件</a></li>
             {%/if%}
-            <li><a href="###" id="search"><i class="common-icons-search"></i>搜索商品</a></li>
+            <li>
+                <i class="common-icons-search"></i>
+                <form action="" id="search-form" name="search-form" method="post">
+                    <input type="text" name="word" placeholder="搜索商品"></input>
+                </form>
+            </li>
         </ul>
     </div>
     
     <div class="nav">
         <div class="nav-inner clearfix">
-            <div class="logo"><i class="common-icons-header-logo"></i></div>
+            <a href="/pages/index" class="logo"><i class="common-icons-header-logo"></i></a>
             <ul>
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="index"%}class="cur"{%/if%}><a href="/pages/index"><i class="common-icons-nav-index"></i><p>首页</p></a></li>

@@ -60,18 +60,19 @@ $becomedesigner-icons-layout: smart;
 .opt{
 	width: 830px;
 	margin: 0 auto;
+	a{
+		float: right;
+		display: block;
+		color: #fff;
+		font-size: 24px;
+		background: #4fbef5;
+		height: 80px;
+		line-height: 80px;
+		@include border-radius(5px);
+		padding: 0 75px;
+	}
 }
-a{
-	float: right;
-	display: block;
-	color: #fff;
-	font-size: 24px;
-	background: #4fbef5;
-	height: 80px;
-	line-height: 80px;
-	@include border-radius(5px);
-	padding: 0 75px;
-}
+
 #submit{
 	display: none;
 }
