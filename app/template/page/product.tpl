@@ -39,23 +39,23 @@
 					<a href="javascript:;">+关注</a>
 				</div>
 				<div class="info-item mt-20">
-					<span class="label">价格：</span><div class="price">￥168</div>
+					<span class="label">价格：</span><div class="price" id="price">￥<span></span></div>
 				</div>
 				<div class="info-item mb-10">
-					<ul class="attr-list clearfix">
-		                <li class="cur">30cm*30cm<i></i></li>
-		                <li>30cm*30cm<i></i></li>
-		                <li>30cm*30cm<i></i></li>
+					<ul class="attr-list clearfix" id="size-list">
+						{%foreach $data.data.item.sizeGroup as $size%}
+							<li data-sizeid="{%$size.sizeId%}" {%if $size@index == 0%}class="cur"{%/if%}>{%$size.sizeName%}<i></i></li>
+						{%/foreach%}
 		            </ul>
 					<span class="label">尺寸：</span>
 				</div>
 				<div class="info-item mb-10">
-					<ul class="attr-list clearfix">
-		                <li class="cur">白色<i></i></li>
-		                <li>蓝色<i></i></li>
-		                <li>灰色<i></i></li>
+					<ul class="attr-list clearfix" id="color-list">
+		                {%foreach $data.data.item.colorGroup as $color%}
+							<li data-colorid="{%$color.colorId%}" {%if $color@index == 0%}class="cur"{%/if%}>{%$color.colorName%}<i></i></li>
+						{%/foreach%}
 		            </ul>
-					<span class="label">属性：</span>
+					<span class="label">颜色：</span>
 				</div>
 				<div class="info-item">
 					<span class="label">购买数量：</span>
@@ -64,10 +64,10 @@
 			            <input type="text" value="1" id="count"></input>
 			            <span class="add">+</span>
 			        </div>
-			        <span class="notice">(库存10件)</span>
+			        <span class="notice" id="stock">(库存<b></b>件)</span>
 				</div>
 				<div class="opt clearfix">
-					<a href="javascript:;" class="add-cart"><i class="product-icons-cart"></i>加入购物车</a>
+					<a href="javascript:;" class="add-cart" id="add-cart"><i class="product-icons-cart"></i>加入购物车</a>
 					<a href="javascript:;" class="like-btn"><i class="product-icons-like"></i>收藏</a>
 				</div>
 			</div>
@@ -95,7 +95,11 @@
 {%/block%}
 
 {%block name="js"%}
-
+<script type="text/javascript">
+	YY.context('itemId','{%$data.data.item.itemId%}');
+	YY.context('sizeGroup',JSON.parse('{%$data.data.item.sizeGroup|@json_encode%}'));
+	YY.context('colorGroup',JSON.parse('{%$data.data.item.colorGroup|@json_encode%}'));
+</script>
 <!-- build:js /static/youin/scripts/page/product.js -->
 <script src="static/scripts/page/product.js"></script>
 <!-- endbuild -->

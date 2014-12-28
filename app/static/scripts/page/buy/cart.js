@@ -19,15 +19,29 @@ YY.indexPage = {
 	        	buyCount.val(value-1);
 	        	sum.text(buyCount.val()*price);
 	        	YY.indexPage.calculate();
+                setNum(itemObj.attr('data-cartid'),buyCount.val());
 	        });
 	        addMinus.find('.add').click(function(){
 	        	buyCount.val(parseInt(buyCount.val())+1);
 	        	sum.text(buyCount.val()*price);
 	        	YY.indexPage.calculate();
+                setNum(itemObj.attr('data-cartid'),buyCount.val());
 	        });
+            buyCount.on('change',function(){
+                var value = parseInt(buyCount.val());
+                if(value <= 1){
+                    return;
+                }
+                buyCount.val(value-1);
+                setNum(itemObj.attr('data-cartid'),buyCount.val());
+            })
 	        del.click(function(){
-	        	itemObj.remove();
-	        	YY.indexPage.calculate();
+                var id = $(this).parents('li').attr('data-cartid');
+                deleteItem(id,function(){
+                    itemObj.remove();
+                    YY.indexPage.calculate();
+                });
+                
 	        });
     	});
 
@@ -45,11 +59,47 @@ YY.indexPage = {
     		$('.cart-list li').each(function(index,item){
     			var select = $(item).find('.select');
     			if(select.get(0).checked){
-    				$(item).remove();
+                    deleteItem($(item).attr('data-cartid'),function(){
+                        $(item).remove();
+                    });
     			}
     		});
     		YY.indexPage.calculate();
     	});
+
+        function setNum(id,num){
+            $.post('/mall/cart/edit',{
+                id: id,
+                num: num
+            },function(resp){
+            });
+        }
+        var isDeleting = false;
+        function deleteItem(id,callback){
+            if(isDeleting){
+                return;
+            }
+            isDeleting = true;
+            $.post('/mall/cart/del?id='+id,{},function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    callback();
+                }
+                isDeleting = false;
+            });
+        }
+
+        $('#submit').click(function(){
+            var ids = [];
+            $('.cart-list li').each(function(index,item){
+                var select = $(item).find('.select');
+                if(select.get(0).checked){
+                    ids.push($(item).attr('data-cartid'));
+                }
+            });
+            $('#ids').val(ids.join(','));
+            $('#cart-form').submit();
+        });
     },
     calculate : function(){
     	var count = 0,

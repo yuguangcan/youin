@@ -34,7 +34,7 @@
     </section>
     <section class="submit-opt clearfix">
         <a href="javascript:;" id="become">我要成为设计师</a>
-        <a href="javascript:;" id="submit">确定</a>
+        <a href="/pay/submit/newdesigner" id="submit">确定</a>
     </section>
 {%/block%}
 

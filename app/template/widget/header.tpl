@@ -30,12 +30,12 @@
                         <p>粉丝<span>0</span></p>
                     </div>
                     <div class="opt">
-                        {%if $data.userInfo.level == 0%}
+                        {%if $data.userInfo.type == 0%}
                         <span>我想成为设计师上传作品</span>
                         <a href="/user/newdesigner">1元成为设计师</a>
                         <a href="###">修改资料</a>
-                        {%elseif $data.userInfo.level == 1%}
-                        <a href="/pages/upload_1">上传资料</a>
+                        {%elseif $data.userInfo.type == 1%}
+                        <a href="/pages/upload_1">上传作品</a>
                         <a href="###">修改资料</a>
                         {%/if%}
                     </div>
@@ -43,7 +43,7 @@
                 </div>
             </li>
             <li><a href="###"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>
-            <li><a href="###"><i class="common-icons-cart"></i>购物车<span>{%$data.userInfo.cartNum%}</span>件</a></li>
+            <li><a href="/mall/cart/getlist"><i class="common-icons-cart"></i>购物车<span>{%$data.userInfo.cartNum%}</span>件</a></li>
             {%/if%}
             <li>
                 <i class="common-icons-search"></i>

@@ -3,7 +3,7 @@ YY.indexPage = {
         this.initMagnifier();
         $('#magnifier-img').magnifier({
             target : $('#magnifier'),
-            scale : 5
+            scale : 3
         });
 
         $('.product-img li').click(function(){
@@ -13,7 +13,8 @@ YY.indexPage = {
         });
 
         var addMinus = $('#add-minus'),
-        	count = $('#count');
+        	count = $('#count'),
+            stock = $('#stock b');
         addMinus.find('.minus').click(function(){
             var value = parseInt(count.val());
             if(value == 1){
@@ -22,12 +23,19 @@ YY.indexPage = {
         	count.val(value-1);
         });
         addMinus.find('.add').click(function(){
-        	count.val(parseInt(count.val())+1);
+            var value = parseInt(count.val());
+            if(value >= parseInt(stock.html())){
+                return;
+            }
+            count.val(value+1);
         });
-
-        $('.attr-list li').click(function(){
-            $(this).siblings('.cur').removeClass('cur');
-            $(this).addClass('cur');
+        addMinus.find('input').on('change',function(){
+            var value = parseInt(count.val());
+            if(value > parseInt(stock.html())){
+                count.val(parseInt(stock.html()));
+            }else if( value < 1){
+                count.val(1);
+            }
         });
     },
     initMagnifier : function(){
@@ -79,8 +87,127 @@ YY.indexPage = {
                 targetContainer.hide();
             }
         }
+    },
+    initAttrSelect : function(){
+        var sizeList = $('#size-list li'),
+            colorList = $('#color-list li'),
+            sizeMap = YY.context('sizeGroup'),
+            colorMap = YY.context('colorGroup'),
+            selectSizeId = 0,
+            selectColorId = 0,
+            _self = this;
+
+        sizeList.click(function(){
+            var _this = $(this);
+            if(_this.hasClass('nostock')){
+                return;
+            }
+            
+            if(_this.hasClass('cur')){
+                _this.removeClass('cur');
+                selectSizeId = 0;
+                colorList.each(function(index,item){
+                    $(item).removeClass('nostock');
+                });
+            }else{
+                _this.siblings('.cur').removeClass('cur');
+                _this.addClass('cur');
+                selectSizeId = _this.attr('data-sizeid');
+                var _cid = {};
+                for(var i=0;i<sizeMap.length;i++){
+                    if(sizeMap[i].sizeId == selectSizeId){
+                        for(var j=0;j<sizeMap[i].sub.length;j++){
+                            _cid[sizeMap[i].sub[j].colorId] = true;
+                        }
+                    }
+                }
+                colorList.each(function(index,item){
+                    if(!_cid[$(item).attr('data-colorid')]){
+                        $(item).addClass('nostock');
+                    }else{
+                        $(item).removeClass('nostock');
+                    }
+                });
+                _self.setPriceAndStock();
+            }
+            
+        });
+        colorList.click(function(){
+            var _this = $(this);
+            if(_this.hasClass('nostock')){
+                return;
+            }
+            if(_this.hasClass('cur')){
+                _this.removeClass('cur');
+                selectColorId = 0;
+                sizeList.each(function(index,item){
+                    $(item).removeClass('nostock');
+                });
+            }else{
+                _this.siblings('.cur').removeClass('cur');
+                _this.addClass('cur');
+                selectColorId = _this.attr('data-colorid');
+                var _sid = {};
+                for(var i=0;i<colorMap.length;i++){
+                    if(colorMap[i].colorId == selectColorId){
+                        for(var j=0;j<colorMap[i].sub.length;j++){
+                            _sid[colorMap[i].sub[j].sizeId] = true;
+                        }
+                    }
+                }
+                sizeList.each(function(index,item){
+                    if(!_sid[$(item).attr('data-sizeid')]){
+                        $(item).addClass('nostock');
+                    }else{
+                        $(item).removeClass('nostock');
+                    }
+                });
+                _self.setPriceAndStock();
+            }
+        });
+
+    },
+    setPriceAndStock : function(){
+        if($('#size-list .cur').length == 0 || $('#color-list .cur').length == 0){
+            return;
+        }
+        var sizeMap = YY.context('sizeGroup'),
+            colorMap = YY.context('colorGroup'),
+            price = $('#price span'),
+            stock = $('#stock b'),
+            selectSizeId = $('#size-list .cur').attr('data-sizeid'),
+            selectColorId = $('#color-list .cur').attr('data-colorid');
+        for(var i=0;i<sizeMap.length;i++){
+            if(sizeMap[i].sizeId == selectSizeId){
+                for(var j=0;j<sizeMap[i].sub.length;j++){
+                    if(sizeMap[i].sub[j].colorId == selectColorId){
+                        price.html(sizeMap[i].sub[j].price);
+                        stock.html(sizeMap[i].sub[j].totalNum);
+                        this.propertyId = sizeMap[i].sub[j].propertyId;
+                    }
+                }
+            }
+        }
+    },
+    initBuy : function(){
+        var _self = this;
+        $('#add-cart').click(function(){
+            $.post('/mall/cart/add',{
+                itemId : YY.context('itemId'),
+                propertyId : _self.propertyId,
+                num : $('#count').val()
+            },function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    alert('添加成功');
+                }
+            });
+        });
     }
 }
 $(function(){
     YY.indexPage.init();
+    YY.indexPage.initAttrSelect();
+    YY.indexPage.setPriceAndStock();
+    YY.indexPage.initBuy();
 });

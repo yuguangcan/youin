@@ -10,9 +10,13 @@ YY.indexPage = {
         	this.uploadFileName = options.uploadFileName;
         	this.uploadDelete = options.uploadDelete;
         	this.uploadProductId = options.uploadProductId;
+        	this.isUploading = false;
 
         	var _self = this;
         	_self.uploadBtn.click(function(){
+        		if(_self.isUploading){
+        			return;
+        		}
         	    _self.picUpload.trigger('click');
         	});
         	_self.picUpload.on('change',change);
@@ -26,9 +30,10 @@ YY.indexPage = {
         	    var src = e.target,
         	        imageName = src.value.substring(src.value.lastIndexOf('\\')+1);
         	    _self.uploadBtn.html('正在上传');
+        	    _self.isUploading = true;
         	    $.ajaxFileUpload(
         	        {
-        	            url: '/image/upload_product',
+        	            url: '/image/upload_product?productId='+_self.uploadProductId,
         	            type : 'post',
         	            data: {
 
@@ -51,11 +56,13 @@ YY.indexPage = {
         	                    _self.uploadBtn.html('上传一张图');
         	                }
         	                resetPicUpload();
+        	                _self.isUploading = false;
         	            },
         	            error: function ()
         	            {
         	                alert('上传失败，请稍候再试');
         	                resetPicUpload();
+        	                _self.isUploading = false;
         	            }
         	        }
         	    );

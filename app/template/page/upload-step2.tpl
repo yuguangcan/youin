@@ -35,7 +35,7 @@
 			<section class="art-list">
 				<div class="title">可选以下艺术品，请上传相应尺寸图片定制<a href="javascript:;" id="skip">跳过</a></div>
 				<ul class="upload-list clearfix">
-					<li data-pid="9">
+					<li data-pid="1">
 						<img data-src="/static/youin/images/art-bg-1.jpg" src="/static/youin/images/art-bg-1.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
@@ -50,8 +50,8 @@
 							</div>
 						</div>
 					</li>
-					<li data-pid="1">
-						<img data-src="/static/youin/images/art-bg-2.jpg" src="/static/youin/images/art-bg-2.jpg">
+					<li data-pid="2">
+						<img data-src="/static/youin/images/art-bg-1.jpg" src="/static/youin/images/art-bg-1.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
 							<input type="file" accept="image/jpeg" id="upload2" name="file"></input>
@@ -65,8 +65,8 @@
 							</div>
 						</div>
 					</li>
-					<li data-pid="2">
-						<img data-src="/static/youin/images/art-bg-3.jpg" src="/static/youin/images/art-bg-3.jpg">
+					<li data-pid="9">
+						<img data-src="/static/youin/images/art-bg-1.jpg" src="/static/youin/images/art-bg-1.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
 							<input type="file" accept="image/jpeg" id="upload3" name="file"></input>
@@ -80,8 +80,8 @@
 							</div>
 						</div>
 					</li>
-					<li data-pid="3">
-						<img data-src="/static/youin/images/art-bg-4.jpg" src="/static/youin/images/art-bg-4.jpg">
+					<li data-pid="7">
+						<img data-src="/static/youin/images/art-bg-2.jpg" src="/static/youin/images/art-bg-2.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
 							<input type="file" accept="image/jpeg" id="upload4" name="file"></input>
@@ -95,8 +95,8 @@
 							</div>
 						</div>
 					</li>
-					<li data-pid="4">
-						<img data-src="/static/youin/images/art-bg-5.jpg" src="/static/youin/images/art-bg-5.jpg">
+					<li data-pid="10">
+						<img data-src="/static/youin/images/art-bg-3.jpg" src="/static/youin/images/art-bg-3.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
 							<input type="file" accept="image/jpeg" id="upload5" name="file"></input>
@@ -110,11 +110,41 @@
 							</div>
 						</div>
 					</li>
-					<li data-pid="5">
-						<img data-src="/static/youin/images/art-bg-6.jpg" src="/static/youin/images/art-bg-6.jpg">
+					<li data-pid="10">
+						<img data-src="/static/youin/images/art-bg-4.jpg" src="/static/youin/images/art-bg-4.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
 							<input type="file" accept="image/jpeg" id="upload6" name="file"></input>
+							<div>请上传您最高质量的JPEG图片（RGB）。尺寸要求为3500px（宽）*3500px（高）</div>
+						</div>
+						<div class="upload-done">
+							<a href="javascript:;">上传成功</a>
+							<div class="clearfix">
+								<span class="upload-file">img.img</span>
+								<span class="upload-delete">删除 X</span>
+							</div>
+						</div>
+					</li>
+					<li data-pid="6">
+						<img data-src="/static/youin/images/art-bg-5.jpg" src="/static/youin/images/art-bg-5.jpg">
+						<div class="upload">
+							<a href="javascript:;">上传一张图</a>
+							<input type="file" accept="image/jpeg" id="upload7" name="file"></input>
+							<div>请上传您最高质量的JPEG图片（RGB）。尺寸要求为3500px（宽）*3500px（高）</div>
+						</div>
+						<div class="upload-done">
+							<a href="javascript:;">上传成功</a>
+							<div class="clearfix">
+								<span class="upload-file">img.img</span>
+								<span class="upload-delete">删除 X</span>
+							</div>
+						</div>
+					</li>
+					<li data-pid="11">
+						<img data-src="/static/youin/images/art-bg-6.jpg" src="/static/youin/images/art-bg-6.jpg">
+						<div class="upload">
+							<a href="javascript:;">上传一张图</a>
+							<input type="file" accept="image/jpeg" id="upload8" name="file"></input>
 							<div>请上传您最高质量的JPEG图片（RGB）。尺寸要求为3500px（宽）*3500px（高）</div>
 						</div>
 						<div class="upload-done">

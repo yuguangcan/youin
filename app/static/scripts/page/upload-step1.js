@@ -45,8 +45,12 @@ YY.indexPage = {
             uploadDone = $('.upload-done'),
             uploadFileName = $('#upload-file'),
             uploadDelete = $('#upload-delete'),
-            uploadFileHidden = $('#upload-file-hidden'); 
+            uploadFileHidden = $('#upload-file-hidden'),
+            isUploading = false;
         uploadBtn.click(function(){
+            if(isUploading){
+                return;
+            }
             picUpload.trigger('click');
         });
         picUpload.on('change',change);
@@ -60,6 +64,7 @@ YY.indexPage = {
             var src = e.target,
                 imageName = src.value.substring(src.value.lastIndexOf('\\')+1);
             uploadBtn.html('正在上传');
+            isUploading = true;
             $.ajaxFileUpload(
                 {
                     url: '/image/upload',
@@ -80,11 +85,13 @@ YY.indexPage = {
                             uploadBtn.html('上传一张图');
                         }
                         resetPicUpload();
+                        isUploading = false;
                     },
                     error: function ()
                     {
                         alert('上传失败，请稍候再试');
                         resetPicUpload();
+                        isUploading = false;
                     }
                 }
             );

@@ -176,6 +176,11 @@ $product-icons-layout: smart;
 				position: relative;
 				margin-right: 10px;
 				margin-bottom: 15px;
+				&.nostock{
+					cursor: not-allowed;
+					color: #dedede;
+					border: 1px dashed #dedede;
+				}
 				i{
 					position: absolute;
 					display: none;
