@@ -32,23 +32,23 @@
                     <img src="/static/youin/images/ds-photo.jpg" class="photo"></img>
             </div>
         </div>
-        <div class="ds-username">测试用户</div>
-        <div class="ds-intro">这里是一段用户介绍</div>
+        <div class="ds-username">{%$data.data.uname%}</div>
+        <div class="ds-intro">{%$data.data.mark%}</div>
     </div>
     <div class="ds-counter">
         <table>
             <tbody>
                 <tr>
                     <td>
-                        <span>26</span>
+                        <span>{%$data.data.itemNum%}</span>
                         <p>作品</p>
                     </td>
                     <td>
-                        <span>43268</span>
+                        <span>{%$data.data.followingNum%}</span>
                         <p>粉丝</p>
                     </td>
                     <td>
-                        <span>12</span>
+                        <span>{%$data.data.followedNum%}</span>
                         <p>关注</p>
                     </td>
                 </tr>

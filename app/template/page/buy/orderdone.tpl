@@ -55,7 +55,7 @@
 		<a href="javascrit:;" id="continue">继续购物</a>
 	</div>
 
-	{%include file="youin/widget/related-product.tpl"%}
+	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
 

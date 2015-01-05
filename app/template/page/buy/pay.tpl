@@ -16,7 +16,7 @@
 	
 	{%include file="youin/widget/buylist.tpl" selected=1 state="pay"%}
 
-	{%include file="youin/widget/related-product.tpl"%}
+	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
 

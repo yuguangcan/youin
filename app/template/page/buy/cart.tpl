@@ -73,7 +73,7 @@
 		</div>
 	</section>
 
-	{%include file="youin/widget/related-product.tpl"%}
+	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
 
