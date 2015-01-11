@@ -40,7 +40,7 @@
 				<div class="num">{%$data.data.order.orderId%}</div>
 				<div class="count">{%$data.data.order.totalNum%}</div>
 				<div class="price">{%$data.data.order.totalPrice%}元</div>
-				<div class="state">预计发货{%$data.data.order.createTime%}</div>
+				<div class="state">预计发货{%$data.data.order.receiveTime%}</div>
 			</li>
 		</ul>
 		<div class="product-list clearfix">
@@ -53,6 +53,7 @@
 
 	<div class="clearfix">
 		<a href="/pages/index" id="continue">继续购物</a>
+		<a href="/pay/submit/buyitem?orderId={%$data.data.order.orderId%}" id="pay">去付款</a>
 	</div>
 
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}

@@ -32,11 +32,19 @@
 			<h2>{%$data.data.item.itemName%}</h2>
 			<div class="product-detail">
 				<div class="author">
-					<img src="{%$data.data.author.avatar%}">
-					<p class="name">{%$data.data.author.uname%}</p>
+					<a href="/user/card?uid={%$data.data.author.uid%}" target="_blank">
+						<img src="{%$data.data.author.avatar%}">
+						<p class="name">{%$data.data.author.uname%}</p>
+					</a>
 					<div class="clearfix"><span>作品</span><span>{%$data.data.author.itemNum%}</span></div>
-					<div class="clearfix"><span>粉丝</span><span>{%$data.data.author.followedNum%}</span></div>
-					<a href="javascript:;">+关注</a>
+					<div class="clearfix"><span>粉丝</span><span id="follower-num">{%$data.data.author.followedNum%}</span></div>
+					{%if $data.data.author.uid != $data.userInfo.uid%}
+						{%if $data.data.author.followStatus == 0%}
+							<a href="javascript:;" class="follow-btn follow">关注</a>
+						{%else%}
+							<a href="javascript:;" class="follow-btn followed">取消关注</a>
+						{%/if%}
+					{%/if%}
 				</div>
 				<div class="info-item mt-20">
 					<span class="label">价格：</span><div class="price" id="price">￥<span></span></div>
@@ -68,7 +76,12 @@
 				</div>
 				<div class="opt clearfix">
 					<a href="javascript:;" class="add-cart" id="add-cart"><i class="product-icons-cart"></i>加入购物车</a>
-					<a href="javascript:;" class="like-btn"><i class="product-icons-like"></i>收藏</a>
+					{%if $data.data.item.isCollected == 0%}
+						<a href="javascript:;" class="like"><i class="product-icons-like"></i><span>收藏</span></a>
+					{%else%}
+						<a href="javascript:;" class="liked"><i class="product-icons-like"></i><span>取消收藏</span></a>
+					{%/if%}
+					
 				</div>
 			</div>
 		</div>
@@ -90,6 +103,13 @@
 	</section>
 	{%/if%}
 
+	<section class="arts-detail">
+		<h2>图文详情</h2>
+		<div>
+			<img src="{%$data.data.item.detailPic%}">
+		</div>
+	</section>
+
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
@@ -97,6 +117,7 @@
 {%block name="js"%}
 <script type="text/javascript">
 	YY.context('itemId','{%$data.data.item.itemId%}');
+	YY.context('uid','{%$data.data.author.uid%}');
 	YY.context('sizeGroup',JSON.parse('{%$data.data.item.sizeGroup|@json_encode%}'));
 	YY.context('colorGroup',JSON.parse('{%$data.data.item.colorGroup|@json_encode%}'));
 </script>

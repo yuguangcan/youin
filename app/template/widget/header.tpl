@@ -19,15 +19,15 @@
                         </div>
                     </div>
                     <div class="user-info buy-info">
-                        <p>待付款<span>0</span></p>
-                        <p>待收款<span>2</span></p>
-                        <p>待发货<span>4</span></p>
-                        <p>待评价<span>1</span></p>
+                        <a href="/order/userorder/getlist?type=0" target="_blank">待付款<span>{%$data.userInfo.payNum%}</span></a>
+                        <a href="/order/userorder/getlist?type=1" target="_blank">待发货<span>{%$data.userInfo.sendNum%}</span></a>
+                        <a href="/order/userorder/getlist?type=2" target="_blank">待收货<span>{%$data.userInfo.receiveNum%}</span></a>
+                        <a href="/order/userorder/getlist?type=0" target="_blank">待评价<span>{%$data.userInfo.evaluateNum%}</span></a>
                     </div>
                     <div class="user-info">
-                        <p>作品<span>0</span></p>
-                        <p>关注<span>0</span></p>
-                        <p>粉丝<span>0</span></p>
+                        <a href="/user/card?uid={%$data.userInfo.uid%}" target="_blank">作品<span>{%$data.userInfo.itemNum%}</span></a>
+                        <a href="/follow/follow/getlist" target="_blank">关注<span>{%$data.userInfo.followingNum%}</span></a>
+                        <a href="/follow/follow/fanslist" target="_blank">粉丝<span>{%$data.userInfo.followedNum%}</span></a>
                     </div>
                     <div class="opt">
                         {%if $data.userInfo.type == 0%}
@@ -42,7 +42,7 @@
                     <a href="###" id="logout">退出</a>
                 </div>
             </li>
-            <li><a href="###"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>
+            <li><a href="/mall/collect/getlist"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>
             <li><a href="/mall/cart/getlist"><i class="common-icons-cart"></i>购物车<span>{%$data.userInfo.cartNum%}</span>件</a></li>
             {%/if%}
             <li>
@@ -109,7 +109,7 @@
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="hot"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-hot"></i><p>热卖</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
-                <li {%if $select=="special"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-special"></i><p>专场</p></a></li>
+                <li {%if $select=="special"%}class="cur"{%/if%}><a href="/pages/special"><i class="common-icons-nav-special"></i><p>专场</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
             </ul>
         </div>

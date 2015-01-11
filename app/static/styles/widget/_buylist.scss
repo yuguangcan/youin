@@ -14,10 +14,16 @@
 		&:last-child{
 			margin-right:0;
 		}
+		a{
+			color: #7c818b;
+		}
 		&.cur{
 			background: #161f32;
-			color: #fffefe;
+			a{
+				color: #fffefe;
+			}
 		}
+
 	}
 }
 .buylist-list{

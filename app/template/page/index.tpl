@@ -45,7 +45,7 @@
         <ul class="clearfix">
             {%foreach $designer.content as $item%}
                 <li>
-                    <a href="{%$item.uid%}" target="_blank" class="designer-item-{%$item@index+1%}">
+                    <a href="/user/card?uid={%$item.uid%}" target="_blank" class="designer-item-{%$item@index+1%}">
                         {%if $item@index == 2 || $item@index == 3%}
                         <img src="{%$item.pic%}">
                         <div class="right">

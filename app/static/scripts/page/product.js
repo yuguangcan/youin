@@ -203,6 +203,51 @@ YY.indexPage = {
                 }
             });
         });
+    },
+    initOther : function(){
+        $('.product-detail').on('click','.like',function(){
+            var _this = $(this);
+            $.post('/mall/collect/add?itemId='+YY.context('itemId'),function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('like').addClass('liked').find('span').html('取消收藏');
+                }else{
+                    alert('收藏失败，请稍候再试');
+                }
+            });
+        }).on('click','.liked',function(){
+            var _this = $(this);
+            $.post('/mall/collect/del?id='+YY.context('itemId'),function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('liked').addClass('like').find('span').html('收藏');
+                }else{
+                    alert('取消收藏失败，请稍候再试');
+                }
+            });
+        }).on('click','.follow',function(){
+            var _this = $(this);
+            $.post('/follow/follow/add?followUid='+YY.context('uid'),function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('follow').addClass('followed').html('取消关注');
+                    $('#follower-num').html(parseInt($('#follower-num').html()) + 1);
+                }else{
+                    alert('关注失败，请稍候再试');
+                }
+            });
+        }).on('click','.followed',function(){
+            var _this = $(this);
+            $.post('/follow/follow/del?followUid='+YY.context('uid'),function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('followed').addClass('follow').html('关注');
+                    $('#follower-num').html(parseInt($('#follower-num').html()) - 1);
+                }else{
+                    alert('取消关注失败，请稍候再试');
+                }
+            });
+        });
     }
 }
 $(function(){
@@ -210,4 +255,5 @@ $(function(){
     YY.indexPage.initAttrSelect();
     YY.indexPage.setPriceAndStock();
     YY.indexPage.initBuy();
+    YY.indexPage.initOther();
 });

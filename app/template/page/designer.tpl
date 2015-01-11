@@ -14,8 +14,8 @@
 
 {%block name="content"%}
 <section class="ds-header">
-<div class="ds-header-cover"></div>
-    <div class="product-list">
+    <div class="ds-header-cover"></div>
+    <!-- <div class="product-list">
         <p>近期成交作品<span>详情</span></p>
         <p>商品/数量/总价/成交日期</p>
         <ol>
@@ -25,11 +25,11 @@
             <li>4.绚彩抱枕/2/88/20140914</li>
             <li>5.不在逆袭就在逆袭路上/2/88/20140914</li>
         </ol>
-    </div>
+    </div> -->
     <div class="ds-inform">
         <div class="ds-photo">
             <div class="photo-wrap">
-                    <img src="/static/youin/images/ds-photo.jpg" class="photo"></img>
+                <img src="{%$data.data.avatar%}" class="photo"></img>
             </div>
         </div>
         <div class="ds-username">{%$data.data.uname%}</div>
@@ -48,7 +48,7 @@
                         <p>粉丝</p>
                     </td>
                     <td>
-                        <span>{%$data.data.followedNum%}</span>
+                        <span id="follower-num">{%$data.data.followedNum%}</span>
                         <p>关注</p>
                     </td>
                 </tr>
@@ -56,126 +56,52 @@
         </table>
     </div>
     <div class="ds-operation">
-    <div class="button op-button-1">修改资料</div>
-    <div class="button op-button-2">上传作品</div>
+        {%if $data.data.uid == $data.userInfo.uid %}
+            {%if $data.userInfo.type == 0%}
+            <span>我想成为设计师上传作品</span>
+            <a class="button" href="###">修改资料</a>
+            <a class="button" href="/user/newdesigner">1元成为设计师</a>
+            {%elseif $data.userInfo.type == 1%}
+            <a class="button" href="###">修改资料</a>
+            <a class="button" href="/pages/upload_1">上传作品</a>
+            {%/if%}
+        {%else%}
+            {%if $data.data.followStatus == 1%}
+            <div class="button followed">取消关注</div>
+            {%else%}
+            <div class="button follow">关注</div>
+            {%/if%}
+        {%/if%}
     </div>
 </section>
 
 <section class="product">
-    <p>编辑/排序</p>
     <ul class="items clearfix">
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
+        {%foreach $data.data.itemList as $item%}
+            <li class="item">
+                <a class="pic-box" href="/pages/art?itemId={%$item.itemId%}">
+                    <img src="{%$item.pic%}"></img>
+                    <div class="pic-intro">
+                        <div class="opt">
+                            <span class="share"><i class="designer-icons-share"></i>{%$item.shareNum%}</span>
+                            <span class="like"><i class="designer-icons-like"></i>{%$item.collectNum%}</span>
+                        </div>
+                        <div class="deal">成交量<span>{%$item.saleNum%}</span></div>
                     </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
-        <li class="item">
-            <a class="pic-box" href="###">
-                <img src="/static/youin/images/product4.jpg"></img>
-                <div class="pic-intro">
-                    <div class="opt">
-                        <span class="share"><i class="designer-icons-share"></i>369</span>
-                        <span class="like"><i class="designer-icons-like"></i>2578</span>
-                    </div>
-                    <div class="deal">成交量<span>2578</span></div>
-                </div>
-            </a>
-            <a href="###" class="product-title">意大利米兰绚彩挂钟</a>
-            <a href="###" class="product-content">静音时尚艺术壁钟时钟石英钟，全静音设计，无闹钟和正点报时功能</a>
-        </li>
+                </a>
+                <a href="/pages/art?itemId={%$item.itemId%}" class="product-title">{%$item.itemName%}</a>
+                <a href="/pages/art?itemId={%$item.itemId%}" class="product-content">{%$item.summary%}</a>
+            </li>
+        {%/foreach%}
     </ul>
 </section>
+{%/block%}
+
+{%block name="js"%}
+<script type="text/javascript">
+    YY.context('uid','{%$data.data.uid%}');
+</script>
+<!-- build:js /static/youin/scripts/page/designer.js -->
+<script src="static/scripts/page/designer.js"></script>
+<!-- endbuild -->
 {%/block%}

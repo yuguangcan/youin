@@ -25,75 +25,35 @@
 	</ul>
 </section>
 <section class="activity">
-	<h2>1F 明星专场<a href="###">更多</a></h2>
+	<h2>1F 明星专场</h2>
 	<ul class="activity-list">
-		<li class="activity-item-top">
-			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg">
-				{%include file="youin/widget/productinfo.tpl"%}</a>
+		{%foreach $data.data.star as $item%}
+		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
+			<a href="{%$item.url%}">
+				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
+				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
 		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
+		{%/foreach%}
 	</ul>
-	<h2>2F 动画专场<a href="###">更多</a></h2>
+	<h2>2F 动画专场</h2>
 	<ul class="activity-list">
-		<li class="activity-item-top">
-			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
+		{%foreach $data.data.cartoon as $item%}
+		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
+			<a href="{%$item.url%}">
+				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
+				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
 		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
+		{%/foreach%}
 	</ul>
-	<h2>3F 新人专场<a href="###">更多</a></h2>
+	<h2>3F 新人专场</h2>
 	<ul class="activity-list">
-		<li class="activity-item-top">
-			<a href="###">
-				<img src="/static/youin/images/special-activity.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
+		{%foreach $data.data.new as $item%}
+		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
+			<a href="{%$item.url%}">
+				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
+				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
 		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
-		<li class="activity-item-bottom">
-			<a href="###">
-				<img src="/static/youin/images/product4.jpg">{%include file="youin/widget/productinfo.tpl"%}</a>
-		</li>
+		{%/foreach%}
 	</ul>
 </section>
 {%/block%}

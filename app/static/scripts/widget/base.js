@@ -4,6 +4,7 @@ YY.base = {
     	this._initGotop();
         this._initLogin();
         this._initUcenter();
+        this._initLike();
     },
     _initLogin : function(){
         function Login(){
@@ -88,6 +89,35 @@ YY.base = {
     			scrollTop : 0
     		},300);
     	});
+    },
+    _initLike : function(){
+        $('body').on('click','.m-productinfo .like',function(e){
+            e.preventDefault();
+            var _this = $(this),
+                parent = _this.parents('.m-productinfo'),
+                pid = parent.attr('data-pid');
+            $.post('/mall/collect/add?itemId='+pid,function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('like').addClass('liked').find('span').html('取消收藏');
+                }else{
+                    alert('收藏失败，请稍候再试');
+                }
+            });
+        }).on('click','.m-productinfo .liked',function(e){
+            e.preventDefault();
+            var _this = $(this),
+                parent = _this.parents('.m-productinfo'),
+                pid = parent.attr('data-pid');
+            $.post('/mall/collect/del?id='+pid,function(resp){
+                var data = JSON.parse(resp);
+                if(data && data.errno == 0){
+                    _this.removeClass('liked').addClass('like').find('span').html('收藏');
+                }else{
+                    alert('取消收藏失败，请稍候再试');
+                }
+            });
+        });
     }
     
 }

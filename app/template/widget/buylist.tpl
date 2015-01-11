@@ -1,8 +1,8 @@
 <ul class="buylist-nav clearfix">
-	<li {%if $selected == 1%}class="cur"{%/if%}>待付款(2)</li>
-	<li {%if $selected == 2%}class="cur"{%/if%}>待发货</li>
-	<li {%if $selected == 3%}class="cur"{%/if%}>待收货</li>
-	<li {%if $selected == 4%}class="cur"{%/if%}>待评价</li>
+	<li {%if $selected == 1%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=0">待付款{%if $selected == 1%}(<span class="pay-count">{%$data.data.total%}</span>){%/if%}</a></li>
+	<li {%if $selected == 2%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=1">待发货{%if $selected == 2%}({%$data.data.total%}){%/if%}</a></li>
+	<li {%if $selected == 3%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=2">待收货{%if $selected == 3%}(<span class="receive-count">{%$data.data.total%}</span>){%/if%}</a></li>
+	<li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li>
 </ul>
 
 <section class="buylist-list">
@@ -16,13 +16,13 @@
 	</div>
 	<ul class="buylist-product">
 		{%foreach $data.data.list as $item%}
-		<li class="clearfix">
+		<li class="clearfix" data-oid="{%$item.orderId%}">
 			<div class="detail">
 				<span class="num">订单编号：{%$item.orderId%}</span>
 				<ul>
 					{%foreach $item.detail as $subitem%}
 						<li class="clearfix">
-							<a href="###" class="name">
+							<a href="/mall/item/detail?itemId={%$subitem.itemId%}" target="_blank" class="name">
 								<img src="{%$subitem.pic%}">
 								<span>{%$subitem.itemName%}</span>
 							</a>
@@ -38,7 +38,7 @@
 					(运费{%$item.expressPrice%}元)
 				</div>
 			</div>
-			{%*0待付款  1待发货  2待收货  3待收货  4评价  5已评价 *%}
+			{%*0待付款  1待发货  2待收货  3待评价  4评价  5已评价 *%}
 			<div class="state">
 				{%if $item.status == 0 %}
 					<span>等待付款</span>
@@ -55,23 +55,22 @@
 					<ul>
 						<li>
 							<a href="###" class="btn pay-btn">评价</a>
-							<a href="###" class="btn-text cancel-btn">再次购买</a>
+							<a href="/mall/item/detail?itemId={%$subitem.itemId%}" target="_blank"  class="btn-text cancel-btn">再次购买</a>
 						</li>
 						<li>
 							<a href="###" class="btn pay-btn">评价</a>
-							<a href="###" class="btn-text cancel-btn">再次购买</a>
+							<a href="/mall/item/detail?itemId={%$subitem.itemId%}" target="_blank"  class="btn-text cancel-btn">再次购买</a>
 						</li>
 					</ul>
 				{%else%}
 					<div class="item-wrapper">
 						{%if $state == "pay" %}
-							<a href="###" class="btn pay-btn">付款</a>
-							<a href="###" class="btn-text cancel-btn">取消订单</a>
+							<a href="/pay/submit/buyitem?orderId={%$item.orderId%}" class="btn pay-btn">付款</a>
+							<a href="javascript:;" class="btn-text cancel-btn">取消订单</a>
 						{%elseif $state == "send"%}
-							<a href="###" class="btn send-btn">发货提醒</a>
-							<a href="###" class="btn-text cancel-btn">取消订单</a>
+							<a href="javascript:;" class="btn send-btn">发货提醒</a>
 						{%elseif $state == "receive"%}
-							<a href="###" class="btn receive-btn">确认收货</a>
+							<a href="javascript:;" class="btn receive-btn">确认收货</a>
 						{%/if%}
 					</div>
 				{%/if%}

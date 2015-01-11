@@ -67,14 +67,19 @@
     <li>
         <a href="/mall/item/detail?itemId=<%=list[i].itemId%>" target="_blank">
             <img src="<%=list[i].pic%>"></img>
-            <div class="m-productinfo">
+            <div class="m-productinfo" data-pid="<%=list[i].itemId%>">
                 <div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
                 <div class="opt share"><i class="common-icons-product-share"></i>分享</div>
-                <div class="opt like"><i class="common-icons-product-like"></i>收藏</div>
+                <% if(list[i].isCollect == 1) { %>
+                    <div class="opt like"><i></i>取消收藏</div>
+                <% }else{ %>
+                    <div class="opt like"><i></i>收藏</div>
+                <% } %>
+                
                 <div class="info">
                     <p class="title"><%=list[i].itemName%></p>
-                    <span class="share"><i class="common-icons-product-share-s"></i><%=list[i].shareNum%></span>
-                    <span class="like"><i class="common-icons-product-like-s"></i><%=list[i].collectNum%></span>
+                    <span><i class="common-icons-product-share-s"></i><%=list[i].shareNum%></span>
+                    <span><i class="common-icons-product-like-s"></i><%=list[i].collectNum%></span>
                     <p class="detail"><%=list[i].summary%></p>
                     <div class="user">
                         <img class="avatar" src="<%=list[i].avatar%>"><%=list[i].uname%>

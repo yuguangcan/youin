@@ -14,107 +14,23 @@
 
 {%block name="content"%}
 <ul class="following-followers-like clearfix">
-	<li><a href="###">已关注的设计师（37人）</a></li>
-	<li><a href="###">我的粉丝（37人）</a></li>
-	<li><a href="#like" class="active">我的收藏（28件）</a></li>
+	<li><a href="/follow/follow/getlist">已关注的设计师（{%$data.userInfo.followingNum%}人）</a></li>
+	<li><a href="/follow/follow/fanslist">我的粉丝（{%$data.userInfo.followedNum%}人）</a></li>
+	<li><a href="javascript:;" class="active">我的收藏（{%$data.data.total%}件）</a></li>
 </ul>
-<ul class="list-nav clearfix">
+<!-- <ul class="list-nav clearfix">
 	<li id="all" class="list-active">全部</li>
 	<li id="sale" >优惠</li>
-</ul>
-<ul class="product-list all clearfix">
-	<li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li>
-	<li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product3.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-</ul>
-<ul class="product-list sale clearfix">
-	<li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li>
-	<li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
-	</li><li>
-		<a href="###"><img src="/static/youin/images/product4.jpg">
-		{%include file="youin/widget/productinfo.tpl"%}
-		</a>
+</ul> -->
+<ul class="product-list clearfix">
+	{%foreach $data.data.list as $item%}
+		<li>
+		    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+		        <img src="{%$item.pic%}"></img>
+		        {%include file="youin/widget/productinfo.tpl" product=$item%}
+		    </a>
+		</li>
+	{%/foreach%}
 </ul>
 {%/block%}
 

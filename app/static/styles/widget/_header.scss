@@ -113,7 +113,8 @@
             position: absolute;
             left: 438px;
             bottom: 145px;
-            p{
+            a,p{  
+                display: block;
                 color: #333;
                 font-size: 14px;
                 margin-bottom: 8px;

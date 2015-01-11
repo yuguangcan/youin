@@ -14,85 +14,25 @@
 
 {%block name="content"%}
 <ul class="following-followers-like clearfix">
+	<li><a href="/follow/follow/getlist">已关注的设计师（{%$data.userInfo.followingNum%}人）</a></li>
+	<li><a href="javascript:;" class="active">我的粉丝（{%$data.userInfo.followedNum%}人）</a></li>
+	<li><a href="/mall/collect/getlist">我的收藏（{%$data.userInfo.collectNum%}件）</a></li>
+</ul>
+
+<ul class="user-list">
 	<li>
-		<a href="#following">已关注的设计师（37人）</a>
-	</li>
-	<li>
-		<a href="#followers" class="active">我的粉丝（37人）</a>
-	</li>
-	<li>
-		<a href="#like">我的收藏（28件）</a>
+		{%foreach $data.data.list as $item%}
+			{%include file="youin/widget/designer-item.tpl" designer=$item%}
+		{%/foreach%}
 	</li>
 </ul>
-<section class="user-list all clearfix">
-	<ul>
-		<li class="ds-photo">
-			<div class="photo-wrap">
-				<img src="/static/youin/images/ds-photo.jpg" class="photo"></div>
-		</li>
-		<li class="intro">
-			<p class="name">永歌</p>
-			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button on">关注</span>
-			<span>粉丝 2544</span>
-			<span>作品 44</span>
-		</li>
-		<li class="product">
-			<a href="###">
-				<img src="/static/youin/images/product3.jpg"><img src="/static/youin/images/product4.jpg"><img src="/static/youin/images/product3.jpg">{%include file="youin/widget/more.tpl"%}</a>
-		</li>
-	</ul>
-	<ul>
-		<li class="ds-photo">
-			<div class="photo-wrap">
-				<img src="/static/youin/images/ds-photo.jpg" class="photo"></div>
-		</li>
-		<li class="intro">
-			<p class="name">永歌</p>
-			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button on">关注</span>
-			<span>粉丝 2544</span>
-			<span>作品 44</span>
-		</li>
-		<li class="product">
-			<a href="###">
-				<img src="/static/youin/images/product3.jpg"><img src="/static/youin/images/product4.jpg"><img src="/static/youin/images/product3.jpg">{%include file="youin/widget/more.tpl"%}</a>
-		</li>
-	</ul>
-	<ul>
-		<li class="ds-photo">
-			<div class="photo-wrap">
-				<img src="/static/youin/images/ds-photo.jpg" class="photo"></div>
-		</li>
-		<li class="intro">
-			<p class="name">永歌</p>
-			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button on">关注</span>
-			<span>粉丝 2544</span>
-			<span>作品 44</span>
-		</li>
-		<li class="product">
-			<a href="###">
-				<img src="/static/youin/images/product3.jpg"><img src="/static/youin/images/product4.jpg"><img src="/static/youin/images/product3.jpg">{%include file="youin/widget/more.tpl"%}</a>
-		</li>
-	</ul>
-	<ul class="last-item">
-		<li class="ds-photo">
-			<div class="photo-wrap">
-				<img src="/static/youin/images/ds-photo.jpg" class="photo"></div>
-		</li>
-		<li class="intro">
-			<p class="name">永歌</p>
-			<p>不在逆袭就在逆袭的路上</p>
-			<span class="attent-button on">关注</span>
-			<span>粉丝 2544</span>
-			<span>作品 44</span>
-		</li>
-		<li class="product">
-			<a href="###">
-				<img src="/static/youin/images/product3.jpg"><img src="/static/youin/images/product4.jpg"><img src="/static/youin/images/product3.jpg">{%include file="youin/widget/more.tpl"%}</a>
-		</li>
-	</ul>
-</section>
-{%include file="youin/widget/page.tpl"%}
+<!-- {%include file="youin/widget/page.tpl"%} -->
+
+{%/block%}
+
+{%block name="js"%}
+
+<!-- build:js /static/youin/scripts/page/follow.js -->
+<script src="static/scripts/page/follow.js"></script>
+<!-- endbuild -->
 {%/block%}
