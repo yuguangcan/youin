@@ -21,14 +21,11 @@
       }
 }
 .user-list{
-    ul{
-        li{
-            border-bottom: 1px solid #20334a;
-            &:last-child{
-                border-bottom:none;
-            }
+    li{
+        border-bottom: 1px solid #20334a;
+        &:last-child{
+            border-bottom:none;
         }
-        
     }
 }
 

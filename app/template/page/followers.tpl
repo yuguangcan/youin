@@ -20,11 +20,13 @@
 </ul>
 
 <ul class="user-list">
+	
+	{%foreach $data.data.list as $item%}
 	<li>
-		{%foreach $data.data.list as $item%}
-			{%include file="youin/widget/designer-item.tpl" designer=$item%}
-		{%/foreach%}
+		{%include file="youin/widget/designer-item.tpl" designer=$item%}
 	</li>
+	{%/foreach%}
+	
 </ul>
 <!-- {%include file="youin/widget/page.tpl"%} -->
 

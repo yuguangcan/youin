@@ -105,7 +105,7 @@
                     </a>
                 </li>
                 <li class="divide common-icons-nav-divide"></li>
-                <li><a href="###"><i class="common-icons-nav-designer"></i><p>设计师</p></a></li>
+                <li {%if $select=="designer"%}class="cur"{%/if%}><a href="/user/designerlist"><i class="common-icons-nav-designer"></i><p>设计师</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="hot"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-hot"></i><p>热卖</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
