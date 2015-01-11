@@ -36,23 +36,23 @@
 				<div class="state">状态</div>
 			</li>
 			<li>
-				<div class="time">2014年10月14日 18:36</div>
-				<div class="num">002312</div>
-				<div class="count">3</div>
-				<div class="price">120</div>
-				<div class="state">预计发货10月20日</div>
+				<div class="time">{%$data.data.order.createTime%}</div>
+				<div class="num">{%$data.data.order.orderId%}</div>
+				<div class="count">{%$data.data.order.totalNum%}</div>
+				<div class="price">{%$data.data.order.totalPrice%}元</div>
+				<div class="state">预计发货{%$data.data.order.createTime%}</div>
 			</li>
 		</ul>
 		<div class="product-list clearfix">
-			<a href="###"><img src="/static/youin/images/product5.jpg"></a>
-			<a href="###"><img src="/static/youin/images/product5.jpg"></a>
-			<a href="###"><img src="/static/youin/images/product5.jpg"></a>
+			{%foreach $data.data.order.picList as $item %}
+				<a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank"><img src="{%$item.pic%}"></a>
+			{%/foreach%}
 		</div>
 	</section>
 	<div class="bottom"></div>
 
 	<div class="clearfix">
-		<a href="javascrit:;" id="continue">继续购物</a>
+		<a href="/pages/index" id="continue">继续购物</a>
 	</div>
 
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}

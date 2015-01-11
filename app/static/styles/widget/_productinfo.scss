@@ -26,13 +26,18 @@
 	}
 	.info{
 		position: absolute;
-		margin: 0 18px;
+		padding: 0 18px;
+		width: 100%;
+		box-sizing: border-box;
 		left: 0;
 		bottom: 16px;
 		.title{
 			font-size: 20px;
 			color: #fff;
 			margin-bottom: 5px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 		i{
 			vertical-align: top;
@@ -50,6 +55,7 @@
 			line-height: 1.5;
 			height: 42px;
 			overflow: hidden;
+			word-break: break-all;
 		}
 		.user{
 			font-size: 14px;

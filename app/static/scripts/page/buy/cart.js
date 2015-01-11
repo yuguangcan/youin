@@ -1,4 +1,4 @@
-YY.indexPage = {
+YY.cartPage = {
     init:function(){
         $('.cart-list li').each(function(index,item){
     		var itemObj = $(item),
@@ -9,7 +9,7 @@ YY.indexPage = {
 	        	del = itemObj.find('.del a'),
 	        	price = itemObj.attr('data-price');
 	        select.on('change',function(){
-	        	YY.indexPage.calculate();
+	        	YY.cartPage.calculate();
 	        });
 	        addMinus.find('.minus').click(function(){
 	            var value = parseInt(buyCount.val());
@@ -18,13 +18,13 @@ YY.indexPage = {
 	            }
 	        	buyCount.val(value-1);
 	        	sum.text(buyCount.val()*price);
-	        	YY.indexPage.calculate();
+	        	YY.cartPage.calculate();
                 setNum(itemObj.attr('data-cartid'),buyCount.val());
 	        });
 	        addMinus.find('.add').click(function(){
 	        	buyCount.val(parseInt(buyCount.val())+1);
 	        	sum.text(buyCount.val()*price);
-	        	YY.indexPage.calculate();
+	        	YY.cartPage.calculate();
                 setNum(itemObj.attr('data-cartid'),buyCount.val());
 	        });
             buyCount.on('change',function(){
@@ -39,7 +39,7 @@ YY.indexPage = {
                 var id = $(this).parents('li').attr('data-cartid');
                 deleteItem(id,function(){
                     itemObj.remove();
-                    YY.indexPage.calculate();
+                    YY.cartPage.calculate();
                 });
                 
 	        });
@@ -52,7 +52,7 @@ YY.indexPage = {
     				select.get(0).checked = true;
     			}
     		});
-    		YY.indexPage.calculate();
+    		YY.cartPage.calculate();
     	});
 
     	$('#delete-select').click(function(){
@@ -64,7 +64,7 @@ YY.indexPage = {
                     });
     			}
     		});
-    		YY.indexPage.calculate();
+    		YY.cartPage.calculate();
     	});
 
         function setNum(id,num){
@@ -97,6 +97,10 @@ YY.indexPage = {
                     ids.push($(item).attr('data-cartid'));
                 }
             });
+            if(ids.length == 0){
+                alert('请选择商品');
+                return;
+            }
             $('#ids').val(ids.join(','));
             $('#cart-form').submit();
         });
@@ -117,5 +121,5 @@ YY.indexPage = {
     }
 }
 $(function(){
-    YY.indexPage.init();
+    YY.cartPage.init();
 });

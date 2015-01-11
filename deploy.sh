@@ -8,10 +8,10 @@ cp -r dist/template/*  /Users/yuguangcan/webserver/php/ci/templates/
 cp -r dist/static/*  /Users/yuguangcan/project/youyin/svn/static/
 cp -r dist/template/*  /Users/yuguangcan/project/youyin/svn/application/views/templates/
 
-# cd /Users/yuguangcan/project/youyin/svn
-# svn ci -m" "
-# svn st|awk '{print $2}'|xargs svn add
-# svn ci -m" "
+cd /Users/yuguangcan/project/youyin/svn
+svn ci -m" "
+svn st|awk '{print $2}'|xargs svn add
+svn ci -m" "
 
 # domain="root@114.215.156.131"
 

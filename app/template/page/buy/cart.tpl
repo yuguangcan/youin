@@ -33,8 +33,10 @@
 				<li data-price="{%$item.price%}" data-cartid="{%$item.id%}">
 					<div class="name">
 						<input type="checkbox" class="select"></input>
-						<img src="{%$item.pic%}">
-						<span>{%$item.name%}</span>
+						<a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+							<img src="{%$item.pic%}">
+							<span>{%$item.itemName%}</span>
+						</a>
 					</div>
 					<div class="price">
 						￥{%$item.price%}
@@ -64,7 +66,7 @@
 			<a href="javascript:;" id="submit">提交订单</a>
 			<div class="check">
 				<span>共<b id="total-count">0</b>件商品</span>
-				<span>订单总计(运费8元)</span>
+				<span>订单总计</span>
 				<span id="total-price">￥<b>0</b></span>
 			</div>
 			<form action="/mall/cart/ready" methd="post" id="cart-form">

@@ -123,7 +123,7 @@ YY.indexPage = {
                 }
                 colorList.each(function(index,item){
                     if(!_cid[$(item).attr('data-colorid')]){
-                        $(item).addClass('nostock');
+                        $(item).removeClass('cur').addClass('nostock');
                     }else{
                         $(item).removeClass('nostock');
                     }
@@ -157,7 +157,7 @@ YY.indexPage = {
                 }
                 sizeList.each(function(index,item){
                     if(!_sid[$(item).attr('data-sizeid')]){
-                        $(item).addClass('nostock');
+                        $(item).removeClass('cur').addClass('nostock');
                     }else{
                         $(item).removeClass('nostock');
                     }

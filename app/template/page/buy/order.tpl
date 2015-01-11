@@ -24,30 +24,32 @@
 		<h2>填写并核对订单信息</h2>
 		<div class="order-item receiver">
 			<h3>收货人信息<a href="javascript:;">修改</a></h3>
-			<div>
-				<span><input type="text" class='name checkEmpty' data-alert='请输入您的姓名' name="receiver" placeholder="姓名"/></span>
-				<span><input type="text" class='phone checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话"/></span>
+			<div class="name-tel">
+				<input type="text" class='input checkEmpty' data-alert='请输入您的姓名' name="receiver" placeholder="姓名"/>
+				<input type="text" class='input checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话"/>
 			</div>
-			<div>
-				<select id='expressSelector' name="provinceId">
-					<option value="0">请选择</option>
+			<div class="address">
+				<select id='province' name="provinceId" class="select">
+					<option value="0" selected="selected">请选择</option>
 					{%foreach $data.data.expressInfo as $item%}
 						<option value='{%$item.provinceId%}' data-price="{%$item.expressPrice%}" data-express='{%$item.expressName%}'>{%$item.provinceName%}</option>
 					{%/foreach%}
 				</select>
-				<input type="text" class='address1 checkEmpty' name="address1" data-alert='请输入您的具体位置' placeholder="朝阳区"/>
-				<input type="text" class='address2 checkEmpty' name="address2" data-alert='请输入您的具体位置' placeholder="望京SOHO"/>
+				<select id='city' name="cityId" class="select">
+					<option value="0" selected="selected">请选择</option>
+				</select>
+				<input type="text" class='input checkEmpty' name="address" data-alert='请输入您的详细地址' placeholder="请输入详细地址"/>
 			</div>
 		</div>
 		<input type='hidden' name="ids" value="{%$data.params.ids%}"/>
 		<div class="order-item payment">
 			<h3>支付方式<a href="javascript:;">修改</a></h3>
-			<div><span>在线支付</span></div>
+			<span>在线支付</span>
 		</div>
 		<div class="order-item deliver">
 			<h3>物流选择<a href="javascript:;">修改</a></h3>
 			<ul class="clearfix">
-                <li class="cur" id="expressName">中通速递<i></i></li>
+                <li class="cur" id="expressName"><b>中通速递</b><i></i></li>
             </ul>
 		</div>
 		<div class="order-item product">
@@ -61,10 +63,10 @@
 				</li>
 				{%foreach $data.data.list as $item%}
                 <li>
-                	<div class="name">
+                	<a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank" class="name">
             			<img src="{%$item.pic%}">
             			<span>{%$item.itemName%}</span>
-            		</div>
+            		</a>
             		<div class="price">
             			￥{%$item.price%}
             		</div>
@@ -82,8 +84,8 @@
 			<a href="javascript:;" id="submit" type="submit">提交订单</a>
 			<div class="check">
 				<span>共{%$data.data.totalNum%}件商品</span>
-				<span id="order-express">订单总计(含运费0元)</span>
-				<span class="total-price" data-total={%$data.data.totalPrice%}>￥{%$data.data.totalPrice%}</span>
+				<span id="order-express">订单总计(含运费<b>0</b>元)</span>
+				<span class="total-price" data-total={%$data.data.totalPrice%}>￥<b>{%$data.data.totalPrice%}</b></span>
 			</div>
 		</div>
 	</section>
