@@ -20,6 +20,7 @@ YY.base = {
                 _self.showLogin();
             });
             $('#login-submit').click(function(e){
+                e.preventDefault();
                 var form = $(this).parent();
                 $.post('/login/checkin',{
                     account : form.find('input[name="account"]').val(),
@@ -29,7 +30,22 @@ YY.base = {
                 });
             });
             $('#register-submit').click(function(e){
-                $(this).parent().submit();
+                e.preventDefault();
+                var form = $(this).parent();
+                $.post('/login/register',{
+                    account : form.find('input[name="account"]').val(),
+                    password : form.find('input[name="password"]').val(),
+                    password2 : form.find('input[name="password2"]').val(),
+                    mail : form.find('input[name="mail"]').val()
+                },function(resp){
+                    var data = JSON.parse(resp);
+                    if(data && data.errno == 0){
+                        alert('注册成功，请登录');
+                        _self.showLogin();
+                    }else{
+                        alert('注册失败，请稍候重试');
+                    }
+                });
             });
         }
         Login.prototype.show = function(){
