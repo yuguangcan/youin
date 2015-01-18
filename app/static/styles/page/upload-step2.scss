@@ -2,14 +2,14 @@
 
 .content-inner{
 	width: 672px;
-	margin: 55px auto 0;
+	margin: 40px auto 0;
 }
 .upload-nav{
 	width: 672px;
-	padding-bottom: 25px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #49c0f5;
 	span{
-		font-size: 30px;
+		font-size: 20px;
 		color: #5680b0;
 		cursor: default;
 		&.cur{
@@ -47,7 +47,7 @@
 .art-list{
 	padding: 25px 0;
 	.title{
-		font-size: 24px;
+		font-size: 14px;
 		color: #5680b0;
 		text-align: left;
 		margin-bottom: 25px;
@@ -71,10 +71,10 @@
 			.upload{
 				a{
 					width: 310px;
-					height: 80px;
-					line-height: 80px;
+					height: 60px;
+					line-height: 60px;
 					color: #fff;
-					font-size: 24px;
+					font-size: 14px;
 					text-align: center;
 					background: #00c0f2;
 					display: block;
@@ -95,12 +95,12 @@
 				display: none;
 				a{
 					width: 310px;
-					height: 80px;
-					line-height: 80px;
+					height: 60px;
+					line-height: 60px;
 					color: #fff;
-					font-size: 24px;
+					font-size: 14px;
 					text-align: center;
-					background: #119fc4;
+					background: #6c4ecc;
 					margin-bottom: 20px;
 					display: block;
 					@include border-radius(5px);
@@ -124,10 +124,10 @@
 }
 #submit{
 	width: 160px;
-	height: 80px;
-	line-height: 80px;
+	height: 60px;
+	line-height: 60px;
 	color: #fff;
-	font-size: 24px;
+	font-size: 14px;
 	text-align: center;
 	background: #48be53;
 	display: inline-block;
@@ -140,8 +140,8 @@
 #back{
 	float: right;
 	margin-right: 40px;
-	height: 80px;
-	line-height: 80px;
+	height: 60px;
+	line-height: 60px;
 	color: #00c0f2;
-	font-size: 24px;
+	font-size: 20px;
 }

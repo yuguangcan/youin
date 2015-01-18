@@ -1,7 +1,7 @@
 YY.indexPage = {
     init:function(){
         var title = $('#title'),
-        	desc = $('#description'),
+        	summary = $('#summary'),
         	taglist = $('#taglist li'),
             tagId = $('#tagid');
         title.on('focus',function(){
@@ -9,7 +9,7 @@ YY.indexPage = {
         }).on('blur',function(){
         	$(this).removeClass('focus');
         });
-        desc.on('focus',function(){
+        summary.on('focus',function(){
         	$(this).addClass('focus');
         }).on('blur',function(){
         	$(this).removeClass('focus');

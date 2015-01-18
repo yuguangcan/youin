@@ -292,7 +292,7 @@ $product-icons-layout: smart;
 		}
 	}
 }
-.relate-arts{
+.relate{
 	margin: 25px 0 35px;
 	h2{
 		background: #1d2c42;
@@ -301,14 +301,15 @@ $product-icons-layout: smart;
 		height: 50px;
 		line-height: 50px;
 		padding: 0 18px;
-		display: inline-block;
+		border-bottom: 1px solid #2a425e;
 	}
 	ul{
 		padding: 0 13px;
 		background: #1d2c42;
+		padding-bottom: 30px;
 		li{
 			float: left;
-			margin: 30px 15px;
+			margin: 30px 15px 0;
 			@include box-shadow(2px 2px 4px rgba(0,0,0,0.5));
 			img{
 				display: block;
@@ -343,7 +344,7 @@ $product-icons-layout: smart;
 		height: 50px;
 		line-height: 50px;
 		padding: 0 18px;
-		display: inline-block;
+		border-bottom: 1px solid #2a425e;
 	}
 	div{
 		padding: 13px;
@@ -354,8 +355,4 @@ $product-icons-layout: smart;
 		}
 	}
 }
-.m-related-product{
-	margin-top: 55px;
-}
-
 

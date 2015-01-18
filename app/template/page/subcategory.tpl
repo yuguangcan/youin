@@ -17,12 +17,19 @@
     <ul class="sub-category-nav clearfix">
         <li><a href="/pages/index">首页</a></li>
         <li>></li>
-        <li><a href="/pages/category?pageId={%$data.data.pageId%}">{%$data.data.pageName%}</a></li>
+        <li><a href="/pages/category?pageId={%$data.data.category.id%}">{%$data.data.category.name%}</a></li>
         <li>></li>
-        <li><a href="javascript:;">{%$data.data.cName%}</a></li>
+        {%if $data.data.category.sub.sub %}
+        <li><a href="/pages/category?pageId={%$data.data.category.id%}#cid{%$data.data.category.sub.sub.cid%}">{%$data.data.category.sub.name%}</a></li>
+        <li>></li>
+        <li><a href="javascript:;">{%$data.data.category.sub.sub.name%}</a></li>
+        {%else%}
+        <li><a href="javascript:;">{%$data.data.category.sub.name%}</a></li>
+        {%/if%}
     </ul>
 
     <div class="filter">
+        {%if $data.data.category.id == 2%}
         <div class="clearfix">
             <span class="label">价格：</span>
             <ul class="price clearfix">
@@ -34,6 +41,7 @@
                 <li data-min="300" data-max="1000000">￥300以上</li>
             </ul>
         </div>
+        {%/if%}
         <div class="clearfix">
             <span class="label">风格：</span>
             <ul class="style clearfix">
@@ -48,6 +56,7 @@
     <ul class="sort clearfix">
         <li class="cur down" data-type="count">按销量排序<i></i></li>
         <li class="down" data-type="price">按价格排序<i></i></li>
+        <li class="down" data-type="date">最近更新<i></i></li>
     </ul>
 
     <ul class="product-list clearfix">

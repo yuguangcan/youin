@@ -49,8 +49,8 @@
 						<div class="clearfix">
 							<span id="upload-file">img.img</span>
 							<span id="upload-delete">删除 X</span>
-							<input type="hidden" id="upload-file-hidden" name="pic"></input>
 						</div>
+						<input type="hidden" id="upload-file-hidden" name="pic"></input>
 					</div>
 				</div>
 				<div class="input-item clearfix">

@@ -6,21 +6,21 @@
         <ul class="detail">
             <li>
                 <ul class="nav">
-                    <li><a href="###">关于有印</a></li>
+                    <li><a href="/pages/about#about" target="_blank">关于有印</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">加入有印</a></li>
+                    <li><a href="/pages/about#join" target="_blank">加入有印</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">联系有印</a></li>
+                    <li><a href="/pages/about#contact" target="_blank">联系有印</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">购物指南</a></li>
+                    <li><a href="/pages/about#guide" target="_blank">购物指南</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">支付方式</a></li>
+                    <li><a href="/pages/about#pay" target="_blank">支付方式</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">配送方式</a></li>
+                    <li><a href="/pages/about#deliver" target="_blank">配送方式</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">售后服务</a></li>
+                    <li><a href="/pages/about#aftersale" target="_blank">售后服务</a></li>
                     <li class="divide">|</li>
-                    <li><a href="###">帮助信息</a></li>
+                    <li><a href="/pages/about#help" target="_blank">帮助信息</a></li>
                 </ul>
             </li>
             <li class="media">

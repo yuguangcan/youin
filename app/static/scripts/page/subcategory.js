@@ -54,7 +54,13 @@ YY.subcategoryPage = {
     		}else{
     			type = 3;
     		}
-    	}
+    	}else if(_type == "date"){
+            if(_isDown){
+                type = 4;
+            }else{
+                type = 5;
+            }
+        }
     	priceMin = this.priceList.filter('.cur').attr('data-min');
     	priceMax = this.priceList.filter('.cur').attr('data-max');
     	this.styleList.filter('.cur').each(function(){

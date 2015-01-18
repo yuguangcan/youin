@@ -12,6 +12,7 @@ YY.base = {
             this.loginPopup = $('#login-popup');
             this.loginLogin = $('#login-login');
             this.loginRegister = $('#login-register');
+            this.loginIntro = $('#login-intro-designer');
             var _self = this;
             this.loginLogin.find('h2 a').click(function(){
                 _self.showRegester();
@@ -47,6 +48,9 @@ YY.base = {
                     }
                 });
             });
+            $('#login-intro-designer a').click(function(){
+                _self.showRegester();
+            });
         }
         Login.prototype.show = function(){
             YY.misc.showPopup(this.loginPopup,this.loginOverlay);
@@ -56,17 +60,28 @@ YY.base = {
         }
         Login.prototype.showLogin = function(){
             this.loginRegister.hide();
+            this.loginIntro.hide();
             this.loginLogin.show();
         }
         Login.prototype.showRegester = function(){
             this.loginLogin.hide();
+            this.loginIntro.hide();
             this.loginRegister.show();
+        }
+        Login.prototype.showIntro = function(){
+            this.loginLogin.hide();
+            this.loginRegister.hide();
+            this.loginIntro.show();
         }
 
         var loginPopup = new Login();
         $('#login').click(function(){
             loginPopup.show();
             loginPopup.showLogin();
+        });
+        $('#become-designer').click(function(){
+            loginPopup.show();
+            loginPopup.showIntro();
         });
     },
     _initUcenter : function(){
@@ -88,7 +103,15 @@ YY.base = {
             e.preventDefault();
             e.stopPropagation();
     		location.href = $(this).data('href');
-    	});
+    	}).on('mouseenter',function(e){
+            if($(this).find('.sub-sub-nav').length > 0){
+                $(this).find('.sub-sub-nav').show();
+            }
+        }).on('mouseleave',function(e){
+            if($(this).find('.sub-sub-nav').length > 0){
+                $(this).find('.sub-sub-nav').hide();
+            }
+        });
     },
     _initGotop : function(){
     	var gotop = $('#gotop'),

@@ -2,15 +2,15 @@
 
 .content-inner{
 	width: 755px;
-	margin: 55px auto 0;
+	margin: 40px auto 0;
 }
 .upload-nav{
 	width: 672px;
 	margin-left: 83px;
-	padding-bottom: 25px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #49c0f5;
 	span{
-		font-size: 30px;
+		font-size: 20px;
 		color: #5680b0;
 		cursor: default;
 		&.cur{
@@ -26,13 +26,13 @@
 		line-height: 80px;
 		width: 80px;
 		color: #fff;
-		font-size: 24px;
+		font-size: 20px;
 	}
 	&>input{
-		height: 46px;
+		height: 30px;
 		width: 638px;
 		border: 2px solid #fff;
-		font-size: 24px;
+		font-size: 14px;
 		color: #333;
 		padding: 15px;
 		float: right;
@@ -43,9 +43,9 @@
 	}
 	textarea{
 		width: 638px;
-		height: 156px;
+		height: 130px;
 		border: 2px solid #fff;
-		font-size: 24px;
+		font-size: 14px;
 		color: #333;
 		padding: 15px;
 		float: right;
@@ -84,11 +84,11 @@
 		float: right;
 		width: 672px;
 		a{
-			width: 197px;
-			height: 80px;
-			line-height: 80px;
+			width: 170px;
+			height: 60px;
+			line-height: 60px;
 			color: #fff;
-			font-size: 24px;
+			font-size: 14px;
 			text-align: center;
 			background: #00c0f2;
 			display: block;
@@ -110,13 +110,13 @@
 		width: 672px;
 		display: none;
 		a{
-			width: 197px;
-			height: 80px;
-			line-height: 80px;
+			width: 170px;
+			height: 60px;
+			line-height: 50px;
 			color: #fff;
-			font-size: 24px;
+			font-size: 14px;
 			text-align: center;
-			background: #119fc4;
+			background: #6c4ecc;
 			display: inline-block;
 			@include border-radius(5px);
 		}
@@ -175,10 +175,10 @@
 }
 #submit{
 	width: 160px;
-	height: 80px;
-	line-height: 80px;
+	height: 60px;
+	line-height: 60px;
 	color: #fff;
-	font-size: 24px;
+	font-size: 14px;
 	text-align: center;
 	background: #48be53;
 	display: inline-block;

@@ -88,7 +88,7 @@
 	</section>
 
 	{%if $data.data.related %}
-	<section class="relate-arts">
+	<section class="relate">
 		<h2>相关艺术品</h2>
 		<ul class="clearfix">
 			{%foreach $data.data.related.list as $item%}
@@ -111,6 +111,20 @@
 	</section>
 
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
+
+	<section class="relate">
+		<h2>相关购买</h2>
+		<ul class="clearfix">
+			{%foreach $data.data.recommendInfo.list as $item%}
+				<li>
+				    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+				        <img src="{%$item.pic%}"></img>
+				        {%include file="youin/widget/productinfo.tpl" product=$item%}
+				    </a>
+				</li>
+			{%/foreach%}
+		</ul>
+	</section>
 
 {%/block%}
 

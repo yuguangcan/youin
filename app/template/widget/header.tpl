@@ -5,6 +5,9 @@
             <li>
                 <a href="javascript:;" class="avatar" id="login"></i>登录/注册</a>
             </li>
+            <li>
+                <a href="javascript:;" class="avatar" id="become-designer"></i>成为设计师</a>
+            </li>
             {%else%}
             <li id="ucenter">
                 <a href="javascript:;" class="avatar"><img src="{%$data.userInfo.avatar%}"></i>{%$data.userInfo.uname%}</a>
@@ -77,7 +80,14 @@
                         <i class="common-icons-nav-dress"></i><p>{%$data.data.menu[1].name%}</p><span class="common-icons-nav-arrow"></span>
                         <div class="sub-nav">
                         {%foreach $data.data.menu[1].sub as $item%}
-                            <div data-href="/pages/subcategory?cid={%$item.cid%}" class="sub-nav-href">{%$item.name%}</div>
+                            <div data-href="/pages/category?pageId={%$data.data.menu[1].pageId%}#cid{%$item.sub[0].cid%}" class="sub-nav-href">
+                                {%$item.name%}<b class="common-icons-nav-arrow-right"></b>
+                                <div class="sub-sub-nav">
+                                    {%foreach $item.sub as $itemsub%}
+                                        <div data-href="/pages/subcategory?cid={%$itemsub.cid%}" class="sub-nav-href">{%$itemsub.name%}</div>
+                                    {%/foreach%}
+                                </div>
+                            </div>
                         {%/foreach%}
                         </div>
                     </a>
@@ -99,7 +109,14 @@
                         <i class="common-icons-nav-shell"></i><p>{%$data.data.menu[3].name%}</p><span class="common-icons-nav-arrow"></span>
                         <div class="sub-nav">
                         {%foreach $data.data.menu[3].sub as $item%}
-                            <div data-href="/pages/subcategory?cid={%$item.cid%}" class="sub-nav-href">{%$item.name%}</div>
+                            <div data-href="/pages/category?pageId={%$data.data.menu[3].pageId%}#cid{%$item.sub[0].cid%}" class="sub-nav-href">
+                                {%$item.name%}<b class="common-icons-nav-arrow-right"></b>
+                                <div class="sub-sub-nav">
+                                    {%foreach $item.sub as $itemsub%}
+                                        <div data-href="/pages/subcategory?cid={%$itemsub.cid%}" class="sub-nav-href">{%$itemsub.name%}</div>
+                                    {%/foreach%}
+                                </div>
+                            </div>
                         {%/foreach%}
                         </div>
                     </a>
@@ -107,7 +124,7 @@
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="designer"%}class="cur"{%/if%}><a href="/user/designerlist"><i class="common-icons-nav-designer"></i><p>设计师</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
-                <li {%if $select=="hot"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-hot"></i><p>热卖</p></a></li>
+                <li {%if $select=="hot"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-hot"></i><p>YOUSHOW</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="special"%}class="cur"{%/if%}><a href="/pages/special"><i class="common-icons-nav-special"></i><p>专场</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
