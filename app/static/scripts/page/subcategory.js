@@ -48,7 +48,7 @@ YY.subcategoryPage = {
     		}else{
     			type = 1;
     		}
-    	}else if(_type == "price"){
+    	}else if(_type == "like"){
     		if(_isDown){
     			type = 2;
     		}else{

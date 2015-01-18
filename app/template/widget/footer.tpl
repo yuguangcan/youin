@@ -6,7 +6,7 @@
         <ul class="detail">
             <li>
                 <ul class="nav">
-                    <li><a href="/pages/about#about" target="_blank">关于有印</a></li>
+                    <li><a href="/pages/about" target="_blank">关于有印</a></li>
                     <li class="divide">|</li>
                     <li><a href="/pages/about#join" target="_blank">加入有印</a></li>
                     <li class="divide">|</li>

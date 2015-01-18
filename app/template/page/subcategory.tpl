@@ -55,7 +55,7 @@
 
     <ul class="sort clearfix">
         <li class="cur down" data-type="count">按销量排序<i></i></li>
-        <li class="down" data-type="price">按价格排序<i></i></li>
+        <li class="down" data-type="like">按收藏排序<i></i></li>
         <li class="down" data-type="date">最近更新<i></i></li>
     </ul>
 
