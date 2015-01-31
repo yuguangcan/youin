@@ -1,8 +1,9 @@
 <ul class="buylist-nav clearfix">
-	<li {%if $selected == 1%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=0">待付款{%if $selected == 1%}(<span class="pay-count">{%$data.data.total%}</span>){%/if%}</a></li>
-	<li {%if $selected == 2%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=1">待发货{%if $selected == 2%}({%$data.data.total%}){%/if%}</a></li>
-	<li {%if $selected == 3%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=2">待收货{%if $selected == 3%}(<span class="receive-count">{%$data.data.total%}</span>){%/if%}</a></li>
-	<li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li>
+	<li {%if $selected == 1%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=0#designer-nav">待付款{%if $selected == 1%}(<span class="pay-count">{%$data.data.total%}</span>){%/if%}</a></li>
+	<li {%if $selected == 2%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=1#designer-nav">待发货{%if $selected == 2%}({%$data.data.total%}){%/if%}</a></li>
+	<li {%if $selected == 3%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=2#designer-nav">待收货{%if $selected == 3%}(<span class="receive-count">{%$data.data.total%}</span>){%/if%}</a></li>
+	<li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3#designer-nav">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li>
+	<li {%if $selected == 5%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=4#designer-nav">已完成{%if $selected == 5%}({%$data.data.total%}){%/if%}</a></li>
 </ul>
 
 <section class="buylist-list">
@@ -12,7 +13,9 @@
 		<div class="count">数量</div>
 		<div class="total">应付金额</div>
 		<div class="state">订单状态</div>
+		{%if $state != 'done'%}
 		<div class="opt">操作</div>
+		{%/if%}
 	</div>
 	<ul class="buylist-product">
 		{%foreach $data.data.list as $item%}
@@ -38,7 +41,7 @@
 					(运费{%$item.expressPrice%}元)
 				</div>
 			</div>
-			{%*0待付款  1待发货  2待收货  3待评价  4评价  5已评价 *%}
+			{%*0待付款  1待发货  2待收货  3待评价  4已完成 *%}
 			<div class="state">
 				{%if $item.status == 0 %}
 					<span>等待付款</span>
@@ -47,9 +50,12 @@
 				{%elseif $item.status == 2%}
 					<span>等待收货</span>
 				{%elseif $item.status == 3%}
+					<span>待评价</span>
+				{%elseif $item.status == 4%}
 					<span>已完成</span>
 				{%/if%}
 			</div>
+			{%if $state != 'done'%}
 			<div class="opt">
 				{%if $state == "evaluate"%}
 					<ul>
@@ -75,6 +81,7 @@
 					</div>
 				{%/if%}
 			</div>
+			{%/if%}
 		</li>
 		{%/foreach%}
 	</ul>

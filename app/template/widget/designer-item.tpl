@@ -5,7 +5,7 @@
 		</a>
 	</div>
 	<div class="intro" data-uid="{%$designer.uid%}">
-		<p class="name">{%$designer.uname%}</p>
+		<a class="name" href="/user/card?uid={%$designer.uid%}" target="_blank">{%$designer.uname%}</a>
 		<p>{%$designer.mark%}</p>
 		{%if $designer.type == 1%}
 			{%if $designer.followStatus == 1 %}
@@ -14,10 +14,10 @@
 			<span class="follow-btn follow">关注</span>
 			{%/if%}
 		{%/if%}
-		
 		<span>粉丝 <b>{%$designer.followedNum%}</b></span>
 		<span>作品 {%$designer.itemNum%}</span>
 	</div>
+	{%if $type != 'followers'%}
 	<div class="product">
 		<a href="/user/card?uid={%$designer.uid%}" target="_blank">
 			{%foreach $designer.itemList as $pic %}
@@ -26,5 +26,6 @@
 			{%include file="youin/widget/more.tpl"%}
 		</a>
 	</div>
+	{%/if%}
 </div>
 

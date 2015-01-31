@@ -48,7 +48,7 @@ YY.indexPage = {
         	                    _self.upload.hide();
         	                    _self.uploadBtn.html('上传一张图');
         	                    _self.uploadFileName.html(imageName);
-        	                    _self.uploadFileName.attr('data-imgid',resp.pic);
+        	                    _self.uploadFileName.attr('data-imgid',resp.picSet);
         	                    _self.uploadImg.attr('src',resp.pic);
         	                    _self.uploadDone.show();
         	                }else{
@@ -102,7 +102,7 @@ YY.indexPage = {
     		$('.upload-list li').each(function(){
     			_value.push({
     				productId : $(this).attr('data-pid'),
-    				pic : $(this).find('.upload-file').attr('data-imgid')
+    				picSet : $(this).find('.upload-file').attr('data-imgid')
     			});
     		});
     		productValue.val(JSON.stringify(_value));

@@ -7,17 +7,20 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/youin/styles/page/like.css -->
-<link rel="stylesheet" href="/static/styles/page/like.css"/>
+<!-- build:css(.tmp) /static/youin/styles/page/ucenter/like.css -->
+<link rel="stylesheet" href="/static/styles/page/ucenter/like.css"/>
 <!-- endbuild -->
 {%/block%}
 
+{%block name="header"%}
+    {%include file="youin/widget/header.tpl" select="designer"%}
+
+    {%include file="youin/widget/designer-header.tpl"%}
+
+    {%include file="youin/widget/designer-nav.tpl" select="like"%}
+{%/block%}
+
 {%block name="content"%}
-<ul class="following-followers-like clearfix">
-	<li><a href="/follow/follow/getlist">已关注的设计师（{%$data.userInfo.followingNum%}人）</a></li>
-	<li><a href="/follow/follow/fanslist">我的粉丝（{%$data.userInfo.followedNum%}人）</a></li>
-	<li><a href="javascript:;" class="active">我的收藏（{%$data.data.total%}件）</a></li>
-</ul>
 <!-- <ul class="list-nav clearfix">
 	<li id="all" class="list-active">全部</li>
 	<li id="sale" >优惠</li>
@@ -36,7 +39,7 @@
 
 {%block name="js"%}
 
-<!-- build:js /static/youin/scripts/page/like.js -->
-<script src="static/scripts/page/like.js"></script>
+<!-- build:js /static/youin/scripts/page/ucenter/like.js -->
+<script src="static/scripts/page/ucenter/like.js"></script>
 <!-- endbuild -->
 {%/block%}

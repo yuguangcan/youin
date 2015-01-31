@@ -1,4 +1,6 @@
 @import "compass/css3";
+@import '../../widget/designer-header';
+@import '../../widget/designer-nav';
 
 /*css sprite */
 .designer-icons-sprite {
@@ -13,84 +15,7 @@ $designer-icons-layout: smart;
 div,p,a{
 	color: #fff;
 }
-.ds-header{
-	width: auto;
-	height: 340px;
-	position: relative;
-	.ds-header-cover{
-		position: absolute;
-		left: -90px;
-		width: 1180px;
-		height: 340px;
-		background: url("/static/youin/images/ds-header-cover.png");
-	}
-	.ds-inform{
-		position: absolute;
-		left: 50%;
-		width: 360px;
-		margin-left: -180px;
-		text-align: center;
-		bottom: 55px;
-		.ds-photo{
-			width: 120px;
-			height: 120px;
-            background:#fff;
-            border-radius: 50%;
-            padding:4px; 
-            margin: 0 auto;
-            .photo{
-            	width: 120px;
-            	height: 120px;
-            	border-radius: 50%;
-            }
-		}
-		.ds-username{
-			font-size: 28px;
-			margin-top: 25px;
-		}
-		.ds-intro{
-			margin-top: 15px;
-		}
-	}
-	.ds-counter{
-		position: absolute;
-		right: 0;
-		bottom: 120px;
-		width: 280px;
-		height: 72px;
-		table{
-			width: 100%;
-			text-align: center;
-			span{
-				font-size: 32px;
-			}
-		}
-	}
-	.ds-operation{
-		position: absolute;
-		right: 0;
-		bottom: 55px;
-		.button{
-			float: right;
-			width: 80px;
-			height: 40px;
-			background:#11bcea;
-			text-align: center;
-			line-height: 40px;
-			box-shadow: 3px 3px 1px rgba(0,0,0,0.3);
-			border-radius: 5px;
-			margin-right: 15px;
-			cursor: pointer;
-			display: block;
-		}
-		.followed{
-			background: #989898;
-		}
-		.follow{
-			background: #11bcea;
-		}
-	}
-}
+
 .product{
 	width: 100%;
 	.items{

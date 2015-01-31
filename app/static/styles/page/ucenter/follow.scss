@@ -1,0 +1,20 @@
+@import "compass/css3";
+
+@import '../../widget/designer-header';
+@import '../../widget/designer-nav';
+
+.user-list{
+    li{
+        border-bottom: 1px solid #20334a;
+        &:last-child{
+            border-bottom:none;
+        }
+    }
+}
+
+.followers-list{
+	li{
+		float: left;
+		width: 50%;
+	}
+}

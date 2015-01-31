@@ -110,7 +110,6 @@
 		</div>
 	</section>
 
-	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 	<section class="relate">
 		<h2>相关购买</h2>
