@@ -24,27 +24,6 @@ div,p,a{
 		height: 340px;
 		background: url("/static/youin/images/ds-header-cover.png");
 	}
-	.product-list{
-		position: absolute;
-		left: 0;
-		bottom: 55px;
-		float: left;
-		p{
-			margin-left: 14px;
-			margin-top: 6px;	
-		}
-		p:first-child{
-			font-size: 18px;		
-		}
-		span{
-			font-size: 14px;
-			color: #11bcea;
-			margin-left: 10px;
-		}
-		li{
-			margin-top: 6px;
-		}
-	}
 	.ds-inform{
 		position: absolute;
 		left: 50%;

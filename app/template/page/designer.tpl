@@ -15,17 +15,6 @@
 {%block name="content"%}
 <section class="ds-header">
     <div class="ds-header-cover"></div>
-    <!-- <div class="product-list">
-        <p>近期成交作品<span>详情</span></p>
-        <p>商品/数量/总价/成交日期</p>
-        <ol>
-            <li>1.不在逆袭就在逆袭路上/2/88/20140914</li>
-            <li>2.后会无期/2/88/20140914</li>
-            <li>3.阿根廷别为我哭泣/2/88/20140914</li>
-            <li>4.绚彩抱枕/2/88/20140914</li>
-            <li>5.不在逆袭就在逆袭路上/2/88/20140914</li>
-        </ol>
-    </div> -->
     <div class="ds-inform">
         <div class="ds-photo">
             <div class="photo-wrap">
