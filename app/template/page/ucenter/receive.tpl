@@ -31,6 +31,8 @@
 {%block name="js"%}
 
 <!-- build:js /static/youin/scripts/page/ucenter/receive.js -->
+<script src="static/scripts/base/ajaxfileupload.js"></script>
+<script src="static/scripts/widget/designer-header.js"></script>
 <script src="static/scripts/page/ucenter/receive.js"></script>
 <!-- endbuild -->
 {%/block%}

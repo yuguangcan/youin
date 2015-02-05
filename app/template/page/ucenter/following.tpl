@@ -34,7 +34,9 @@
 {%/block%}
 
 {%block name="js"%}
-<!-- build:js /static/youin/scripts/page/ucenter/follow.js -->
+<!-- build:js /static/youin/scripts/page/ucenter/following.js -->
+<script src="static/scripts/base/ajaxfileupload.js"></script>
+<script src="static/scripts/widget/designer-header.js"></script>
 <script src="static/scripts/page/ucenter/follow.js"></script>
 <!-- endbuild -->
 {%/block%}

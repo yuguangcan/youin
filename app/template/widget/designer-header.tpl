@@ -3,9 +3,7 @@
     <div class="ds-header-inner">
         <div class="ds-inform">
             <div class="ds-photo">
-                <div class="photo-wrap">
-                    <img src="{%$data.data.avatar%}" class="photo"></img>
-                </div>
+                <img src="{%$data.data.avatar%}" class="photo"></img>
             </div>
             <div class="ds-username">{%$data.data.uname%}</div>
             <div class="ds-intro">{%$data.data.mark%}</div>
@@ -34,10 +32,10 @@
             {%if $data.data.uid == $data.userInfo.uid %}
                 {%if $data.userInfo.type == 0%}
                 <span>我想成为设计师上传作品</span>
-                <a class="button" href="###">修改资料</a>
+                <a class="button change-profile" href="javascript:;">修改资料</a>
                 <a class="button" href="/user/newdesigner">1元成为设计师</a>
                 {%elseif $data.userInfo.type == 1%}
-                <a class="button" href="###">修改资料</a>
+                <a class="button change-profile" href="javascript:;">修改资料</a>
                 <a class="button" href="/pages/upload_1">上传作品</a>
                 {%/if%}
             {%else%}
@@ -49,4 +47,23 @@
             {%/if%}
         </div>
     </div>
+    <div class="ds-header-change-inner">
+        <div class="ds-inform">
+            <div class="ds-photo">
+                <img class="photo"></img>
+                <i class="common-icons-avatar-placeholder"></i>
+                <input type="hidden" id="upload-avatar-hidden" name="pic"></input>
+                <input type="file" id="avatar-file" name="file" accept="image/*"></input>
+            </div>
+            <input type="text" class="ds-username-input" value="{%$data.data.uname%}"></div>
+            <textarea class="ds-intro-input" value="{%$data.data.mark%}"></textarea>
+        </div>
+        <div class="ds-operation">
+            <div class="button avatar-cancel">取消</div>
+            <div class="button avatar-save">保存修改</div>
+        </div>
+    </div>
 </section>
+<script type="text/javascript">
+    YY.context('ds-uid','{%$data.data.uid%}');
+</script>

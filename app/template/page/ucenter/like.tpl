@@ -40,6 +40,8 @@
 {%block name="js"%}
 
 <!-- build:js /static/youin/scripts/page/ucenter/like.js -->
+<script src="static/scripts/base/ajaxfileupload.js"></script>
+<script src="static/scripts/widget/designer-header.js"></script>
 <script src="static/scripts/page/ucenter/like.js"></script>
 <!-- endbuild -->
 {%/block%}

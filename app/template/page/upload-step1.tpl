@@ -41,7 +41,7 @@
 					<span></span>
 					<div class="upload">
 						<a href="javascript:;" id="upload">上传一张图</a>
-						<input type="file" id="file" name="file" accept="image/jpeg"></input>
+						<input type="file" id="file" name="file" accept="image/*"></input>
 						<div>请上传您最高质量的JPEG图片，我们帮您制作成精美的有框画和无框画。（请不要上传重复作品）</div>
 					</div>
 					<div class="upload-done">

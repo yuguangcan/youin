@@ -1,0 +1,18 @@
+@import "compass/css3";
+
+.search-notice{
+	color: #fff;
+	font-size: 28px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #00c0f2;
+	margin-top: 20px;
+}
+
+.items{
+	padding-top: 40px;
+	width: 1020px;
+	.item{
+		float: left;
+	}
+}
+

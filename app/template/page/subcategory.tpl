@@ -80,9 +80,9 @@
                 <div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
                 <div class="opt share"><i class="common-icons-product-share"></i>分享</div>
                 <% if(list[i].isCollect == 1) { %>
-                    <div class="opt like"><i></i>取消收藏</div>
+                    <div class="opt like"><i></i><span>取消收藏</span></div>
                 <% }else{ %>
-                    <div class="opt like"><i></i>收藏</div>
+                    <div class="opt like"><i></i><span>收藏</span></div>
                 <% } %>
                 
                 <div class="info">

@@ -29,8 +29,8 @@
                     </div>
                     <div class="user-info">
                         <a href="/user/card?uid={%$data.userInfo.uid%}" target="_blank">作品<span>{%$data.userInfo.itemNum%}</span></a>
-                        <a href="/follow/follow/getlist" target="_blank">关注<span>{%$data.userInfo.followingNum%}</span></a>
                         <a href="/follow/follow/fanslist" target="_blank">粉丝<span>{%$data.userInfo.followedNum%}</span></a>
+                        <a href="/follow/follow/getlist" target="_blank">关注<span>{%$data.userInfo.followingNum%}</span></a>
                     </div>
                     <div class="opt">
                         {%if $data.userInfo.type == 0%}
@@ -50,7 +50,7 @@
             {%/if%}
             <li>
                 <i class="common-icons-search"></i>
-                <form action="" id="search-form" name="search-form" method="post">
+                <form action="/search/artlist" id="search-form" name="search-form" method="get">
                     <input type="text" name="word" placeholder="搜索商品"></input>
                 </form>
             </li>

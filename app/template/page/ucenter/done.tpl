@@ -27,3 +27,11 @@
 	{%include file="youin/widget/related-product.tpl" productlist=$data.data.recommendInfo.list%}
 
 {%/block%}
+
+{%block name="js"%}
+
+<!-- build:js /static/youin/scripts/page/ucenter/done.js -->
+<script src="static/scripts/base/ajaxfileupload.js"></script>
+<script src="static/scripts/widget/designer-header.js"></script>
+<!-- endbuild -->
+{%/block%}

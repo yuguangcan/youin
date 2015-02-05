@@ -1,4 +1,4 @@
-{%*搜索结果*%}
+{%*艺术品*%}
 
 {%extends file="youin/layout/layout.tpl"%}
 
@@ -7,8 +7,8 @@
 {%/block%}
 
 {%block name="css"%}
-<!-- build:css(.tmp) /static/youin/styles/page/search-result.css -->
-<link rel="stylesheet" href="/static/styles/page/search-result.css"/>
+<!-- build:css(.tmp) /static/youin/styles/page/art.css -->
+<link rel="stylesheet" href="/static/styles/page/art.css"/>
 <!-- endbuild -->
 {%/block%}
 
