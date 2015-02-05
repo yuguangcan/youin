@@ -53,10 +53,10 @@
                 <img class="photo"></img>
                 <i class="common-icons-avatar-placeholder"></i>
                 <input type="hidden" id="upload-avatar-hidden" name="pic"></input>
-                <input type="file" id="avatar-file" name="file" accept="image/*"></input>
             </div>
-            <input type="text" class="ds-username-input" value="{%$data.data.uname%}"></div>
-            <textarea class="ds-intro-input" value="{%$data.data.mark%}"></textarea>
+            <input type="text" class="ds-username-input" value="{%$data.data.uname%}" placeholder="用户名"></input>
+            <textarea class="ds-intro-input" placeholder="简介（不超过40字符）"></textarea>
+            <input type="file" id="avatar-file" name="file" accept="image/*"></input>
         </div>
         <div class="ds-operation">
             <div class="button avatar-cancel">取消</div>

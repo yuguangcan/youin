@@ -1,5 +1,16 @@
 YY.designerHeader = {
+    originHeader : $('.ds-header-inner'),
+    changedHeader : $('.ds-header-change-inner'),
+    originPhoto : $('.ds-header-inner .photo'),
+    originName : $('.ds-header-inner .ds-username'),
+    originIntro : $('.ds-header-inner .ds-intro'),
+    changedName : $('.ds-header-change-inner .ds-username-input'),
+    changedIntro : $('.ds-header-change-inner .ds-intro-input'),
+    changedPhoto : $('.ds-header-change-inner .photo'),
+    changedPhotoIcon : $('.ds-header-change-inner .ds-photo i'),
+    uploadFileHidden : $('#upload-avatar-hidden'),
 	init: function(){
+        var _self = this;
 		$('.m-ds-header').on('click','.follow',function(){
             var _this = $(this);
             $.post('/follow/follow/add?followUid='+YY.context('ds-uid'),function(resp){
@@ -23,23 +34,43 @@ YY.designerHeader = {
                 }
             });
         }).on('click','.change-profile',function(){
-            $('.ds-header-inner').hide();
-            $('.ds-header-change-inner').show();
+            _self.changedPhoto.attr('src',"");
+            _self.changedPhotoIcon.show();
+            _self.uploadFileHidden.val(_self.originPhoto.attr('src'));
+            _self.changedName.val(_self.originName.html());
+            _self.changedIntro.val(_self.originIntro.html());
+            _self.originHeader.hide();
+            _self.changedHeader.show();
         }).on('click','.avatar-cancel',function(){
-            $('.ds-header-change-inner').hide();
-            $('.ds-header-inner').show();
+            _self.changedHeader.hide();
+            _self.originHeader.show();
         }).on('click','.avatar-save',function(){
-
+            var uname = $.trim(_self.changedName.val()),
+                mark = $.trim(_self.changedIntro.val());
+            if(uname == ""){
+                alert('请输入用户名');
+                return;
+            }
+            $.post('/user/infoupdate',{
+                avatar : _self.uploadFileHidden.val(),
+                uname : uname,
+                mark : mark
+            },function(resp){
+                alert('修改成功');
+                _self.originPhoto.attr('src',_self.uploadFileHidden.val());
+                _self.originName.html(_self.changedName.val());
+                _self.originIntro.html(_self.changedIntro.val());
+                _self.changedHeader.hide();
+                _self.originHeader.show();
+            });
         });
 	},
     initAvatarUpload : function(){
-        var upload = $('.ds-header-change-inner .ds-photo'),
+        var upload = $('.ds-header-change-inner .ds-inform'),
             picUpload = $('#avatar-file'),
-            uploadDone = $('.upload-done'),
-            uploadFileName = $('#upload-file'),
-            uploadFileHidden = $('#upload-avatar-hidden'),
-            isUploading = false;
-        upload.click(function(){
+            isUploading = false,
+            _self = this;
+        upload.find('.ds-photo').click(function(){
             if(isUploading){
                 return;
             }
@@ -60,7 +91,9 @@ YY.designerHeader = {
                     success: function (resp)  //服务器成功响应处理函数
                     {
                         if(resp && resp.errno == 0){
-                            uploadFileHidden.val(resp.url);
+                            _self.uploadFileHidden.val(resp.url);
+                            _self.changedPhoto.attr('src',resp.url);
+                            _self.changedPhotoIcon.hide();
                         }else{
                             alert('上传失败，请稍候再试');
                         }
@@ -85,3 +118,7 @@ YY.designerHeader = {
         }
     }
 }
+$(function(){
+    YY.designerHeader.init();
+    YY.designerHeader.initAvatarUpload();
+})
