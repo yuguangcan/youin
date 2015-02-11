@@ -40,7 +40,7 @@
 						<img data-src="/static/youin/images/art-bg-{%$item.id%}.jpg" src="/static/youin/images/art-bg-{%$item.id%}.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
-							<input type="file" accept="image/jpeg" id="upload{%$item.id%}" name="file"></input>
+							<input type="file" accept="image/*" id="upload{%$item.id%}" name="file"></input>
 							<div>{%$item.name%},请上传您最高质量的JPEG图片（RGB）</div>
 						</div>
 						<div class="upload-done">

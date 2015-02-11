@@ -1,0 +1,26 @@
+.m-share{
+	height: 32px;
+	line-height: 32px;
+	.notice{
+		font-size: 14px;
+		color: #fff;
+		float: left;
+		margin-right: 10px;
+	}
+	.jiathis_style_32x32{
+		.jtico_weixin{
+			@include common-icons-sprite(share-weixin);
+		}
+		.jtico_tsina{
+			@include common-icons-sprite(share-sina);
+		}
+		.jtico_douban{
+			@include common-icons-sprite(share-douban);
+		}
+		.jtico{
+			margin-right: 15px;
+			padding-left: 32px!important;
+		}
+	}
+	
+}

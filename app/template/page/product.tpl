@@ -3,7 +3,7 @@
 {%extends file="youin/layout/layout.tpl"%}
 
 {%block name="title"%}
-商品详情
+{%$data.data.item.itemName%}_商品详情
 {%/block%}
 
 {%block name="css"%}
@@ -86,6 +86,8 @@
 			</div>
 		</div>
 	</section>
+
+	{%include file="youin/widget/share.tpl" name=$data.data.item.itemName%}
 
 	{%if $data.data.related %}
 	<section class="relate">

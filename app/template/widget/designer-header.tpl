@@ -31,7 +31,6 @@
         <div class="ds-operation">
             {%if $data.data.uid == $data.userInfo.uid %}
                 {%if $data.userInfo.type == 0%}
-                <span>我想成为设计师上传作品</span>
                 <a class="button change-profile" href="javascript:;">修改资料</a>
                 <a class="button" href="/user/newdesigner">1元成为设计师</a>
                 {%elseif $data.userInfo.type == 1%}

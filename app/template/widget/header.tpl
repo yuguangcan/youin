@@ -36,10 +36,10 @@
                         {%if $data.userInfo.type == 0%}
                         <span>我想成为设计师上传作品</span>
                         <a href="/user/newdesigner">1元成为设计师</a>
-                        <a href="###">修改资料</a>
+                        <a href="/user/card?uid={%$data.userInfo.uid%}">修改资料</a>
                         {%elseif $data.userInfo.type == 1%}
                         <a href="/pages/upload_1">上传作品</a>
-                        <a href="###">修改资料</a>
+                        <a href="/user/card?uid={%$data.userInfo.uid%}">修改资料</a>
                         {%/if%}
                     </div>
                     <a href="###" id="logout">退出</a>

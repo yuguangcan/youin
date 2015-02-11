@@ -41,8 +41,8 @@ YY.base = {
                 },function(resp){
                     var data = JSON.parse(resp);
                     if(data && data.errno == 0){
-                        alert('注册成功，请登录');
-                        _self.showLogin();
+                        alert('注册成功');
+                        window.location.reload();
                     }else{
                         alert('注册失败，请稍候重试');
                     }
