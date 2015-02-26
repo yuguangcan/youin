@@ -41,8 +41,8 @@
 					<span></span>
 					<div class="upload">
 						<a href="javascript:;" id="upload">上传一张图</a>
-						<input type="file" id="file" name="file" accept="image/*"></input>
-						<div>请上传您最高质量的JPEG图片，我们帮您制作成精美的有框画和无框画。（请不要上传重复作品）</div>
+						<input type="file" id="file" name="file" accept="image/png, image/jpeg"></input>
+						<div>请上传高质量（分辨率300DPI以上）的JPEG/PNG图片（大小在50MB以内）</div>
 					</div>
 					<div class="upload-done">
 						<a href="javascript:;">上传成功</a>
