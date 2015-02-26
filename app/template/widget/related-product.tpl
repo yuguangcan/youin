@@ -1,3 +1,4 @@
+{%if $productlist|count > 0%}
 <section class="m-related-product">
 	<h2>相关购买</h2>
 	<ul class="clearfix">
@@ -11,3 +12,4 @@
 		{%/foreach%}
 	</ul>
 </section>
+{%/if%}
