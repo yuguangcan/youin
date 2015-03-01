@@ -40,8 +40,12 @@
 						<img data-src="/static/youin/images/art-bg-{%$item.id%}.jpg" src="/static/youin/images/art-bg-{%$item.id%}.jpg">
 						<div class="upload">
 							<a href="javascript:;">上传一张图</a>
-							<input type="file" accept="image/*" id="upload{%$item.id%}" name="file"></input>
-							<div>{%$item.name%},请上传您最高质量的JPEG图片（RGB）</div>
+							{%if $item.id == 3 || $item.id == 4 || $item.id == 5 || $item.id == 6 || $item.id == 17 || $item.id == 18 || $item.id == 19 || $item.id == 20 %}
+							<input type="file" accept="image/png" id="upload{%$item.id%}" name="file"></input>
+							{%else%}
+							<input type="file" accept="image/jpg,image/png" id="upload{%$item.id%}" name="file"></input>
+							{%/if%}
+							<div>{%$item.name%}</div>
 						</div>
 						<div class="upload-done">
 							<a href="javascript:;">上传成功</a>

@@ -15,7 +15,7 @@ YY.orderPage = {
 				if(data && data.data.list){
 					var option = [];
 					for(var i =0;i<data.data.list.length;i++){
-						option.push('<option value="'+data.data.list[i].id+'">'+data.data.list[i].cityName+'</option>');
+						option.push('<option value="'+data.data.list[i].cityId+'">'+data.data.list[i].cityName+'</option>');
 					}
 					city.empty().append(option.join(''));
 				}
