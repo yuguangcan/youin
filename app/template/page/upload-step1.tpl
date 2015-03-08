@@ -42,7 +42,7 @@
 					<div class="upload">
 						<a href="javascript:;" id="upload">上传一张图</a>
 						<input type="file" id="file" name="file" accept="image/png, image/jpeg"></input>
-						<div>请上传高质量（分辨率300DPI以上）的JPEG/PNG图片（大小在50MB以内）</div>
+						<div>请上传分辨率300DPI以上，大小在2MB-50MB之间的JPEG/PNG图片（支持RGB和CMYK格式）。</div>
 					</div>
 					<div class="upload-done">
 						<a href="javascript:;">上传成功</a>

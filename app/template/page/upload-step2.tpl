@@ -39,7 +39,7 @@
 					<li data-pid="{%$item.id%}">
 						<img data-src="/static/youin/images/art-bg-{%$item.id%}.jpg" src="/static/youin/images/art-bg-{%$item.id%}.jpg">
 						<div class="upload">
-							<a href="javascript:;">上传一张图</a>
+							<a href="javascript:;"><img src="/static/youin/images/loading.gif"></img><b>上传一张图</b></a>
 							{%if $item.id == 3 || $item.id == 4 || $item.id == 5 || $item.id == 6 || $item.id == 17 || $item.id == 18 || $item.id == 19 || $item.id == 20 %}
 							<input type="file" accept="image/png" id="upload{%$item.id%}" name="file"></input>
 							{%else%}
@@ -62,7 +62,7 @@
 		</form>
 		<section class="clearfix">
 			<a href="javascript:;" id="submit">确定</a>
-			<a href="javascript:;" id="back">返回修改</a>
+			<a href="javascript:history.go(-1);" id="back">返回修改</a>
 		</section>
 	</div>
 {%/block%}

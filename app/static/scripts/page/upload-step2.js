@@ -24,12 +24,12 @@ YY.indexPage = {
         	    _self.uploadFileName.html("");
         	    _self.uploadImg.attr('src',_self.uploadImg.attr('data-src'));
         	    _self.uploadDone.hide();
-        	    _self.upload.show();
+        	    _self.upload.removeClass('hide');
         	});
         	function change(e){
         	    var src = e.target,
         	        imageName = src.value.substring(src.value.lastIndexOf('\\')+1);
-        	    _self.uploadBtn.html('正在上传');
+        	    _self.uploadBtn.addClass('loading').find("b").html('正在上传');
         	    _self.isUploading = true;
         	    $.ajaxFileUpload(
         	        {
@@ -45,15 +45,15 @@ YY.indexPage = {
         	            success: function (resp)  //服务器成功响应处理函数
         	            {
         	                if(resp && resp.errno == 0){
-        	                    _self.upload.hide();
-        	                    _self.uploadBtn.html('上传一张图');
+        	                    _self.upload.addClass('hide');
+        	                    _self.uploadBtn.removeClass('loading').find("b").html('上传一张图');
         	                    _self.uploadFileName.html(imageName);
         	                    _self.uploadFileName.attr('data-imgid',resp.picSet);
         	                    _self.uploadImg.attr('src',resp.pic);
         	                    _self.uploadDone.show();
         	                }else{
         	                    alert('上传失败，请稍候再试');
-        	                    _self.uploadBtn.html('上传一张图');
+        	                    _self.uploadBtn.removeClass('loading').find("b").html('上传一张图');
         	                }
         	                resetPicUpload();
         	                _self.isUploading = false;

@@ -63,6 +63,19 @@ YY.designerHeader = {
                 _self.changedHeader.hide();
                 _self.originHeader.show();
             });
+        }).on('click','.cash-out',function(){
+            if(!$(this).hasClass('cash-none') && confirm('确定提取全部收入吗？')){
+                $.post('/user/getmoney',{},function(resp){
+                    var data = JSON.parse(resp);
+                    if(data && data.errno == 0){
+                        alert('提现成功');
+                        $(".ds-cash div").html("0元");
+                    }else{
+                        alert('提现失败，请稍候再试');
+                    }
+                });
+            }
+
         });
 	},
     initAvatarUpload : function(){

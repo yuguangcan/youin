@@ -8,6 +8,11 @@
             <div class="ds-username">{%$data.data.uname%}</div>
             <div class="ds-intro">{%$data.data.mark%}</div>
         </div>
+        <div class="ds-cash">
+            <div>{%$data.userInfo.myMoney%}元</div>
+            <p>我的收入</p>
+        </div>
+        <a class="ds-cash-out {%if $data.userInfo.myMoney == 0%}cash-none{%/if%}" href="javascript:;">提现</a>
         <div class="ds-counter">
             <table>
                 <tbody>

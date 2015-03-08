@@ -47,6 +47,7 @@ $subcategory-icons-layout: smart;
 		}
 	}
 	.style{
+		margin-left: 57px;
 		li{
 			float: left;
 			cursor: pointer;
@@ -58,6 +59,7 @@ $subcategory-icons-layout: smart;
 			color: #333;
 			position: relative;
 			margin-right: 10px;
+			margin-bottom: 10px;
 			i{
 				position: absolute;
 				display: none;

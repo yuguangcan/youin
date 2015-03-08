@@ -82,6 +82,33 @@
         	display: none;
         }
 	}
+	.ds-cash{
+		position: absolute;
+		left: 50px;
+		bottom: 120px;
+		color: #fff;
+		div{
+			font-size: 32px;
+		}
+	}
+	.ds-cash-out{
+		position: absolute;
+		left: 50px;
+		bottom: 55px;
+		padding: 0 15px;
+		height: 40px;
+		background:#11bcea;
+		text-align: center;
+		line-height: 40px;
+		box-shadow: 3px 3px 1px rgba(0,0,0,0.3);
+		border-radius: 5px;
+		margin-right: 15px;
+		cursor: pointer;
+		color: #fff;
+		&.cash-none{
+			background: #989898;
+		}
+	}
 	.ds-counter{
 		position: absolute;
 		right: 0;

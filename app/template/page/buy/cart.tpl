@@ -44,7 +44,7 @@
 					<div class="count">
 						<div class="add-minus">
 				            <span class="minus">-</span>
-				            <input type="text" value="1" class="buy-count"></input>
+				            <input type="text" value="{%$item.num%}" class="buy-count"></input>
 				            <span class="add">+</span>
 				        </div>
 					</div>
