@@ -29,9 +29,9 @@
 	<ul class="activity-list">
 		{%foreach $data.data.star as $item%}
 		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
-			<a href="{%$item.url%}">
+			<a href="{%$item.url%}" target="_blank">
 				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
-				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
+			</a>
 		</li>
 		{%/foreach%}
 	</ul>
@@ -39,9 +39,9 @@
 	<ul class="activity-list">
 		{%foreach $data.data.cartoon as $item%}
 		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
-			<a href="{%$item.url%}">
+			<a href="{%$item.url%}" target="_blank">
 				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
-				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
+			</a>
 		</li>
 		{%/foreach%}
 	</ul>
@@ -49,9 +49,9 @@
 	<ul class="activity-list">
 		{%foreach $data.data.new as $item%}
 		<li class="{%if $item@index == 0%}activity-item-top{%else%}activity-item-bottom{%/if%}">
-			<a href="{%$item.url%}">
+			<a href="{%$item.url%}" target="_blank">
 				<img src="/pic/{%$item.pic%}.jpg" style="width: 100%;height:100%;">
-				{%include file="youin/widget/productinfo.tpl" product=$item%}</a>
+			</a>
 		</li>
 		{%/foreach%}
 	</ul>

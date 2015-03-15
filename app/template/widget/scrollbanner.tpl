@@ -2,7 +2,7 @@
     <div class="scrollable">
         <div class="items">
             {%foreach $banner as $item%}
-                <a href="{%$item.title%}">
+                <a href="{%$item.url%}">
                     <img src="{%$item.pic%}">
                 </a>
             {%/foreach%}
