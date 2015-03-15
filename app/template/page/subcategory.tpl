@@ -100,8 +100,10 @@
     <% } %>
     
 </script>
-<!-- build:js /static/youin/scripts/page/subcategory.js -->
+<!-- build:js /static/youin/scripts/base/baiduTemplate.js -->
 <script src="static/scripts/base/baiduTemplate.js" type="text/javascript"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/page/subcategory.js -->
 <script src="static/scripts/page/subcategory.js"></script>
 <!-- endbuild -->
 {%/block%}

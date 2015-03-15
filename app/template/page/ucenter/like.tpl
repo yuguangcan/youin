@@ -38,10 +38,13 @@
 {%/block%}
 
 {%block name="js"%}
-
-<!-- build:js /static/youin/scripts/page/ucenter/like.js -->
+<!-- build:js /static/youin/scripts/base/ajaxfileupload.js -->
 <script src="static/scripts/base/ajaxfileupload.js"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/widget/designer-header.js -->
 <script src="static/scripts/widget/designer-header.js"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/page/ucenter/like.js -->
 <script src="static/scripts/page/ucenter/like.js"></script>
 <!-- endbuild -->
 {%/block%}

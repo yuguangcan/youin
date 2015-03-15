@@ -37,6 +37,17 @@
 				<ul class="upload-list clearfix">
 					{%foreach $data.data.products as $item%}
 					<li data-pid="{%$item.id%}">
+						{%if $item.id == 1 %}
+						<img src="{%$data.data.picNoframe%}">
+						<div class="generated">已生成，无需重复上传</div>
+						<div class="intro">{%$item.name%}</div>
+						<span class="upload-file" data-imgid="{%$data.data.picSetNoframe%}"></span>
+						{%elseif $item.id == 2%}
+						<img src="{%$data.data.picFrame%}">
+						<div class="generated">已生成，无需重复上传</div>
+						<div class="intro">{%$item.name%}</div>
+						<span class="upload-file" data-imgid="{%$data.data.picSetFrame%}"></span>
+						{%else%}
 						<img data-src="/static/youin/images/art-bg-{%$item.id%}.jpg" src="/static/youin/images/art-bg-{%$item.id%}.jpg">
 						<div class="upload">
 							<a href="javascript:;"><img src="/static/youin/images/loading.gif"></img><b>上传一张图</b></a>
@@ -54,6 +65,7 @@
 								<span class="upload-delete">删除 X</span>
 							</div>
 						</div>
+						{%/if%}
 					</li>
 					{%/foreach%}
 				</ul>
@@ -68,9 +80,10 @@
 {%/block%}
 
 {%block name="js"%}
-
-<!-- build:js /static/youin/scripts/page/upload-step2.js -->
+<!-- build:js /static/youin/scripts/base/ajaxfileupload.js -->
 <script src="static/scripts/base/ajaxfileupload.js"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/page/upload-step2.js -->
 <script src="static/scripts/page/upload-step2.js"></script>
 <!-- endbuild -->
 {%/block%}

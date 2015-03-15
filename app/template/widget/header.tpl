@@ -124,7 +124,7 @@
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="designer"%}class="cur"{%/if%}><a href="/user/designerlist"><i class="common-icons-nav-designer"></i><p>设计师</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
-                <li {%if $select=="hot"%}class="cur"{%/if%}><a href="###"><i class="common-icons-nav-hot"></i><p>YOUSHOW</p></a></li>
+                <li {%if $select=="hot"%}class="cur"{%/if%}><a href="/pages/youshow"><i class="common-icons-nav-hot"></i><p>YOUSHOW</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>
                 <li {%if $select=="special"%}class="cur"{%/if%}><a href="/pages/special"><i class="common-icons-nav-special"></i><p>专场</p></a></li>
                 <li class="divide common-icons-nav-divide"></li>

@@ -36,10 +36,13 @@
 {%/block%}
 
 {%block name="js"%}
-
-<!-- build:js /static/youin/scripts/page/category.js -->
+<!-- build:js /static/youin/scripts/base/jquery.tools.min.js -->
 <script src="static/scripts/base/jquery.tools.min.js" type="text/javascript"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/widget/scrollbanner.js -->
 <script src="static/scripts/widget/scrollbanner.js"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/page/category.js -->
 <script src="static/scripts/page/category.js"></script>
 <!-- endbuild -->
 {%/block%}

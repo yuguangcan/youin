@@ -77,13 +77,13 @@
     <h2>请输入提现信息：</h2>
     <form id="cash-form" name="cash-form" method="post" action="/user/getmoney" class="clearfix">
         <div class="input-box">
-            <input type="text" name="name" placeholder="姓名"></input>
+            <input type="text" name="people" placeholder="姓名"></input>
         </div>
         <div class="input-box">
             <input type="text" name="account" placeholder="支付宝账号"></input>
         </div>
         <div class="input-box">
-            <input type="tel" name="account" placeholder="电话"></input>
+            <input type="tel" name="phone" placeholder="电话"></input>
         </div>
         <input type="submit" class="submit" id="cash-submit" value="提现"></a>
     </form>

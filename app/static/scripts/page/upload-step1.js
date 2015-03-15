@@ -40,21 +40,17 @@ YY.indexPage = {
         var priceCount = $('#price-count');
         priceCount.find('.price-count-benefit').on('input',function(){
             var value = $(this).val();
+            if(!value){
+                return;
+            }
             if(!/^\d+(\.\d*)?$/.test(value)){
                 alert("请输入数字");
                 return;
             }
             var parent = $(this).parents('tr'),
                 baseValue = parseFloat(parent.find('td').eq(1).html()),
-                totalValue = parent.find('.price-count-final');
-            totalValue.val(parseFloat(value) + baseValue);
-        });
-        priceCount.find('.price-count-final').on('input',function(){
-            var value = $(this).val();
-            if(!/^\d+(\.\d*)?$/.test(value)){
-                alert("请输入数字");
-                return;
-            }
+                totalValue = parent.find('td').eq(3);
+            totalValue.html(parseFloat(value) + baseValue);
         });
     },
     initUpload : function(){

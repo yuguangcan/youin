@@ -76,14 +76,16 @@ YY.designerHeader = {
             _self.cashpopup.find('form').on('submit',function(e){
                 e.preventDefault();
                 $.post('/user/getmoney',{
-                    name : $(this).find('input[name="name"]').val(),
-                    account : form.find('input[name="account"]').val(),
-                    tel : form.find('input[name="tel"]').val()
+                    people : $(this).find('input[name="people"]').val(),
+                    account : $(this).find('input[name="account"]').val(),
+                    phone : $(this).find('input[name="phone"]').val()
                 },function(resp){
                     var data = JSON.parse(resp);
                     if(data && data.errno == 0){
                         alert('提现成功');
                         $(".ds-cash div").html("0元");
+                        $(".ds-cash-out").addClass('cash-none');
+                        YY.misc.hidePopup(_self.cashpopup,_self.cashpopupOverlay);
                     }else{
                         alert('提现失败，请稍候再试');
                     }

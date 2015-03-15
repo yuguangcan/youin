@@ -68,16 +68,16 @@
 			        		<th>最终售价(元)</th>
 			        	</tr>
 			        	<tr>
-			        		<td>X-Large 40x28</td>
-			        		<td>12</td>
-			        		<td><input type="text" value="10" class="price-count-benefit"></input></td>
-			        		<td><input type="text" value="22" class="price-count-final"></input></td>
+			        		<td>有框画</td>
+			        		<td>{%$data.data.priceFrame%}</td>
+			        		<td><input type="text" value="0" class="price-count-benefit" name="priceFrame"></input></td>
+			        		<td>{%$data.data.priceFrame%}</td>
 			        	</tr>
 			        	<tr>
-			        		<td>XL-Large 60x58</td>
-			        		<td>20</td>
-			        		<td><input type="text" value="10" class="price-count-benefit"></input></td>
-			        		<td><input type="text" value="30" class="price-count-final"></input></td>
+			        		<td>无框画</td>
+			        		<td>{%$data.data.priceNoframe%}</td>
+			        		<td><input type="text" value="0" class="price-count-benefit" name="priceNoframe"></input></td>
+			        		<td>{%$data.data.priceNoframe%}</td>
 			        	</tr>
 			        </table>
 				</div>
@@ -90,9 +90,10 @@
 {%/block%}
 
 {%block name="js"%}
-
-<!-- build:js /static/youin/scripts/page/upload-step1.js -->
+<!-- build:js /static/youin/scripts/base/ajaxfileupload.js -->
 <script src="static/scripts/base/ajaxfileupload.js"></script>
+<!-- endbuild -->
+<!-- build:js /static/youin/scripts/page/upload-step1.js -->
 <script src="static/scripts/page/upload-step1.js"></script>
 <!-- endbuild -->
 {%/block%}

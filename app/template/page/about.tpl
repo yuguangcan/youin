@@ -21,7 +21,7 @@
                 <li><a href="/pages/category?pageId={%$item.pageId%}">{%$item.name%}</a></li>
                 {%/foreach%}
                 <li><a href="/user/designerlist">设计师</a></li>
-                <li><a href="###">YOUSHOW</a></li>
+                <li><a href="/pages/youshow">YOUSHOW</a></li>
                 <li><a href="/pages/special">专场</a></li>
             </ul>
         </div>
