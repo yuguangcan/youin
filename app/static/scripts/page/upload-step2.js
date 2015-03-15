@@ -61,6 +61,7 @@ YY.indexPage = {
         	            error: function ()
         	            {
         	                alert('上传失败，请稍候再试');
+                            _self.uploadBtn.removeClass('loading').find("b").html('上传一张图');
         	                resetPicUpload();
         	                _self.isUploading = false;
         	            }

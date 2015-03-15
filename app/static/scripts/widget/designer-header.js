@@ -9,6 +9,8 @@ YY.designerHeader = {
     changedPhoto : $('.ds-header-change-inner .photo'),
     changedPhotoIcon : $('.ds-header-change-inner .ds-photo i'),
     uploadFileHidden : $('#upload-avatar-hidden'),
+    cashpopup : $('#cash-popup'),
+    cashpopupOverlay : $('#cash-popup-overlay'),
 	init: function(){
         var _self = this;
 		$('.m-ds-header').on('click','.follow',function(){
@@ -63,9 +65,21 @@ YY.designerHeader = {
                 _self.changedHeader.hide();
                 _self.originHeader.show();
             });
-        }).on('click','.cash-out',function(){
-            if(!$(this).hasClass('cash-none') && confirm('确定提取全部收入吗？')){
-                $.post('/user/getmoney',{},function(resp){
+        }).on('click','.ds-cash-out',function(){
+            
+            if(!$(this).hasClass('cash-none')){
+                YY.misc.showPopup(_self.cashpopup,_self.cashpopupOverlay);
+            }
+
+        });
+        if(_self.cashpopup.length > 0){
+            _self.cashpopup.find('form').on('submit',function(e){
+                e.preventDefault();
+                $.post('/user/getmoney',{
+                    name : $(this).find('input[name="name"]').val(),
+                    account : form.find('input[name="account"]').val(),
+                    tel : form.find('input[name="tel"]').val()
+                },function(resp){
                     var data = JSON.parse(resp);
                     if(data && data.errno == 0){
                         alert('提现成功');
@@ -74,9 +88,8 @@ YY.designerHeader = {
                         alert('提现失败，请稍候再试');
                     }
                 });
-            }
-
-        });
+            });  
+        }
 	},
     initAvatarUpload : function(){
         var upload = $('.ds-header-change-inner .ds-inform'),

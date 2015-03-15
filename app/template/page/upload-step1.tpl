@@ -40,7 +40,7 @@
 				<div class="input-item clearfix">
 					<span></span>
 					<div class="upload">
-						<a href="javascript:;" id="upload">上传一张图</a>
+						<a href="javascript:;" id="upload"><img src="/static/youin/images/loading.gif"></img><b>上传一张图</b></a>
 						<input type="file" id="file" name="file" accept="image/png, image/jpeg"></input>
 						<div>请上传分辨率300DPI以上，大小在2MB-50MB之间的JPEG/PNG图片（支持RGB和CMYK格式）。</div>
 					</div>
@@ -55,11 +55,31 @@
 				</div>
 				<div class="input-item clearfix">
 					<span>定价</span>
-					<div class="add-minus" id="add-minus">
+					<!-- <div class="add-minus" id="add-minus">
 			            <span class="minus">-</span>
 			            <input type="text" value="1" id="price" name="price"></input>
 			            <span class="add">+</span>
-			        </div>
+			        </div> -->
+			        <table id="price-count">
+			        	<tr>
+			        		<th>商品</th>
+			        		<th>基础价格(元)</th>
+			        		<th>您的收益(元)</th>
+			        		<th>最终售价(元)</th>
+			        	</tr>
+			        	<tr>
+			        		<td>X-Large 40x28</td>
+			        		<td>12</td>
+			        		<td><input type="text" value="10" class="price-count-benefit"></input></td>
+			        		<td><input type="text" value="22" class="price-count-final"></input></td>
+			        	</tr>
+			        	<tr>
+			        		<td>XL-Large 60x58</td>
+			        		<td>20</td>
+			        		<td><input type="text" value="10" class="price-count-benefit"></input></td>
+			        		<td><input type="text" value="30" class="price-count-final"></input></td>
+			        	</tr>
+			        </table>
 				</div>
 				<div class="clearfix">
 					<a href="javascript:;" id="submit">下一步</a>

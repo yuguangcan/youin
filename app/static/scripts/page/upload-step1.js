@@ -29,13 +29,32 @@ YY.indexPage = {
         }
 
 
-        var addMinus = $('#add-minus'),
-        	price = $('#price');
-        addMinus.find('.minus').click(function(){
-        	price.val(parseInt(price.val())-1);
+        // var addMinus = $('#add-minus'),
+        // 	price = $('#price');
+        // addMinus.find('.minus').click(function(){
+        // 	price.val(parseInt(price.val())-1);
+        // });
+        // addMinus.find('.add').click(function(){
+        // 	price.val(parseInt(price.val())+1);
+        // });
+        var priceCount = $('#price-count');
+        priceCount.find('.price-count-benefit').on('input',function(){
+            var value = $(this).val();
+            if(!/^\d+(\.\d*)?$/.test(value)){
+                alert("请输入数字");
+                return;
+            }
+            var parent = $(this).parents('tr'),
+                baseValue = parseFloat(parent.find('td').eq(1).html()),
+                totalValue = parent.find('.price-count-final');
+            totalValue.val(parseFloat(value) + baseValue);
         });
-        addMinus.find('.add').click(function(){
-        	price.val(parseInt(price.val())+1);
+        priceCount.find('.price-count-final').on('input',function(){
+            var value = $(this).val();
+            if(!/^\d+(\.\d*)?$/.test(value)){
+                alert("请输入数字");
+                return;
+            }
         });
     },
     initUpload : function(){
@@ -63,7 +82,7 @@ YY.indexPage = {
         function change(e){
             var src = e.target,
                 imageName = src.value.substring(src.value.lastIndexOf('\\')+1);
-            uploadBtn.html('正在上传');
+            uploadBtn.addClass('loading').find("b").html('正在上传');
             isUploading = true;
             $.ajaxFileUpload(
                 {
@@ -76,13 +95,13 @@ YY.indexPage = {
                     {
                         if(resp && resp.errno == 0){
                             upload.hide();
-                            uploadBtn.html('上传一张图');
+                            uploadBtn.removeClass('loading').find("b").html('上传一张图');
                             uploadFileName.html(imageName);
                             uploadFileHidden.val(resp.url);
                             uploadDone.show();
                         }else{
                             alert('上传失败，请稍候再试');
-                            uploadBtn.html('上传一张图');
+                            uploadBtn.removeClass('loading').find("b").html('上传一张图');
                         }
                         resetPicUpload();
                         isUploading = false;
@@ -90,6 +109,7 @@ YY.indexPage = {
                     error: function ()
                     {
                         alert('上传失败，请稍候再试');
+                        uploadBtn.removeClass('loading').find("b").html('上传一张图');
                         resetPicUpload();
                         isUploading = false;
                     }

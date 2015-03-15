@@ -8,11 +8,13 @@
             <div class="ds-username">{%$data.data.uname%}</div>
             <div class="ds-intro">{%$data.data.mark%}</div>
         </div>
+        {%if $data.data.uid == $data.userInfo.uid %}
         <div class="ds-cash">
             <div>{%$data.userInfo.myMoney%}元</div>
             <p>我的收入</p>
         </div>
         <a class="ds-cash-out {%if $data.userInfo.myMoney == 0%}cash-none{%/if%}" href="javascript:;">提现</a>
+        {%/if%}
         <div class="ds-counter">
             <table>
                 <tbody>
@@ -68,6 +70,25 @@
         </div>
     </div>
 </section>
+{%if $data.data.uid == $data.userInfo.uid %}
+<div id="cash-overlay"></div>
+<div id="cash-popup">
+    <i class="common-icons-popup-close close"></i>
+    <h2>请输入提现信息：</h2>
+    <form id="cash-form" name="cash-form" method="post" action="/user/getmoney" class="clearfix">
+        <div class="input-box">
+            <input type="text" name="name" placeholder="姓名"></input>
+        </div>
+        <div class="input-box">
+            <input type="text" name="account" placeholder="支付宝账号"></input>
+        </div>
+        <div class="input-box">
+            <input type="tel" name="account" placeholder="电话"></input>
+        </div>
+        <input type="submit" class="submit" id="cash-submit" value="提现"></a>
+    </form>
+</div>
+{%/if%}
 <script type="text/javascript">
     YY.context('ds-uid','{%$data.data.uid%}');
 </script>

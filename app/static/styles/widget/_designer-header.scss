@@ -107,6 +107,7 @@
 		color: #fff;
 		&.cash-none{
 			background: #989898;
+			cursor: not-allowed;
 		}
 	}
 	.ds-counter{
@@ -150,5 +151,68 @@
 		.avatar-cancel{
 			background: #989898;
 		}
+	}
+}
+#cash-overlay{
+	background: #000000;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+#cash-popup{
+	display: none;
+	background: #fff;
+	width: 350px;
+	height: 280px;
+	position: relative;
+	padding: 15px 30px;
+	.close{
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		cursor: pointer;
+	}
+	h2{
+		font-size: 18px;
+		color: #333;
+		margin-bottom: 20px;
+	}
+	.input-box{
+		width: 350px;
+		height: 46px;
+		border: 1px solid #49c0f5;
+		position: relative;
+		margin-bottom: 10px;
+		input{
+			width: 320px;
+			line-height: 26px;
+			padding: 10px 15px;
+			color: #333;
+			font-size: 16px;
+			display: block;
+			border: 0;
+			outline: 0;
+		}
+	}
+	.submit{
+		width: 120px;
+		height: 50px;
+		line-height: 50px;
+		background: #49c0f5;
+		color: #fff;
+		font-size: 18px;
+		text-align: center;
+		@include border-radius(5px);
+		display: block;
+		float: right;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
 	}
 }
