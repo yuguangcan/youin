@@ -16,8 +16,10 @@
                     <div class="mask"></div>
                     <div class="user-wrapper">
                         <div class="user">
-                            <img src="{%$data.userInfo.avatar%}" class="avatar">
-                            <p class="name">{%$data.userInfo.uname%}</p>
+                            <a href="/user/card?uid={%$data.userInfo.uid%}">
+                                <img src="{%$data.userInfo.avatar%}" class="avatar">
+                                <p class="name">{%$data.userInfo.uname%}</p>
+                            </a>
                             <p class="detail">{%$data.userInfo.mark%}</p>
                         </div>
                     </div>
@@ -45,8 +47,8 @@
                     <a href="###" id="logout">退出</a>
                 </div>
             </li>
-            <li><a href="/mall/collect/getlist"><i class="common-icons-collect"></i>收藏<span>{%$data.userInfo.collectNum%}</span>件</a></li>
-            <li><a href="/mall/cart/getlist"><i class="common-icons-cart"></i>购物车<span>{%$data.userInfo.cartNum%}</span>件</a></li>
+            <li><a href="/mall/collect/getlist"><i class="common-icons-collect"></i>收藏<span id="header-like-count">{%$data.userInfo.collectNum%}</span>件</a></li>
+            <li><a href="/mall/cart/getlist"><i class="common-icons-cart"></i>购物车<span id="header-cart-count">{%$data.userInfo.cartNum%}</span>件</a></li>
             {%/if%}
             <li>
                 <i class="common-icons-search"></i>

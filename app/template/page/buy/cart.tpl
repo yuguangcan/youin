@@ -32,7 +32,7 @@
 			{%foreach $data.data.list as $item %}
 				<li data-price="{%$item.price%}" data-cartid="{%$item.id%}">
 					<div class="name">
-						<input type="checkbox" class="select"></input>
+						<input type="checkbox" class="select" checked="checked"></input>
 						<a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
 							<img src="{%$item.pic%}">
 							<span>{%$item.itemName%}</span>

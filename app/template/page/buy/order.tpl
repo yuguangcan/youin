@@ -26,7 +26,7 @@
 			<h3>收货人信息<a href="javascript:;">修改</a></h3>
 			<div class="name-tel">
 				<input type="text" class='input checkEmpty' data-alert='请输入您的姓名' name="receiver" placeholder="姓名"/>
-				<input type="text" class='input checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话"/>
+				<input type="text" class='input checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话" id="telephone"/>
 			</div>
 			<div class="address">
 				<select id='province' name="provinceId" class="select">
@@ -38,16 +38,16 @@
 				<select id='city' name="cityId" class="select">
 					<option value="0" selected="selected">请选择</option>
 				</select>
-				<input type="text" class='input checkEmpty' name="address" data-alert='请输入您的详细地址' placeholder="请输入详细地址"/>
+				<input type="text" class='input checkEmpty input-address' name="address" data-alert='请输入您的详细地址' placeholder="请输入详细地址"/>
 			</div>
 		</div>
 		<input type='hidden' name="ids" value="{%$data.params.ids%}"/>
 		<div class="order-item payment">
-			<h3>支付方式<a href="javascript:;">修改</a></h3>
+			<h3>支付方式</h3>
 			<span>在线支付</span>
 		</div>
 		<div class="order-item deliver">
-			<h3>物流选择<a href="javascript:;">修改</a></h3>
+			<h3>物流选择</h3>
 			<ul class="clearfix">
                 <li class="cur" id="expressName"><b>中通速递</b><i></i></li>
             </ul>
@@ -82,6 +82,9 @@
 		</div>
 		<div class="operation">
 			<a href="javascript:;" id="submit" type="submit">提交订单</a>
+			<div class="opt">
+				<a href="javascript:window.history.go(-1);">返回购物车修改</a>
+			</div>
 			<div class="check">
 				<span>共{%$data.data.totalNum%}件商品</span>
 				<span id="order-express">订单总计(含运费<b>0</b>元)</span>

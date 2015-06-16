@@ -41,6 +41,10 @@ YY.orderPage = {
 					return false;
 				}
 			}
+			if(/(^(\d{3,4}-)?\d{7,8})$|^(13[0-9]{9})$/.test($('#telephone').val())){
+				alert("请输入正确的电话号码");
+				return false;
+			}
 			return true;
 		}
 	}

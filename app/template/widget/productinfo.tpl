@@ -1,10 +1,10 @@
 <div class="m-productinfo" data-pid="{%$product.itemId%}">
-	<div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
-	<div class="opt share"><i class="common-icons-product-share"></i>分享</div>
+	<!-- <div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
+	<div class="opt share"><i class="common-icons-product-share"></i>分享</div> -->
 	{%if $product.isCollected == 1%}
-		<div class="opt liked"><i></i><span>取消收藏</span></div>
+		<div class="opt liked"><i></i></div>
 	{%else%}
-		<div class="opt like"><i></i><span>收藏</span></div>
+		<div class="opt like"><i></i></div>
 	{%/if%}
 	<div class="info">
 		<p class="title">{%$product.itemName%}</p>

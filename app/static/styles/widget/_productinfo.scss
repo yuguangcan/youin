@@ -34,6 +34,9 @@
 			height: 43px;
 			display: inline-block;
 			@include common-icons-sprite(product-like);
+			&:hover{
+				@include common-icons-sprite(product-liked);
+			}
 		}
 	}
 	.liked{

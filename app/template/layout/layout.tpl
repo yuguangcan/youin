@@ -67,6 +67,7 @@
 
         <!-- build:js /static/youin/scripts/base/base.js -->
         <script src="static/scripts/base/jquery-1.8.3.js" type="text/javascript"></script>
+        <script src="static/scripts/base/js.cookie.js" type="text/javascript"></script>
         <script src="static/scripts/widget/misc.js" type="text/javascript"></script>
         <script src="static/scripts/widget/base.js" type="text/javascript"></script>
         <!-- endbuild -->

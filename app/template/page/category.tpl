@@ -18,11 +18,11 @@
 
     {%foreach $data.data.product as $product%}
         <section class="category-item" id="cid{%$product.cid%}">
-            <h2>{%$product.cname%}<a href="/pages/subcategory?cid={%$product.cid%}">更多</a></h2>
+            <h2><a href="/pages/subcategory?cid={%$product.cid%}" class="title">{%$product.cname%}</a><a href="/pages/subcategory?cid={%$product.cid%}" class="more">更多</a></h2>
             <ul class="product-list clearfix">
                 {%foreach $product.list as $item%}
                     <li>
-                        <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+                        <a href="javascript:;" target="_blank">
                             <img src="{%$item.pic%}"></img>
                             {%include file="youin/widget/productinfo.tpl" product=$item%}
                         </a>

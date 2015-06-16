@@ -14,5 +14,12 @@ YY.scrollbanner = {
             pointers.filter('.cur').removeClass('cur');
             pointers.eq(current).addClass('cur');
         });
+        pointers.on('click',function(){
+            var _this = $(this);
+            if(!_this.hasClass('cur')){
+                var index = $.inArray(this,pointers);
+                api.seekTo(index);
+            }
+        });
 	}
 }

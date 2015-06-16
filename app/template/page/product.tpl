@@ -91,11 +91,11 @@
 
 	{%if $data.data.related %}
 	<section class="relate">
-		<h2>相关艺术品</h2>
+		<h2>同主题艺术品</h2>
 		<ul class="clearfix">
 			{%foreach $data.data.related.list as $item%}
 				<li>
-				    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+				    <a href="javascript:;" target="_blank">
 				        <img src="{%$item.pic%}"></img>
 				        {%include file="youin/widget/productinfo.tpl" product=$item%}
 				    </a>
@@ -114,11 +114,11 @@
 
 
 	<section class="relate">
-		<h2>相关购买</h2>
+		<h2>热销艺术品</h2>
 		<ul class="clearfix">
 			{%foreach $data.data.recommendInfo.list as $item%}
 				<li>
-				    <a href="/mall/item/detail?itemId={%$item.itemId%}" target="_blank">
+				    <a href="javascript:;" target="_blank">
 				        <img src="{%$item.pic%}"></img>
 				        {%include file="youin/widget/productinfo.tpl" product=$item%}
 				    </a>

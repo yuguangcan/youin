@@ -23,7 +23,7 @@ YOUSHOW
             <ul class="{%if $item.style == 1%}product-list-style1{%else if $item.style == 2%}product-list-style2{%/if%}">
                 {%foreach $item.content as $picitem%}
                     <li class="product-item-{%$picitem@index+1%}">
-                        <a href="/mall/item/detail?itemId={%$picitem.itemId%}" target="_blank">
+                        <a href="javascript:;" target="_blank">
                             <img src="{%$picitem.pic%}"></img>
                             {%include file="youin/widget/productinfo.tpl" product=$picitem%}
                         </a>

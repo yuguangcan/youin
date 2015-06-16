@@ -63,6 +63,9 @@ $buy-icons-layout: smart;
 		border: 0;
 		outline: none;
 	}
+	.input-address{
+		width: 350px;
+	}
 	.select{
 		width: 120px;
 		line-height: 26px;
@@ -161,6 +164,14 @@ $buy-icons-layout: smart;
 	height: 140px;
 	line-height: 140px;
 	background: #1e2b43;
+	.opt{
+		float: left;
+		a{
+			color: #00baea;
+			margin-right: 30px;
+			font-size: 14px;
+		}
+	}
 	#submit{
 		float: right;
 		margin: 30px 40px 0;

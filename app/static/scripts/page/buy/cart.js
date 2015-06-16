@@ -37,11 +37,12 @@ YY.cartPage = {
             })
 	        del.click(function(){
                 var id = $(this).parents('li').attr('data-cartid');
-                deleteItem(id,function(){
-                    itemObj.remove();
-                    YY.cartPage.calculate();
-                });
-                
+                if(confirm("确认删除选中商品吗？")){
+                    deleteItem(id,function(){
+                        itemObj.remove();
+                        YY.cartPage.calculate();
+                    });
+                }
 	        });
     	});
 
@@ -56,15 +57,17 @@ YY.cartPage = {
     	});
 
     	$('#delete-select').click(function(){
-    		$('.cart-list li').each(function(index,item){
-    			var select = $(item).find('.select');
-    			if(select.get(0).checked){
-                    deleteItem($(item).attr('data-cartid'),function(){
-                        $(item).remove();
-                    });
-    			}
-    		});
-    		YY.cartPage.calculate();
+            if(confirm("确认删除选中商品吗？")){
+                $('.cart-list li').each(function(index,item){
+                    var select = $(item).find('.select');
+                    if(select.get(0).checked){
+                        deleteItem($(item).attr('data-cartid'),function(){
+                            $(item).remove();
+                        });
+                    }
+                });
+                YY.cartPage.calculate();
+            }
     	});
 
         function setNum(id,num){
@@ -104,6 +107,8 @@ YY.cartPage = {
             $('#ids').val(ids.join(','));
             $('#cart-form').submit();
         });
+
+        YY.cartPage.calculate();
     },
     calculate : function(){
     	var count = 0,

@@ -74,15 +74,13 @@
 
     <% for(var i=0;i<list.length;i++){ %>
     <li>
-        <a href="/mall/item/detail?itemId=<%=list[i].itemId%>" target="_blank">
+        <a href="javascript:;" target="_blank">
             <img src="<%=list[i].pic%>"></img>
             <div class="m-productinfo" data-pid="<%=list[i].itemId%>">
-                <div class="opt buy"><i class="common-icons-product-buy"></i>购买</div>
-                <div class="opt share"><i class="common-icons-product-share"></i>分享</div>
                 <% if(list[i].isCollect == 1) { %>
-                    <div class="opt like"><i></i><span>取消收藏</span></div>
+                    <div class="opt like"><i></i></div>
                 <% }else{ %>
-                    <div class="opt like"><i></i><span>收藏</span></div>
+                    <div class="opt like"><i></i></div>
                 <% } %>
                 
                 <div class="info">

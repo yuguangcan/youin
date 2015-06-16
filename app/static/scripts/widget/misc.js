@@ -38,5 +38,13 @@ YY.misc = {
             overlay = $(overlay);
         popup.fadeOut();
         overlay.hide();
+    },
+    changeLike : function(increase){
+        var likeCount = $('#header-like-count');
+        likeCount.html(increase? (parseInt(likeCount.html()) + 1):(parseInt(likeCount.html()) - 1));
+    },
+    changeCart : function(increase){
+        var cartCount = $('#header-cart-count');
+        cartCount.html(increase? (parseInt(cartCount.html()) + 1):(parseInt(cartCount.html()) - 1));
     }
 }

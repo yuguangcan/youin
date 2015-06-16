@@ -9,10 +9,10 @@
         </div>
     </div>
     <div class="navi navi-pre">
-        <i></i>
+        <a href="javascript:;"></a>
     </div>
     <div class="navi navi-next">
-        <i></i>
+        <a href="javascript:;"></a>
     </div>
     <ul class="scroll-point">
         {%foreach $banner as $item%}

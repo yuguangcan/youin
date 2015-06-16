@@ -7,13 +7,12 @@
             <form id="login-form" name="login-form" method="post" action="/login/checkin" class="clearfix">
                 <div class="input-box">
                     <input type="text" name="account" placeholder="请输入用户名"></input>
-                    <span class="error">用户名错误</span>
                 </div>
                 <div class="input-box">
                     <input type="password" name="password" placeholder="请输入登录密码"></input>
-                    <span class="error">密码错误</span>
                 </div>
-                <input type="submit" class="submit" id="login-submit" value="登录"></a>
+                <input type="submit" class="submit" id="login-submit" value="登录"></input>
+                <span class="error"></span>
             </form>
         </li>
         <li id="login-register">
@@ -33,7 +32,10 @@
                 </div>
                 <input type="checkbox" id="register-term"></input>
                 <label for="register-term">我已阅读并接受《有印用户协议》</label>
-                <input type="submit" class="submit" id="register-submit" value="注册"></a>
+                <div>
+                    <input type="submit" class="submit" id="register-submit" value="注册"></input>
+                    <span class="error"></span>
+                </div>
             </form>
         </li>
         <li id="login-intro-designer">

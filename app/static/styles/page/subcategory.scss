@@ -98,19 +98,19 @@ $subcategory-icons-layout: smart;
 		}
 		i{
 			margin-left: 5px;
+			position: relative;
+			top: 1px;
+			width: 10px;
+			height: 13px;
 		}
 		&.up{
 			i{
 				@include subcategory-icons-sprite(arrow-up);
-				width: 12px;
-				height: 14px;
 			}
 		}
 		&.down{
 			i{
 				@include subcategory-icons-sprite(arrow-down);
-				width: 10px;
-				height: 13px;
 			}
 		}
 	}

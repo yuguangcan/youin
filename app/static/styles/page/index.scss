@@ -158,7 +158,7 @@ $index-icons-layout: smart;
 						position: absolute;
 						top: 108px;
 						color: #fff;
-						font-size: 30px;
+						font-size: 26px;
 					}
 					.mark{
 						position: absolute;
@@ -167,13 +167,26 @@ $index-icons-layout: smart;
 						font-size: 14px;
 					}
 					&.right{
-						img,.name,.mark{
+						img{
 							right: 34px;
+						}
+						.name,.mark{
+							right: 34px;
+							width: 215px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							text-align: right;
 						}
 					}
 					&.left{
-						img,.name,.mark{
+						img{
 							left: 34px;
+						}
+						.name,.mark{
+							left: 34px;
+							width: 215px;
+							overflow: hidden;
+							text-overflow: ellipsis;
 						}
 					}
 				}

@@ -200,6 +200,7 @@ YY.indexPage = {
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     alert('添加成功');
+                    YY.misc.changeCart(true);
                 }
             });
         });
@@ -211,6 +212,7 @@ YY.indexPage = {
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     _this.removeClass('like').addClass('liked').find('span').html('取消收藏');
+                    YY.misc.changeLike(true);
                 }else{
                     alert('收藏失败，请稍候再试');
                 }
@@ -221,6 +223,7 @@ YY.indexPage = {
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     _this.removeClass('liked').addClass('like').find('span').html('收藏');
+                    YY.misc.changeLike(false);
                 }else{
                     alert('取消收藏失败，请稍候再试');
                 }

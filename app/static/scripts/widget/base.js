@@ -14,6 +14,9 @@ YY.base = {
             this.loginRegister = $('#login-register');
             this.loginIntro = $('#login-intro-designer');
             var _self = this;
+            if(Cookies.get('youin_uid')){
+                _self.loginLogin.find('input[name="account"]').val(Cookies.get('youin_uid'));
+            }
             this.loginLogin.find('h2 a').click(function(){
                 _self.showRegester();
             });
@@ -22,22 +25,75 @@ YY.base = {
             });
             $('#login-submit').click(function(e){
                 e.preventDefault();
-                var form = $(this).parent();
+                var form = $(this).parents('form'),
+                    account = $.trim(form.find('input[name="account"]').val()),
+                    password = $.trim(form.find('input[name="password"]').val()),
+                    error = form.find('.error');
+                error.removeClass('show').html("");
+                if(account == ""){
+                    error.html('请输入用户名').addClass('show');
+                    return;
+                }
+                if(password == ""){
+                    error.html('请输入密码').addClass('show');
+                    return;
+                }
                 $.post('/login/checkin',{
-                    account : form.find('input[name="account"]').val(),
-                    password : form.find('input[name="password"]').val()
+                    account : account,
+                    password : password
                 },function(resp){
+                    Cookies.set('youin_uid',account,{ expires: 30 });
                     window.location.reload(true);
+                    //error.html('用户名或密码错误').addClass('show');
                 });
             });
             $('#register-submit').click(function(e){
                 e.preventDefault();
-                var form = $(this).parent();
+                var form = $(this).parents('form'),
+                    account = $.trim(form.find('input[name="account"]').val()),
+                    password = $.trim(form.find('input[name="password"]').val()),
+                    password2 = $.trim(form.find('input[name="password2"]').val()),
+                    mail = $.trim(form.find('input[name="mail"]').val()),
+                    check = $('#register-term'),
+                    error = form.find('.error');
+                error.removeClass('show').html("");
+                if(account == ""){
+                    error.html('请输入用户名').addClass('show');
+                    return;
+                }
+                if(!/^[\w|\d|_]{4,20}$/.test(account)){
+                    error.html('用户名仅支持英文、数字、_，长度为4-20位字符').addClass('show');
+                    return;
+                }
+                if(password == ""){
+                    error.html('请输入密码').addClass('show');
+                    return;
+                }
+                if(password.length < 6 ){
+                    error.html('密码不得少于6位').addClass('show');
+                    return;
+                }
+                if(password != password2){
+                    error.html('两次输入密码不一致，请确认').addClass('show');
+                    return;
+                }
+                if(mail == ""){
+                    error.html('请输入邮箱地址').addClass('show');
+                    return;
+                }
+                if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(mail)){
+                    error.html('请输入正确的邮箱地址').addClass('show');
+                    return;
+                }
+                if(!check.get(0).checked){
+                    error.html('请阅读并接受《有印用户协议》').addClass('show');
+                    return;
+                }
                 $.post('/login/register',{
-                    account : form.find('input[name="account"]').val(),
-                    password : form.find('input[name="password"]').val(),
-                    password2 : form.find('input[name="password2"]').val(),
-                    mail : form.find('input[name="mail"]').val()
+                    account : account,
+                    password : password,
+                    password2 : password2,
+                    mail : mail
                 },function(resp){
                     var data = JSON.parse(resp);
                     if(data && data.errno == 0){
@@ -139,6 +195,7 @@ YY.base = {
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     _this.removeClass('like').addClass('liked').find('span').html('取消收藏');
+                    YY.misc.changeLike(true);
                 }else{
                     alert('收藏失败，请稍候再试');
                 }
@@ -152,10 +209,14 @@ YY.base = {
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     _this.removeClass('liked').addClass('like').find('span').html('收藏');
+                    YY.misc.changeLike(false);
                 }else{
                     alert('取消收藏失败，请稍候再试');
                 }
             });
+        }).on('click','.m-productinfo .title, .m-productinfo .detail',function(e){
+            var pid = $(this).parents('.m-productinfo').attr("data-pid");
+            window.location.href = "/mall/item/detail?itemId=" + pid;
         });
     }
     
