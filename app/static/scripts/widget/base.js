@@ -4,7 +4,7 @@ YY.base = {
     	this._initGotop();
         this._initLogin();
         this._initUcenter();
-        this._initLike();
+        this._initProductInfo();
     },
     _initLogin : function(){
         function Login(){
@@ -185,7 +185,7 @@ YY.base = {
     		},300);
     	});
     },
-    _initLike : function(){
+    _initProductInfo : function(){
         $('body').on('click','.m-productinfo .like',function(e){
             e.preventDefault();
             var _this = $(this),
@@ -217,7 +217,10 @@ YY.base = {
         }).on('click','.m-productinfo .title, .m-productinfo .detail',function(e){
             var pid = $(this).parents('.m-productinfo').attr("data-pid");
             window.location.href = "/mall/item/detail?itemId=" + pid;
+        }).on('click','.m-productinfo .user',function(e){
+            window.location.href = "/user/card?uid=" + $(this).data('uid');
         });
+
     }
     
 }

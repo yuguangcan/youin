@@ -47,19 +47,29 @@
                 <li>
                     <a href="/user/card?uid={%$item.uid%}" target="_blank" class="designer-item-{%$item@index+1%}">
                         {%if $item@index == 2 || $item@index == 3%}
-                        <img src="{%$item.pic%}">
-                        <div class="right">
+                        <div class="img-cover">
+                            <img src="{%$item.pic%}">
+                            <i class="index-icons-arrow-big"></i>
+                            <div class="mask"></div>
+                        </div>
+                        <div class="user-cover right">
                             <img src="{%$item.avatar%}"></img>
                             <span class="name">{%$item.uname%}</span>
                             <span class="mark">{%$item.mark%}</span>
+                            <div class="mask"></div>
                         </div>
                         {%else%}
-                        <div class="left">
+                        <div class="user-cover left">
                             <img src="{%$item.avatar%}"></img>
                             <span class="name">{%$item.uname%}</span>
                             <span class="mark">{%$item.mark%}</span>
+                            <div class="mask"></div>
                         </div>
-                        <img src="{%$item.pic%}">
+                        <div class="img-cover">
+                            <img src="{%$item.pic%}">
+                            <i class="index-icons-arrow-big"></i>
+                            <div class="mask"></div>
+                        </div>
                         {%/if%}
                     </a>
                 </li>

@@ -110,9 +110,11 @@ $product-icons-layout: smart;
 			margin: 15px auto 10px;
 		}
 		.name{
-			font-size: 20px;
+			font-size: 18px;
 			color: #fff;
-			margin-bottom: 10px;
+			overflow: hidden;
+			margin: 0 5px 10px;
+			text-overflow: ellipsis
 		}
 		div{
 			color: #fff;
@@ -141,7 +143,7 @@ $product-icons-layout: smart;
 		.follow{
 			background: #16b9e4;
 			&:hover{
-				background:#68d5ff;
+				background:#078db3;
 			}
 		}
 		.followed{
@@ -272,7 +274,7 @@ $product-icons-layout: smart;
 			width: 165px;
 			background: #00c0f2;
 			&:hover{
-				background:#68d5ff;
+				background:#078db3;
 			}
 		}
 		.like{
@@ -280,7 +282,7 @@ $product-icons-layout: smart;
 			width: 130px;
 			background: #48be53;
 			&:hover{
-				background:#68d759;
+				background:#01b11d;
 			}
 		}
 		.liked{
@@ -288,7 +290,7 @@ $product-icons-layout: smart;
 			width: 130px;
 			background: #48be53;
 			&:hover{
-				background:#68d759;
+				background:#01b11d;
 			}
 		}
 	}
@@ -353,6 +355,72 @@ $product-icons-layout: smart;
 		img{
 			display: block;
 			margin: 0 auto;
+		}
+	}
+}
+#cart-overlay{
+	background: #000000;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+}
+#cart-popup{
+	display: none;
+	background: #fff;
+	width: 350px;
+	height: 160px;
+	position: relative;
+	padding: 15px 30px;
+	.close{
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		cursor: pointer;
+	}
+	.info{
+		color: #48be53;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 20px 0 30px;
+		i{
+			margin-right: 10px;
+			position: relative;
+			top: 5px;
+		}
+	}
+	.opt{
+		.go{
+			width: 140px;
+			height: 50px;
+			line-height: 50px;
+			background: #49c0f5;
+			color: #fff;
+			font-size: 18px;
+			text-align: center;
+			@include border-radius(5px);
+			display: inline-block;
+			border: 0;
+			outline: 0;
+			cursor: pointer;
+			margin-right: 20px;
+			&:hover{
+				background:#078db3;
+			}
+		}
+		span{
+			font-size: 16px;
+			color: #666;
+			margin-right: 5px;
+		}
+		.link{
+			color: #0b60a0;
+			font-size: 16px;
 		}
 	}
 }

@@ -47,6 +47,9 @@
             }
             .follow{
             	background: #00b8e7;
+                  &:hover{
+                        background:#078db3;
+                  }
             }
             .followed{
                   background: #989898;

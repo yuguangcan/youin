@@ -146,8 +146,14 @@
                 margin-left: 15px;
                 @include border-radius(5px);
                 background: #00c0f2;
+                &:hover{
+                    background:#078db3;
+                }
                 &:last-child{
                     background:#48be53;
+                    &:hover{
+                        background:#01b11d;
+                    }
                 }
             }
         }

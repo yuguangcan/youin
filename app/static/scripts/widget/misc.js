@@ -43,8 +43,8 @@ YY.misc = {
         var likeCount = $('#header-like-count');
         likeCount.html(increase? (parseInt(likeCount.html()) + 1):(parseInt(likeCount.html()) - 1));
     },
-    changeCart : function(increase){
+    changeCart : function(increase,count){
         var cartCount = $('#header-cart-count');
-        cartCount.html(increase? (parseInt(cartCount.html()) + 1):(parseInt(cartCount.html()) - 1));
+        cartCount.html(increase? (parseInt(cartCount.html()) + (count || 1)):(parseInt(cartCount.html()) - (count || 1)));
     }
 }

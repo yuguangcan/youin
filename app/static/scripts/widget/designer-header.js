@@ -10,7 +10,7 @@ YY.designerHeader = {
     changedPhotoIcon : $('.ds-header-change-inner .ds-photo i'),
     uploadFileHidden : $('#upload-avatar-hidden'),
     cashpopup : $('#cash-popup'),
-    cashpopupOverlay : $('#cash-popup-overlay'),
+    cashpopupOverlay : $('#cash-overlay'),
 	init: function(){
         var _self = this;
 		$('.m-ds-header').on('click','.follow',function(){

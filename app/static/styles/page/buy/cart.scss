@@ -163,6 +163,9 @@
 		font-size: 24px;
 		background: #16b9e4;
 		@include border-radius(5px);
+		&:hover{
+			background:#078db3;
+		}
 	}
 	.check{
 		float: right;

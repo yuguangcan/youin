@@ -168,6 +168,9 @@
 			@include border-radius(5px); 
 			margin-bottom: 15px;
 			display: inline-block;
+			&:hover{
+				background:#078db3;
+			}
 		}
 		.btn-text{
 			color: #4cb8ed;

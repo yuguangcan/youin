@@ -3,13 +3,7 @@ YY.orderPage = {
 		var province = $("#province"),
 			city = $("#city");
 		province.change(function(){
-			var $this = $(this).children('option:selected');
-			var price = $this.data("price");
-			var express = $this.data("express");
-			$("#expressName b").html(express);
-			$("#order-express b").html(price);
-			$(".total-price b").text( $(".total-price").data("total") + price );
-
+			caculatePrice();
 			$.get('/ajax/getcity?provinceId='+$(this).val(),function(resp){
 				var data = JSON.parse(resp);
 				if(data && data.data.list){
@@ -22,6 +16,29 @@ YY.orderPage = {
 			});
 		});
 
+		var defaultCityId = YY.context('cityId'),
+			defaultProvinceId = YY.context('provinceId')
+		if(defaultCityId){
+			$.get('/ajax/getcity?provinceId='+YY.context('provinceId'),function(resp){
+				var data = JSON.parse(resp);
+				if(data && data.data.list){
+					var option = [];
+					for(var i =0;i<data.data.list.length;i++){
+						option.push('<option value="'+data.data.list[i].cityId+'" ' + (defaultCityId == data.data.list[i].cityId ? 'selected="selected"': '')+'>'+data.data.list[i].cityName+'</option>');
+					}
+					city.empty().append(option.join(''));
+				}
+				caculatePrice();
+			});
+		}
+		function caculatePrice(){
+			var $this = province.children('option:selected');
+			var price = $this.data("price");
+			var express = $this.data("express");
+			$("#expressName b").html(express);
+			$("#order-express b").html(price);
+			$(".total-price b").text( $(".total-price").data("total") + price );
+		}
 		$("#submit").click(function(){
 			//check
 			if(check()){
@@ -41,7 +58,7 @@ YY.orderPage = {
 					return false;
 				}
 			}
-			if(/(^(\d{3,4}-)?\d{7,8})$|^(13[0-9]{9})$/.test($('#telephone').val())){
+			if(!/(^(\d{3,4}-)?\d{7,8})$|^(1[0-9]{10})$/.test($('#telephone').val())){
 				alert("请输入正确的电话号码");
 				return false;
 			}

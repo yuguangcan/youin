@@ -24,7 +24,7 @@
                 </ul>
             </li>
             <li class="media">
-                <div>关注有印<i class="common-icons-weixin"></i><i class="common-icons-weibo"></i><i class="common-icons-douban"></i></div>
+                <div>关注有印<a href="javascript:;" id="footer-weixin"><i class="common-icons-weixin"></i><img src="/static/youin/images/weixin.png"></a><a href="###"><i class="common-icons-weibo"></i></a><a href="###"><i class="common-icons-douban"></i></a></div>
             </li>
             <li class="qualify">京ICP备14008353号-1 \ 京公网安备12010802014108号 \ Powered by 北京领结科技有限公司</li>
         </ul>

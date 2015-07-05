@@ -113,6 +113,9 @@ $subcategory-icons-layout: smart;
 				@include subcategory-icons-sprite(arrow-down);
 			}
 		}
+		&:hover{
+			background: #00c0f2;
+		}
 	}
 }
 

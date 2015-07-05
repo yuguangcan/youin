@@ -11,9 +11,9 @@
         {%if $data.data.uid == $data.userInfo.uid %}
         <div class="ds-cash">
             <div>{%$data.userInfo.myMoney%}元</div>
-            <p>我的收入</p>
+            <p>我的收入{%if $data.userInfo.myMoney < 100%}(小于100元无法提现){%/if%}</p>
         </div>
-        <a class="ds-cash-out {%if $data.userInfo.myMoney == 0%}cash-none{%/if%}" href="javascript:;">提现</a>
+        <a class="ds-cash-out {%if $data.userInfo.myMoney < 100%}cash-none{%/if%}" href="javascript:;">提现</a>
         {%/if%}
         <div class="ds-counter">
             <table>

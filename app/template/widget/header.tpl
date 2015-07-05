@@ -27,7 +27,7 @@
                         <a href="/order/userorder/getlist?type=0" target="_blank">待付款<span>{%$data.userInfo.payNum%}</span></a>
                         <a href="/order/userorder/getlist?type=1" target="_blank">待发货<span>{%$data.userInfo.sendNum%}</span></a>
                         <a href="/order/userorder/getlist?type=2" target="_blank">待收货<span>{%$data.userInfo.receiveNum%}</span></a>
-                        <a href="/order/userorder/getlist?type=0" target="_blank">待评价<span>{%$data.userInfo.evaluateNum%}</span></a>
+                        <!-- <a href="/order/userorder/getlist?type=0" target="_blank">待评价<span>{%$data.userInfo.evaluateNum%}</span></a> -->
                     </div>
                     <div class="user-info">
                         <a href="/user/card?uid={%$data.userInfo.uid%}" target="_blank">作品<span>{%$data.userInfo.itemNum%}</span></a>
@@ -47,6 +47,8 @@
                     <a href="###" id="logout">退出</a>
                 </div>
             </li>
+            <li><a href="/order/userorder/getlist?type=0#designer-nav">我的订单</a></li>
+            <li><a href="/user/card?uid=5">个人中心</a></li>
             <li><a href="/mall/collect/getlist"><i class="common-icons-collect"></i>收藏<span id="header-like-count">{%$data.userInfo.collectNum%}</span>件</a></li>
             <li><a href="/mall/cart/getlist"><i class="common-icons-cart"></i>购物车<span id="header-cart-count">{%$data.userInfo.cartNum%}</span>件</a></li>
             {%/if%}

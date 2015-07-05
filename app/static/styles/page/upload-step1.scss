@@ -95,6 +95,9 @@
 			display: block;
 			float: left;
 			@include border-radius(5px);
+			&:hover{
+				background:#078db3;
+			}
 			b{
 				font-weight: normal;
 			}
@@ -241,6 +244,9 @@
 	float: right;
 	margin-top: 80px;
 	@include border-radius(5px);
+	&:hover{
+		background:#01b11d;
+	}
 	&.disable{
 		background: #c4c4c4;
 	}

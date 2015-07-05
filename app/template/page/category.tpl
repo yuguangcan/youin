@@ -28,6 +28,11 @@
                         </a>
                     </li>
                 {%/foreach%}
+                <li>
+                    <a href="/pages/subcategory?cid={%$product.cid%}">
+                        <img src="/static/youin/images/category-more-product.jpg"></img>
+                    </a>
+                </li>
             </ul>
         </section>
     {%/foreach%}

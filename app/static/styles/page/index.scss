@@ -141,7 +141,7 @@ $index-icons-layout: smart;
 				display: block;
 				width: 500px;
 				height: 180px;
-				div{
+				.user-cover{
 					float: left;
 					width: 250px;
 					height: 180px;
@@ -153,18 +153,31 @@ $index-icons-layout: smart;
 						border: 2px solid #fff;
 						top: 45px;
 						@include border-radius(48px);
+						z-index: 2;
 					}
 					.name{
 						position: absolute;
 						top: 108px;
 						color: #fff;
 						font-size: 26px;
+						z-index: 2;
 					}
 					.mark{
 						position: absolute;
 						top: 145px;
 						color: #fff;
 						font-size: 14px;
+						z-index: 2;
+					}
+					.mask{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						filter:alpha(opacity=80);
+						opacity: 0.8;
+						display: none;
+						left: 0;
+						top: 0;
 					}
 					&.right{
 						img{
@@ -190,20 +203,128 @@ $index-icons-layout: smart;
 						}
 					}
 				}
-				&>img{
+				.img-cover{
 					float: left;
-					display: block;
 					width: 250px;
 					height: 180px;
+					position: relative;
+					img{
+						display: block;
+						width: 250px;
+						height: 180px;
+					}
+					i{
+						position: absolute;
+						left: 78px;
+						top: 43px;
+						display: none;
+						z-index: 1;
+					}
+					.mask{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						filter:alpha(opacity=80);
+						opacity: 0.8;
+						display: none;
+						left: 0;
+						top: 0;
+					}
 				}
-
+				&:hover{
+					.user-cover{
+						.mask{
+							display: block;
+						}
+					}
+					.img-cover{
+						i{
+							display: block;
+						}
+						.mask{
+							display: block;
+						}
+					}
+				}
 				@for $i from 1 through 6 {
 				  	&.designer-item-#{$i} { 
-				  		div{
+				  		.user-cover{
 				  			@include index-icons-sprite(designer-item-#{$i});
 				  		}
 				  	 	
 				  	}
+				}
+				&.designer-item-1{
+					.user-cover{
+						.mask{
+							background-color: #568130;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #568130; 
+						}
+					}
+				}
+				&.designer-item-2{
+					.user-cover{
+						.mask{
+							background-color: #973877;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #973877; 
+						}
+					}
+				}
+				&.designer-item-3{
+					.user-cover{
+						.mask{
+							background-color: #424791;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #424791; 
+						}
+					}
+				}
+				&.designer-item-4{
+					.user-cover{
+						.mask{
+							background-color: #7b492f;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #7b492f; 
+						}
+					}
+				}
+				&.designer-item-5{
+					.user-cover{
+						.mask{
+							background-color: #257a77;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #257a77; 
+						}
+					}
+				}
+				&.designer-item-6{
+					.user-cover{
+						.mask{
+							background-color: #367790;
+						}
+					}
+					.img-cover{
+						.mask{
+							background-color: #367790; 
+						}
+					}
 				}
 			}
 		}

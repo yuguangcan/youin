@@ -190,7 +190,10 @@ YY.indexPage = {
         }
     },
     initBuy : function(){
-        var _self = this;
+        var _self = this,
+            cartPopup =  $('#cart-popup'),
+            cartpopupOverlay = $('#cart-overlay');
+        
         $('#add-cart').click(function(){
             $.post('/mall/cart/add',{
                 itemId : YY.context('itemId'),
@@ -199,10 +202,13 @@ YY.indexPage = {
             },function(resp){
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
-                    alert('添加成功');
+                    YY.misc.showPopup(cartPopup,cartpopupOverlay);
                     YY.misc.changeCart(true);
                 }
             });
+        });
+        cartPopup.find('.link').click(function(){
+            YY.misc.hidePopup(cartPopup,cartpopupOverlay);
         });
     },
     initOther : function(){

@@ -127,6 +127,16 @@
 		</ul>
 	</section>
 
+	<div id="cart-overlay"></div>
+	<div id="cart-popup">
+	    <i class="common-icons-popup-close close"></i>
+	    <div class="info"><i class="common-icons-check"></i>商品已成功加入购物车！</div>
+	    <div class="opt">
+	    	<a href="/mall/cart/getlist" class="go">去购物车结算</a>
+	    	<span>您还可以</span>
+	    	<a href="javascript:;" class="link">继续购物</a>
+	    </div>
+	</div>
 {%/block%}
 
 {%block name="js"%}

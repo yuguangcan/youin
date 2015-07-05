@@ -2,7 +2,7 @@
 	<li {%if $selected == 1%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=0#designer-nav">待付款{%if $selected == 1%}(<span class="pay-count">{%$data.data.total%}</span>){%/if%}</a></li>
 	<li {%if $selected == 2%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=1#designer-nav">待发货{%if $selected == 2%}({%$data.data.total%}){%/if%}</a></li>
 	<li {%if $selected == 3%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=2#designer-nav">待收货{%if $selected == 3%}(<span class="receive-count">{%$data.data.total%}</span>){%/if%}</a></li>
-	<li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3#designer-nav">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li>
+	<!-- <li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3#designer-nav">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li> -->
 	<li {%if $selected == 5%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=4#designer-nav">已完成{%if $selected == 5%}({%$data.data.total%}){%/if%}</a></li>
 </ul>
 
@@ -46,7 +46,7 @@
 				{%if $item.status == 0 %}
 					<span>等待付款</span>
 				{%elseif $item.status == 1%}
-					<span>买家已付款</span>
+					<span>买家已付款，制作中</span>
 				{%elseif $item.status == 2%}
 					<span>等待收货</span>
 				{%elseif $item.status == 3%}
@@ -59,10 +59,6 @@
 			<div class="opt">
 				{%if $state == "evaluate"%}
 					<ul>
-						<li>
-							<a href="###" class="btn pay-btn">评价</a>
-							<a href="/mall/item/detail?itemId={%$subitem.itemId%}" target="_blank"  class="btn-text cancel-btn">再次购买</a>
-						</li>
 						<li>
 							<a href="###" class="btn pay-btn">评价</a>
 							<a href="/mall/item/detail?itemId={%$subitem.itemId%}" target="_blank"  class="btn-text cancel-btn">再次购买</a>

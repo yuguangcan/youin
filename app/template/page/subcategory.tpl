@@ -88,7 +88,7 @@
                     <span><i class="common-icons-product-share-s"></i><%=list[i].shareNum%></span>
                     <span><i class="common-icons-product-like-s"></i><%=list[i].collectNum%></span>
                     <p class="detail"><%=list[i].summary%></p>
-                    <div class="user">
+                    <div class="user" data-uid="<%=list[i].uid%>">
                         <img class="avatar" src="<%=list[i].avatar%>"><%=list[i].uname%>
                     </div>
                 </div>

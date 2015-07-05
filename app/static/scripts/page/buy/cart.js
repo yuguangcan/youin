@@ -40,6 +40,7 @@ YY.cartPage = {
                 if(confirm("确认删除选中商品吗？")){
                     deleteItem(id,function(){
                         itemObj.remove();
+                        YY.misc.changeCart(false);
                         YY.cartPage.calculate();
                     });
                 }
@@ -58,15 +59,22 @@ YY.cartPage = {
 
     	$('#delete-select').click(function(){
             if(confirm("确认删除选中商品吗？")){
+                var ids = [],
+                    items = [];
                 $('.cart-list li').each(function(index,item){
                     var select = $(item).find('.select');
                     if(select.get(0).checked){
-                        deleteItem($(item).attr('data-cartid'),function(){
-                            $(item).remove();
-                        });
+                        ids.push($(item).attr('data-cartid'));
+                        items.push($(item));
                     }
                 });
-                YY.cartPage.calculate();
+                deleteItem(ids,function(){
+                    $.each(items,function(index,item){
+                        item.remove();
+                    });
+                    YY.misc.changeCart(false,items.length);
+                    YY.cartPage.calculate();
+                });
             }
     	});
 
@@ -83,7 +91,13 @@ YY.cartPage = {
                 return;
             }
             isDeleting = true;
-            $.post('/mall/cart/del?id='+id,{},function(resp){
+            var url = '/mall/cart/del';
+            if(Object.prototype.toString.call(id) === '[object Array]'){
+                url += '?ids=' + id;
+            }else{
+                url += '?id=' + id;
+            }
+            $.post(url,{},function(resp){
                 var data = JSON.parse(resp);
                 if(data && data.errno == 0){
                     callback();
@@ -91,7 +105,6 @@ YY.cartPage = {
                 isDeleting = false;
             });
         }
-
         $('#submit').click(function(){
             var ids = [];
             $('.cart-list li').each(function(index,item){

@@ -43,6 +43,20 @@
                         vertical-align: middle;
                     }
                 }
+                #footer-weixin{
+                    position: relative;
+                    img{
+                        position: absolute;
+                        top: -225px;
+                        left: -62px;
+                        display: none;
+                    }
+                    &:hover{
+                        img{
+                            display: block;
+                        }
+                    }
+                }
             }
             .qualify{
                 font-size: 12px;

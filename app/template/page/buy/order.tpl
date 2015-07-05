@@ -23,22 +23,22 @@
 	<section class="order">
 		<h2>填写并核对订单信息</h2>
 		<div class="order-item receiver">
-			<h3>收货人信息<a href="javascript:;">修改</a></h3>
+			<h3>收货人信息<!-- <a href="javascript:;">修改</a> --></h3>
 			<div class="name-tel">
-				<input type="text" class='input checkEmpty' data-alert='请输入您的姓名' name="receiver" placeholder="姓名"/>
-				<input type="text" class='input checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话" id="telephone"/>
+				<input type="text" class='input checkEmpty' data-alert='请输入您的姓名' name="receiver" placeholder="姓名" value="{%$data.data.userAddress.receiver%}"/>
+				<input type="text" class='input checkEmpty' data-alert='请输入您的电话' name="phone" placeholder="电话" id="telephone" value="{%$data.data.userAddress.phone%}"/>
 			</div>
 			<div class="address">
 				<select id='province' name="provinceId" class="select">
 					<option value="0" selected="selected">请选择</option>
 					{%foreach $data.data.expressInfo as $item%}
-						<option value='{%$item.provinceId%}' data-price="{%$item.expressPrice%}" data-express='{%$item.expressName%}'>{%$item.provinceName%}</option>
+						<option value='{%$item.provinceId%}' data-price="{%$item.expressPrice%}" data-express='{%$item.expressName%}' {%if $item.provinceId == $data.data.userAddress.provinceId %}selected="selected"{%/if%}>{%$item.provinceName%}</option>
 					{%/foreach%}
 				</select>
 				<select id='city' name="cityId" class="select">
 					<option value="0" selected="selected">请选择</option>
 				</select>
-				<input type="text" class='input checkEmpty input-address' name="address" data-alert='请输入您的详细地址' placeholder="请输入详细地址"/>
+				<input type="text" class='input checkEmpty input-address' name="address" data-alert='请输入您的详细地址' placeholder="请输入详细地址" value="{%$data.data.userAddress.address%}"/>
 			</div>
 		</div>
 		<input type='hidden' name="ids" value="{%$data.params.ids%}"/>
@@ -99,7 +99,10 @@
 {%/block%}
 
 {%block name="js"%}
-
+<script type="text/javascript">
+	YY.context('provinceId','{%$data.data.userAddress.provinceId%}');
+	YY.context('cityId','{%$data.data.userAddress.cityId%}');
+</script>
 <!-- build:js /static/youin/scripts/page/buy/order.js -->
 <script src="static/scripts/page/buy/order.js"></script>
 <!-- endbuild -->

@@ -11,7 +11,7 @@
 		<span><i class="common-icons-product-share-s"></i>{%$product.shareNum%}</span>
         <span><i class="common-icons-product-like-s"></i>{%$product.collectNum%}</span>
         <p class="detail">{%$product.summary%}</p>
-        <div class="user">
+        <div class="user" data-uid="{%$product.uid%}">
         	<img class="avatar" src="{%$product.avatar%}">{%$product.uname%}
         </div>
 	</div>

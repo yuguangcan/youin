@@ -108,6 +108,12 @@
 		&.cash-none{
 			background: #989898;
 			cursor: not-allowed;
+			&:hover{
+				background: #989898;
+			}
+		}
+		&:hover{
+			background: #078db3;
 		}
 	}
 	.ds-counter{
@@ -141,15 +147,27 @@
 			cursor: pointer;
 			display: block;
 			color: #fff;
+			&:hover{
+				background: #078db3;
+			}
 		}
 		.followed{
 			background: #989898;
+			&:hover{
+				background: #989898;
+			}
 		}
 		.follow{
 			background: #11bcea;
+			&:hover{
+				background: #078db3;
+			}
 		}
 		.avatar-cancel{
 			background: #989898;
+			&:hover{
+				background: #989898;
+			}
 		}
 	}
 }
@@ -214,5 +232,8 @@
 		border: 0;
 		outline: 0;
 		cursor: pointer;
+		&:hover{
+			background:#078db3;
+		}
 	}
 }
