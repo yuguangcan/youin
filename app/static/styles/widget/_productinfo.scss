@@ -67,6 +67,9 @@
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
+			&:hover{
+			    color:#49c0f5;
+			}
 		}
 		i{
 			vertical-align: top;
@@ -85,10 +88,16 @@
 			height: 42px;
 			overflow: hidden;
 			word-break: break-all;
+			&:hover{
+			    color:#49c0f5;
+			}
 		}
 		.user{
 			font-size: 14px;
 			color: #fff;
+			&:hover{
+			    color:#49c0f5;
+			}
 			.avatar{
 				width: 28px;
 				height: 28px;

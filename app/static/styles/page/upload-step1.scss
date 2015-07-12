@@ -144,11 +144,17 @@
 			position: absolute;
 			left: 0;
 			top: 85px;
-			width: 197px;
+			width: 170px;
 			span{
 				float: left;
 				font-size: 14px;
 				color: #5680b0;
+				&:first-child{
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					width: 69%;
+				}
 				&:last-child{
 					float:right;
 					cursor: pointer;

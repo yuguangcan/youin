@@ -31,20 +31,27 @@ YY.base = {
                     error = form.find('.error');
                 error.removeClass('show').html("");
                 if(account == ""){
-                    error.html('请输入用户名').addClass('show');
+                    //error.html('请输入用户名').addClass('show');
+                    alert('请输入用户名');
+                    form.find('input[name="account"]').get(0).focus();
                     return;
                 }
                 if(password == ""){
-                    error.html('请输入密码').addClass('show');
+                    //error.html('请输入密码').addClass('show');
+                    alert('请输入密码');
+                    form.find('input[name="password"]').get(0).focus();
                     return;
                 }
                 $.post('/login/checkin',{
                     account : account,
                     password : password
                 },function(resp){
-                    Cookies.set('youin_uid',account,{ expires: 30 });
-                    window.location.reload(true);
-                    //error.html('用户名或密码错误').addClass('show');
+                    if(resp.indexOf('errno') != -1){
+                        alert('用户名或密码错误');
+                    }else{
+                        Cookies.set('youin_uid',account,{ expires: 30 });
+                        window.location.reload(true);
+                    }
                 });
             });
             $('#register-submit').click(function(e){
@@ -58,35 +65,50 @@ YY.base = {
                     error = form.find('.error');
                 error.removeClass('show').html("");
                 if(account == ""){
-                    error.html('请输入用户名').addClass('show');
+                    //error.html('请输入用户名').addClass('show');
+                    alert('请输入用户名');
+                    form.find('input[name="account"]').get(0).focus();
                     return;
                 }
                 if(!/^[\w|\d|_]{4,20}$/.test(account)){
-                    error.html('用户名仅支持英文、数字、_，长度为4-20位字符').addClass('show');
+                    //error.html('用户名仅支持英文、数字、_，长度为4-20位字符').addClass('show');
+                    alert('用户名仅支持英文、数字、_，长度为4-20位字符');
+                    form.find('input[name="account"]').get(0).focus();
                     return;
                 }
                 if(password == ""){
-                    error.html('请输入密码').addClass('show');
+                    //error.html('请输入密码').addClass('show');
+                    alert('请输入密码');
+                    form.find('input[name="password"]').get(0).focus();
                     return;
                 }
                 if(password.length < 6 ){
-                    error.html('密码不得少于6位').addClass('show');
+                    //error.html('密码不得少于6位').addClass('show');
+                    alert('密码不得少于6位');
+                    form.find('input[name="password"]').get(0).focus();
                     return;
                 }
                 if(password != password2){
-                    error.html('两次输入密码不一致，请确认').addClass('show');
+                    //error.html('两次输入密码不一致，请确认').addClass('show');
+                    alert('两次输入密码不一致，请确认');
+                    form.find('input[name="password2"]').get(0).focus();
                     return;
                 }
                 if(mail == ""){
-                    error.html('请输入邮箱地址').addClass('show');
+                    //error.html('请输入邮箱地址').addClass('show');
+                    alert('请输入邮箱地址');
+                    form.find('input[name="mail"]').get(0).focus();
                     return;
                 }
                 if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(mail)){
-                    error.html('请输入正确的邮箱地址').addClass('show');
+                    //error.html('请输入正确的邮箱地址').addClass('show');
+                    alert('请输入正确的邮箱地址');
+                    form.find('input[name="mail"]').get(0).focus();
                     return;
                 }
                 if(!check.get(0).checked){
-                    error.html('请阅读并接受《有印用户协议》').addClass('show');
+                    //error.html('请阅读并接受《有印用户协议》').addClass('show');
+                    alert('请阅读并接受《有印用户协议》');
                     return;
                 }
                 $.post('/login/register',{

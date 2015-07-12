@@ -90,7 +90,7 @@
 	{%include file="youin/widget/share.tpl" name=$data.data.item.itemName%}
 
 	{%if $data.data.related %}
-	<section class="relate">
+	<section class="relate relate-same">
 		<h2>同主题艺术品</h2>
 		<ul class="clearfix">
 			{%foreach $data.data.related.list as $item%}

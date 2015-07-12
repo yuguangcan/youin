@@ -98,7 +98,7 @@ $product-icons-layout: smart;
 		position: absolute;
 		top: -20px;
 		right: 0;
-		width: 130px;
+		width: 170px;
 		text-align: center;
 		background: #253c57;
 		img{
@@ -110,7 +110,7 @@ $product-icons-layout: smart;
 			margin: 15px auto 10px;
 		}
 		.name{
-			font-size: 18px;
+			font-size: 17px;
 			color: #fff;
 			overflow: hidden;
 			margin: 0 5px 10px;
@@ -335,6 +335,18 @@ $product-icons-layout: smart;
 					}
 				}
 			}
+		}
+	}
+}
+.relate-same{
+	ul{
+		white-space: nowrap;
+		overflow: hidden;
+		overflow-x:auto;
+		li{
+			float: none;
+			display: inline-block;
+			margin: 30px 5px;
 		}
 	}
 }
