@@ -218,6 +218,22 @@
 			outline: 0;
 		}
 	}
+	.confirm-box{
+		width: 350px;
+		height: 48px;
+		position: relative;
+		margin-bottom: 10px;
+		line-height: 48px;
+		font-size: 16px;
+		span{
+			margin: 0 15px;
+			color: #5c5c5c;
+		}
+		b{
+			font-weight: normal;
+			color: #333;
+		}
+	}
 	.submit{
 		width: 120px;
 		height: 50px;
@@ -235,5 +251,15 @@
 		&:hover{
 			background:#078db3;
 		}
+		&.submit-cancel{
+			background: #989898;
+			margin-left: 20px;
+			&:hover{
+				background:#989898;
+			}
+		}
 	}
+}
+#cash-popup-confirm{
+	display: none;
 }

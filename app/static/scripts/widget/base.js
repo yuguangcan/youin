@@ -54,6 +54,8 @@ YY.base = {
                     }
                 });
             });
+            YY.misc.autoCutLength($('#register-form').find('input[name="account"]'),20);
+
             $('#register-submit').click(function(e){
                 e.preventDefault();
                 var form = $(this).parents('form'),

@@ -22,11 +22,11 @@
 			<form id="upload-form" method="post" action="/pages/upload_2">
 				<div class="input-item clearfix">
 					<span>标题</span>
-					<input type="text" placeholder="请输入作品名称" id="title" name="itemName"></input>
+					<input type="text" placeholder="请输入作品名称（不超过20个字）" id="title" name="itemName"></input>
 				</div>
 				<div class="input-item clearfix">
 					<span>描述</span>
-					<textarea placeholder="请输入作品描述" id="summary" name="summary"></textarea>
+					<textarea placeholder="请输入作品描述（不超过99个字）" id="summary" name="summary"></textarea>
 				</div>
 				<div class="input-item clearfix">
 					<ul class="taglist" id="taglist">
@@ -80,6 +80,7 @@
 			        		<td>{%$data.data.priceNoframe%}</td>
 			        	</tr>
 			        </table>
+			        <div class="price-notice">定价说明：最终售价 = 基础价格 + 您的收益</div>
 				</div>
 				<div class="clearfix">
 					<a href="javascript:;" id="submit">下一步</a>

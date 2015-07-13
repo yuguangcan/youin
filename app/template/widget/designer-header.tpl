@@ -74,19 +74,36 @@
 <div id="cash-overlay"></div>
 <div id="cash-popup">
     <i class="common-icons-popup-close close"></i>
-    <h2>请输入提现信息：</h2>
-    <form id="cash-form" name="cash-form" method="post" action="/user/getmoney" class="clearfix">
-        <div class="input-box">
-            <input type="text" name="people" placeholder="姓名"></input>
+    <div id="cash-popup-input">
+        <h2>请输入提现信息：</h2>
+        <form id="cash-form" name="cash-form" method="post" action="/user/getmoney" class="clearfix">
+            <div class="input-box">
+                <input type="text" name="people" placeholder="姓名"></input>
+            </div>
+            <div class="input-box">
+                <input type="text" name="account" placeholder="支付宝账号"></input>
+            </div>
+            <div class="input-box">
+                <input type="tel" name="phone" placeholder="电话"></input>
+            </div>
+            <input type="submit" class="submit" id="cash-submit" value="提现"></a>
+        </form>
+    </div>
+    <div id="cash-popup-confirm">
+        <h2>请确认提现信息：</h2>
+        <div class="confirm-box">
+            <span>姓名：</span><b id="confirm-box-people"></b>
         </div>
-        <div class="input-box">
-            <input type="text" name="account" placeholder="支付宝账号"></input>
+        <div class="confirm-box">
+            <span>支付宝账号：</span><b id="confirm-box-account"></b>
         </div>
-        <div class="input-box">
-            <input type="tel" name="phone" placeholder="电话"></input>
+        <div class="confirm-box">
+            <span>电话：</span><b id="confirm-box-phone"></b>
         </div>
-        <input type="submit" class="submit" id="cash-submit" value="提现"></a>
-    </form>
+        <input class="submit submit-cancel" id="cash-submit-cancel" value="取消"></a>
+        <input class="submit" id="cash-submit-final" value="确认提现"></a>
+    </div>
+    
 </div>
 {%/if%}
 <script type="text/javascript">

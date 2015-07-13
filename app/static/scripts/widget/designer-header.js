@@ -11,8 +11,12 @@ YY.designerHeader = {
     uploadFileHidden : $('#upload-avatar-hidden'),
     cashpopup : $('#cash-popup'),
     cashpopupOverlay : $('#cash-overlay'),
+    cashpopupInput : $('#cash-popup-input'),
+    cashpopupConfirm : $('#cash-popup-confirm'),
 	init: function(){
         var _self = this;
+        YY.misc.autoCutLength(_self.changedName,20);
+        YY.misc.autoCutLength(_self.changedIntro,72);
 		$('.m-ds-header').on('click','.follow',function(){
             var _this = $(this);
             $.post('/follow/follow/add?followUid='+YY.context('ds-uid'),function(resp){
@@ -36,7 +40,7 @@ YY.designerHeader = {
                 }
             });
         }).on('click','.change-profile',function(){
-            _self.changedPhoto.attr('src',"");
+            _self.changedPhoto.attr('src',"").hide();
             _self.changedPhotoIcon.show();
             _self.uploadFileHidden.val(_self.originPhoto.attr('src'));
             _self.changedName.val(_self.originName.html());
@@ -51,6 +55,10 @@ YY.designerHeader = {
                 mark = $.trim(_self.changedIntro.val());
             if(uname == ""){
                 alert('请输入用户名');
+                return;
+            }
+            if(!/^[\w|\d|_]{4,20}$/.test(uname)){
+                alert('用户名仅支持英文、数字、_，长度为4-20位字符');
                 return;
             }
             $.post('/user/infoupdate',{
@@ -73,12 +81,38 @@ YY.designerHeader = {
 
         });
         if(_self.cashpopup.length > 0){
-            _self.cashpopup.find('form').on('submit',function(e){
+            var people = _self.cashpopupInput.find('input[name="people"]'),
+                account = _self.cashpopupInput.find('input[name="account"]'),
+                phone = _self.cashpopupInput.find('input[name="phone"]'),
+                peopleConfirm = $('#confirm-box-people'),
+                accountConfirm = $('#confirm-box-account'),
+                phoneConfirm = $('#confirm-box-phone');
+            _self.cashpopupInput.find('form').on('submit',function(e){
                 e.preventDefault();
+                if($.trim(people.val()) == ""){
+                    alert('请输入姓名');
+                    return;
+                }
+                if($.trim(account.val()) == ""){
+                    alert('请输入支付宝账户名');
+                    return;
+                }
+                if(!/(^(\d{3,4}-)?\d{7,8})$|^(1[0-9]{10})$/.test(phone.val())){
+                    alert("请输入正确的电话号码");
+                    return;
+                }
+                peopleConfirm.html(people.val());
+                accountConfirm.html(account.val());
+                phoneConfirm.html(phone.val());
+
+                _self.cashpopupInput.hide();
+                _self.cashpopupConfirm.show();
+            });  
+            _self.cashpopupConfirm.find('#cash-submit-final').on('click',function(){
                 $.post('/user/getmoney',{
-                    people : $(this).find('input[name="people"]').val(),
-                    account : $(this).find('input[name="account"]').val(),
-                    phone : $(this).find('input[name="phone"]').val()
+                    people : peopleConfirm.html(),
+                    account : accountConfirm.html(),
+                    phone : phoneConfirm.html()
                 },function(resp){
                     var data = JSON.parse(resp);
                     if(data && data.errno == 0){
@@ -90,7 +124,11 @@ YY.designerHeader = {
                         alert('提现失败，请稍候再试');
                     }
                 });
-            });  
+            });
+            _self.cashpopupConfirm.find('#cash-submit-cancel').on('click',function(){
+                _self.cashpopupConfirm.hide();
+                _self.cashpopupInput.show();
+            });
         }
 	},
     initAvatarUpload : function(){
@@ -120,7 +158,7 @@ YY.designerHeader = {
                     {
                         if(resp && resp.errno == 0){
                             _self.uploadFileHidden.val(resp.url);
-                            _self.changedPhoto.attr('src',resp.url);
+                            _self.changedPhoto.attr('src',resp.url).show();
                             _self.changedPhotoIcon.hide();
                         }else{
                             alert('上传失败，请稍候再试');

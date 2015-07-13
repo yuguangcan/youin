@@ -4,6 +4,8 @@ YY.indexPage = {
         	summary = $('#summary'),
         	taglist = $('#taglist li'),
             tagId = $('#tagid');
+        YY.misc.autoCutLength(title,40);
+        YY.misc.autoCutLength(summary,198);
         title.on('focus',function(){
         	$(this).addClass('focus');
         }).on('blur',function(){
@@ -121,7 +123,18 @@ YY.indexPage = {
         }
     },
     initSubmit : function(){
+        var title = $('#title'),
+            summary = $('#summary'),
+            taglist = $('#taglist li');
         $('#submit').click(function(e){
+            if($.trim(title.val()) == ""){
+                alert('请输入作品名称');
+                return;
+            }
+            if($.trim(summary.val()) == ""){
+                alert('请输入作品描述');
+                return;
+            }
             $('#upload-form').submit();
         });
     }
