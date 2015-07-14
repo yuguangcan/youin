@@ -98,7 +98,7 @@ YY.indexPage = {
                             uploadFileHidden.val(resp.url);
                             uploadDone.show();
                         }else{
-                            alert('上传失败，请稍候再试');
+                            alert(resp.errstr || '上传失败，请稍候再试');
                             uploadBtn.removeClass('loading').find("b").html('上传一张图');
                         }
                         resetPicUpload();

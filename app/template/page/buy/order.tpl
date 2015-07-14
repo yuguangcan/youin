@@ -80,6 +80,10 @@
                 {%/foreach%}
             </ul>
 		</div>
+		<div class="order-item note">
+			<h3>备注</h3>
+			<textarea placeholder="如有需要，请填写备注信息" name="note"></textarea>
+		</div>
 		<div class="operation">
 			<a href="javascript:;" id="submit" type="submit">提交订单</a>
 			<div class="opt">

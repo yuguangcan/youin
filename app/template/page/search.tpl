@@ -14,7 +14,7 @@
 
 {%block name="content"%}
 	
-<div class="search-notice">关于"{%$data.data.word%}"的艺术品搜索结果：</div>
+<div class="search-notice">关于"{%$data.data.word%}"的艺术品搜索结果：<span>共{%$data.data.total%}条结果</span></div>
 <ul class="items clearfix">
     {%foreach $data.data.list as $item%}
         <li class="item">

@@ -4,6 +4,7 @@
 	<li {%if $selected == 3%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=2#designer-nav">待收货{%if $selected == 3%}(<span class="receive-count">{%$data.data.total%}</span>){%/if%}</a></li>
 	<!-- <li {%if $selected == 4%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=3#designer-nav">待评价{%if $selected == 4%}({%$data.data.total%}){%/if%}</a></li> -->
 	<li {%if $selected == 5%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=4#designer-nav">已完成{%if $selected == 5%}({%$data.data.total%}){%/if%}</a></li>
+	<li {%if $selected == 6%}class="cur"{%/if%}><a href="/order/userorder/getlist?type=99#designer-nav">已取消{%if $selected == 6%}({%$data.data.total%}){%/if%}</a></li>
 </ul>
 
 <section class="buylist-list">
@@ -13,7 +14,7 @@
 		<div class="count">数量</div>
 		<div class="total">应付金额</div>
 		<div class="state">订单状态</div>
-		{%if $state != 'done'%}
+		{%if $state != 'done' && $state != 'cancel' %}
 		<div class="opt">操作</div>
 		{%/if%}
 	</div>
@@ -44,7 +45,11 @@
 			{%*0待付款  1待发货  2待收货  3待评价  4已完成 *%}
 			<div class="state">
 				{%if $item.status == 0 %}
+					{%if $state == 'cancel'%}
+					<span>已取消</span>
+					{%else%}
 					<span>等待付款</span>
+					{%/if%}
 				{%elseif $item.status == 1%}
 					<span>买家已付款，制作中</span>
 				{%elseif $item.status == 2%}
@@ -55,7 +60,7 @@
 					<span>已完成</span>
 				{%/if%}
 			</div>
-			{%if $state != 'done'%}
+			{%if $state != 'done' && $state != 'cancel' %}
 			<div class="opt">
 				{%if $state == "evaluate"%}
 					<ul>
